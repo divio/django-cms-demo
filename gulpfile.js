@@ -21,13 +21,13 @@ var yuidoc = require('gulp-yuidoc');
 // #####################################################################################################################
 // #SETTINGS#
 var paths = {
-    'css': './static/css/',
-    'html': './templates/',
-    'images': './static/img/',
-    'js': './static/js/',
-    'sass': './private/sass/',
-    'docs': './static/docs',
-    'tests': './tests'
+    'css': './site/static/css/',
+    'html': './site/templates/',
+    'images': './site/static/img/',
+    'js': './site/static/js/',
+    'sass': './site/private/sass/',
+    'docs': './site/static/docs',
+    'tests': './site/tests'
 };
 
 var patterns = {
@@ -130,7 +130,7 @@ gulp.task('browser', function () {
 gulp.task('tests', ['lint'], function () {
     // run javascript tests
     karma.start({
-        'configFile': __dirname + '/tests/karma.conf.js',
+        'configFile': __dirname + '/.site/tests/karma.conf.js',
         'singleRun': true
     });
 });
@@ -138,7 +138,7 @@ gulp.task('tests', ['lint'], function () {
 gulp.task('karma', function () {
     // run javascript tests
     karma.start({
-        'configFile': __dirname + '/tests/karma.conf.js'
+        'configFile': __dirname + '/.site/tests/karma.conf.js'
     });
 });
 

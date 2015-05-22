@@ -2,7 +2,7 @@ SHELL := /bin/bash
 CHDIR_SHELL := $(SHELL)
 
 ##### SETTINGS
-NAME = xplorer-standardsite-minimalistic
+NAME = xplorer_standardsite_minimalistic
 PORT = 8000
 # local db settings
 DBNAME = $(NAME)_local
@@ -13,7 +13,7 @@ ENV = .virtualenv
 VENV = $(ENV)/bin/activate
 PTYHON = $(ENV)/bin/python
 PIP = $(ENV)/bin/pip
-PROJECT_DIR = ./site
+PROJECT_DIR = .site
 BRANCH=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
 
@@ -29,13 +29,16 @@ install:
 	##### install python requirements
 	. $(VENV); $(PIP) install -r $(PROJECT_DIR)/requirements.txt
 	. $(VENV); npm install
+	##### we need to create an aldrynfile from
+	##### https://github.com/aldryn/aldryn-client/blob/09be71543c701b293978d7829898c076a4578efb/aldryn_client/client.py#L522
+	@echo $(PWD)/dev > $(ENV)/lib/python2.7/site-packages/aldrynsite_dev.pth
 	##### install gem requirements
 	make gems
 	##### create database
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 	#### install data
-	$(MANAGE) dbshell < ./database.sql
+	. $(VENV); $(PTYHON) $(PROJECT_DIR)/manage.py dbshell < ./database.sql
 	#### finished
 
 update:
@@ -76,6 +79,6 @@ cssforce:
 	. $(VENV); compass compile private --sourcemap --force
 
 gems:
-	grep -q ". $(PWD)/.gemenv" virtualenv/bin/activate || echo ". $(PWD)/.gemenv" >> virtualenv/bin/activate
+	grep -q ". $(PWD)/.gemenv" .virtualenv/bin/activate || echo ". $(PWD)/.gemenv" >> .virtualenv/bin/activate
 	. $(VENV); gem install bundler --no-rdoc --no-ri
 	. $(VENV); bundle install --binstubs $(ENV)/bin --clean --path $(ENV)/gems
