@@ -37,3 +37,4 @@ Gemfile.lock
 .site/.theme_original_files/
 .site/tests/coverage/
 .site/static/vendor
+database.sql

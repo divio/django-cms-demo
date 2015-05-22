@@ -38,7 +38,9 @@ install:
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 	#### install data
+	unzip ./database.sql.zip
 	. $(VENV); $(PTYHON) $(PROJECT_DIR)/manage.py dbshell < ./database.sql
+	rm ./database.sql
 	#### finished
 
 update:
