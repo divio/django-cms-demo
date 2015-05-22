@@ -3,11 +3,19 @@ DjangoCon Europe CMS Demo
 #########################
 
 
-This repository lets you run the latest django CMS with the following addons pre-installed:
+This repository lets you run the latest django CMS with demo content added through Aldryn:
+https://control.aldryn.com/control/edit/4438/
 
-- Aldryn Blueprint
+The following addons are pre-installed from Aldryn:
+
 - `Aldryn Bootstrap3 <https://github.com/aldryn/aldryn-bootstrap3>`_
-- Aldryn Segmentation
+- `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
+- `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_
+
+The following addons are additionally added (not yet on Aldryn):
+
+- Aldryn Blueprint (tba)
+- Aldryn Segmentation (tba)
 
 
 ************
