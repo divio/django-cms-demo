@@ -24,3 +24,5 @@ Installation
 
 - run ``make install`` to get started
 - run ``make run`` to start the development server
+
+- run ``make update`` to update the project (this will not load new static files from the Aldryn site)
