@@ -35,3 +35,6 @@ Gemfile.lock
 .site/.addons_original_files/
 .site/.boilerplate_original_files/
 .site/.theme_original_files/
+.site/tests/coverage/
+.site/static/vendor
+database.sql
