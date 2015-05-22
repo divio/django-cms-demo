@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>		<html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>		<html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>		<html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Your site is ready</title>
+	<link rel="shortcut icon" href="https://static.aldryn.com/favicon.ico">
+	<link rel="apple-touch-icon" href="https://static.aldryn.com/apple-touch-icon.png">
+	<link rel="stylesheet" href="https://static.aldryn.com/stylesheets/style.css?v=2"><!--[if lte IE 9]>
+	<link rel="stylesheet" href="https://static.aldryn.com/stylesheets/ie.css" type="text/css" media="screen" />
+	<![endif]--><!--[if lt IE 8]>
+	<script src='https://static.aldryn.com/javascripts/libs/modernizr.min.js'></script>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="reg-bg"></div>
+	{% block message %}
+		<div id="login" class="window center">
+			<section>
+				<div id="logo">
+					<a href="http://www.aldryn.com" class="logo dark">aldryn.com</a>
+				</div>
+				<div class="register-icon success-icon"></div>
+				<h3>Your site is ready</h3>
+				<p>Just click on the login button to access it:</p>
+				<p style="margin-top:20px"><a class="button blue" href="/login/">Login</a></p>
+			</section>
+			<section class="inverted">
+				<h4>Get your free account today! <a href="/register/">Sign up</a></h4>
+			</section>
+		</div>
+	{% endblock message %}
+	<script type="text/javascript">
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-26813318-4']);
+				_gaq.push(['_trackPageview']);
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+	</script>
+</body>
+</html>

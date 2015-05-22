@@ -1,0 +1,147 @@
+{
+    "LIVERELOAD_CREDENTIAL_URL": "https://control.aldryn.com/control/editor/4438/livereload-credentials/", 
+    "SSO_DSN": "https://SYrXI8a9fq15LyRLmeQmpVXZXsQpc1ehAf09Kx1SdPwbsjxFiqXcsNgODL1txhgY:1GGK8RAEHRKATK1sSU6n8Fw5TUghmc5iy3hNr0z5JXq9OSX7e8WjrZ35eOicCFGh@login.aldryn.com/", 
+    "SHARING_VIEW_ONLY_TOKEN_KEY_NAME": "sharing_token", 
+    "MIDDLEWARE_CLASSES": [
+        "django.contrib.sessions.middleware.SessionMiddleware", 
+        "django.middleware.transaction.TransactionMiddleware", 
+        "django.contrib.auth.middleware.AuthenticationMiddleware", 
+        "cmscloud.middleware.AccessControlMiddleware", 
+        "django.contrib.messages.middleware.MessageMiddleware", 
+        "django.middleware.locale.LocaleMiddleware", 
+        "django.middleware.common.CommonMiddleware", 
+        "django.middleware.csrf.CsrfViewMiddleware", 
+        "django.middleware.http.ConditionalGetMiddleware", 
+        "cms.middleware.language.LanguageCookieMiddleware", 
+        "cms.middleware.user.CurrentUserMiddleware", 
+        "cms.middleware.page.CurrentPageMiddleware", 
+        "cms.middleware.toolbar.ToolbarMiddleware"
+    ], 
+    "SECRET_KEY": "MyzJhZ50vlhzjtIFFYZY3ueUlevVliCWcUDNeOPFniTyuBfdzqSVUQdn2aYmF6DB", 
+    "ALDRYN_BOOTSTRAP3_ICONSETS": [
+        [
+            "fontawesome", 
+            "fa", 
+            "Fontawesome"
+        ]
+    ], 
+    "CMS_LANGUAGES": {
+        "1": [
+            {
+                "code": "en", 
+                "fallbacks": [], 
+                "name": "English", 
+                "public": true
+            }
+        ]
+    }, 
+    "SENTRY_DSN": "https://001b0b4fd6734490993097c7de6385fb:eca21c7c364a47e883701702bf9282f6@app.getsentry.com/4077", 
+    "RESTARTER_URL": "https://control.aldryn.com/api/internal/v1/restart/", 
+    "ALDRYN_BOILERPLATE_NAME": "bootstrap3", 
+    "DJEESE_STORAGE_KEY": "L3ieJqYuKtn3MxhpTSQ2gux7lbeF2idgXiLI3enEAiLAHdK7d1dkhjAEChuHsUnp", 
+    "ALDRYN_FORMS_SHOW_ALL_RECIPIENTS": false, 
+    "ALLOWED_HOSTS": [
+        "xplorer-standardsite-minimalistic-stage.us-iad-rs.aldryn.io", 
+        "*"
+    ], 
+    "SYNC_CHANGED_FILES_URL": "https://control.aldryn.com/api/internal/v1/sync-changed-files/xplorer-standardsite-minimalistic/", 
+    "LAST_BOILERPLATE_COMMIT": "ada733db49f51f590db44bb87340fd232db91902", 
+    "ALDRYN_STYLE_CLASS_NAMES": [
+        [
+            "feature-visual-narrow", 
+            "feature-visual-narrow"
+        ], 
+        [
+            "section-cyan", 
+            "section-cyan"
+        ], 
+        [
+            "container", 
+            "container"
+        ], 
+        [
+            "feature-visual", 
+            "feature-visual"
+        ], 
+        [
+            "text-center", 
+            "text-center"
+        ], 
+        [
+            "section-gray", 
+            "section-gray"
+        ], 
+        [
+            "feature-content", 
+            "feature-content"
+        ], 
+        [
+            "section-violet", 
+            "section-violet"
+        ]
+    ], 
+    "LANGUAGES": [
+        [
+            "en", 
+            "English"
+        ]
+    ], 
+    "ALDRYN_BOOTSTRAP3_CAROUSEL_STYLES": "", 
+    "DATABASES": {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2", 
+            "NAME": "db_4727", 
+            "HOST": "192.168.128.1", 
+            "USER": "db_4727", 
+            "PASSWORD": "96aqc91b2d9bmq0ouwvi", 
+            "PORT": 5432
+        }
+    }, 
+    "DEBUG": true, 
+    "SHARING_VIEW_ONLY_SECRET_TOKEN": "a6ac660085ed9e5f49cd2fc43595918734071d276d37133f96f4428599392824", 
+    "DEFAULT_FILE_STORAGE": "fs.django_storage.DjeeseFSStorage", 
+    "INSTALLED_APPS": [
+        "django.contrib.auth", 
+        "django.contrib.contenttypes", 
+        "django.contrib.sessions", 
+        "django.contrib.sites", 
+        "django.contrib.messages", 
+        "djangocms_admin_style", 
+        "django.contrib.admin", 
+        "django.contrib.staticfiles", 
+        "cms", 
+        "menus", 
+        "mptt", 
+        "south", 
+        "raven.contrib.django", 
+        "sekizai", 
+        "gunicorn", 
+        "cmscloud", 
+        "compressor", 
+        "aldryn_style", 
+        "emailit", 
+        "captcha", 
+        "django_tablib", 
+        "aldryn_forms", 
+        "aldryn_bootstrap3"
+    ], 
+    "CACHE_URL": "db://django_dbcache", 
+    "DJEESE_STORAGE_ID": "1enaEFsxqEVsHSwYhK8cvsfURp0TCnvovCrOA0a6VHlQlimwOgsVUqiDlChBu9Ez", 
+    "DJEESE_STORAGE_HOST": "http://media.us-iad-rs.aldryn.net", 
+    "CMSCLOUD_SYNC_KEY": "Qcrx0OFq88n9aB7eyiWZEIYqgDEsZfZeFnIeLXJGDvaMliUGnJoWlkICOX5VSxxP", 
+    "TEMPLATE_DEBUG": true, 
+    "TEMPLATE_CONTEXT_PROCESSORS": [
+        "django.contrib.auth.context_processors.auth", 
+        "django.core.context_processors.i18n", 
+        "django.core.context_processors.request", 
+        "django.core.context_processors.media", 
+        "django.core.context_processors.static", 
+        "django.contrib.messages.context_processors.messages", 
+        "sekizai.context_processors.sekizai", 
+        "cms.context_processors.media", 
+        "cmscloud.context_processors.boilerplate", 
+        "cmscloud.context_processors.debug", 
+        "aldryn_snake.template_api.template_processor"
+    ], 
+    "RESTARTER_PAYLOAD": "4438-1-3c3c4ea05958e22bfee86ad68cbe17dc542522f719a76369c8e318f44eb5e7e836988d694b949cdd739434005e9118340c946988f747eb4d3558a9978f091403"
+}

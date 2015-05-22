@@ -1,0 +1,13 @@
+<script src="{{ CMSCLOUD_STATIC_URL }}javascripts/libs/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="{{ CMSCLOUD_STATIC_URL }}/javascripts/libs/klass.js" type="text/javascript"></script>
+<script src="{{ CMSCLOUD_STATIC_URL }}/javascripts/libs/autobahn.min.js" type="text/javascript"></script>
+<script src="{{ CMSCLOUD_STATIC_URL }}/javascripts/realtime.js" type="text/javascript"></script>
+<script src="{{ CMSCLOUD_STATIC_URL }}/javascripts/livereload.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		LiveReload({
+			"credential_url": "{{ LIVE_RELOAD_CREDENTIAL_URL }}",
+			"logged_user_email": "{{ CURRENTLY_LOGGED_IN_USER_EMAIL }}",
+		});
+	});
+</script>

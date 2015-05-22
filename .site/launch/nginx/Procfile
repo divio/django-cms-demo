@@ -1,0 +1,2 @@
+nginx: nginx
+gunicorn: /app/launch/start_gunicorn.sh

@@ -32,3 +32,6 @@ Gemfile.lock
 .bundle/
 
 .virtualenv/
+.site/.addons_original_files/
+.site/.boilerplate_original_files/
+.site/.theme_original_files/

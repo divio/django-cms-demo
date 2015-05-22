@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ $PAGESPEED = true ] || [ $PAGESPEED = '1' ] || [ $PAGESPEED = 1 ]; then
+  echo "PAGESPEED is on (${PAGESPEED})"
+  if [ $BROWSERCACHE = true ] || [ $BROWSERCACHE = '1' ] || [ $BROWSERCACHE = 1 ]; then
+    echo "BROWSERCACHE is on (${BROWSERCACHE})"
+    exec /app/launch/start_with_pagespeed_and_browsercache.sh
+  else
+    echo "BROWSERCACHE is off (${BROWSERCACHE})"
+    exec /app/launch/start_with_pagespeed.sh
+  fi
+else
+  echo "PAGESPEED is off (${PAGESPEED})"
+  echo "BROWSERCACHE is off (${BROWSERCACHE})"
+  echo "NO PAGESPEED OR BROWSERCACHE... using pure gunicorn without nginx"
+  exec /app/launch/start_gunicorn.sh
+fi
