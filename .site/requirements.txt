@@ -1,5 +1,6 @@
 # Extra indexes currently necessary, because some (older) Addons have
 # dependencies to packages not yet on pypi.
+--find-links https://devpi.divio.ch/divio/all/+simple/
 --extra-index-url https://devpi.divio.ch/django-cms/pre-release/+simple/
 --extra-index-url https://devpi.divio.ch/divio/all/+simple/
 --extra-index-url https://divio:wlkdjeorijlerf@pkg.divio.ch/simple/
@@ -85,3 +86,9 @@ smmap==0.9.0
 static3==0.6.0
 webservices==0.5
 wsgiref==0.1.2
+
+# django-admin-sortable2==0.5.1
+
+# ADDITIONS (always use latest version)
+-e git+git@github.com:aldryn/aldryn-segmentation.git@master#egg=aldryn-segmentation
+-e git+git@github.com:aldryn/aldryn-blueprint.git@master#egg=aldryn-blueprint
