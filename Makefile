@@ -87,6 +87,6 @@ gems:
 
 dump:
 	rm -rf database.sql.zip
-	pg_dump xplorer_minimalistic_local --file=database.sql
+	pg_dump $(DBNAME) --file=database.sql
 	zip -r database.sql.zip database.sql
 	rm -rf database.sql
