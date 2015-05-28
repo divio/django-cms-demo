@@ -14,8 +14,8 @@ The following addons are pre-installed from Aldryn:
 
 The following addons are additionally added (not yet on Aldryn):
 
-- Aldryn Blueprint (tba)
-- Aldryn Segmentation (tba)
+- `Aldryn Blueprint <https://github.com/aldryn/aldryn-blueprint>`_
+- `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_
 
 
 ************
