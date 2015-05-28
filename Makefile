@@ -84,3 +84,10 @@ gems:
 	grep -q ". $(PWD)/.gemenv" .virtualenv/bin/activate || echo ". $(PWD)/.gemenv" >> .virtualenv/bin/activate
 	. $(VENV); gem install bundler --no-rdoc --no-ri
 	. $(VENV); bundle install --binstubs $(ENV)/bin --clean --path $(ENV)/gems
+
+dump:
+	rm -rf database.sql.zip
+	pg_dump xplorer_minimalistic_local --file=database.sql
+	zip -r database.sql.zip database.sql
+	rm -rf database.sql
+
