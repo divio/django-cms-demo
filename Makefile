@@ -90,4 +90,3 @@ dump:
 	pg_dump xplorer_minimalistic_local --file=database.sql
 	zip -r database.sql.zip database.sql
 	rm -rf database.sql
-
