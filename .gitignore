@@ -38,3 +38,4 @@ Gemfile.lock
 .site/tests/coverage/
 .site/static/vendor
 database.sql
+.site/cmscloud/.sync_commit_cache

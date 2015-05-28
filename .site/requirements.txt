@@ -87,10 +87,10 @@ static3==0.6.0
 webservices==0.5
 wsgiref==0.1.2
 
-# django-admin-sortable2==0.5.1
 
 # ADDITIONS (always use latest version)
 -e git+git@github.com:aldryn/aldryn-segmentation.git@master#egg=aldryn-segmentation
 -e git+git@github.com:aldryn/aldryn-country-segment.git@master#egg=aldryn-country-segment
 
-# -e git+git@github.com:aldryn/aldryn-blueprint.git@master#egg=aldryn-blueprint
+-e git+git@github.com:jrief/django-admin-sortable2.git@master#egg=django-admin-sortable2
+-e git+git@github.com:aldryn/aldryn-blueprint.git@master#egg=aldryn-blueprint
