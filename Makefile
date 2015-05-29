@@ -75,7 +75,7 @@ tasks:
 	. $(VENV); gulp
 
 css:
-	. $(VENV); compass watch private --sourcemap
+	. $(VENV); compass watch .site/private --sourcemap
 
 cssforce:
 	. $(VENV); compass compile private --sourcemap --force
