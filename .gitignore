@@ -39,3 +39,4 @@ Gemfile.lock
 .site/static/vendor
 database.sql
 .site/cmscloud/.sync_commit_cache
+.site/static/css/base.css

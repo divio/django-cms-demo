@@ -22,7 +22,7 @@ BRANCH=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1
 ##### You need to be within the repository for excecution
 all:
 	##### automatically run the project with all requirements
-	make -j4 server tasks css
+	make -j4 server tasks cssforce css
 
 install:
 	test -d $(VENV) || virtualenv $(ENV) --prompt="(`basename \`pwd\``)"
