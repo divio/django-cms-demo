@@ -21,10 +21,11 @@ urlpatterns = patterns(
     '',
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^robots\.txt$', include('robots.urls')),
-    url(r'^%s(?P<path>.*)$' % re.escape(settings.STATIC_URL.lstrip('/')), 'django.contrib.staticfiles.views.serve', {'insecure': True}),
+    url(r'^static/(?P<path>.*)$', 'django.contrib.staticfiles.views.serve', {'insecure': True}),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/~cmscloud-api/', include('cmscloud.urls')),
     url(r'^admin/~health-check/', include('health_check.urls')),
-    url(r'^login/', include(client.get_urls())),
+#    url(r'^login/', include(client.get_urls())),
     url(r'^trigger-sync-changed-files/$', csrf_exempt(trigger_sync_changed_files)),
 ) + i18n_patterns(
     '',

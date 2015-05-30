@@ -131,3 +131,8 @@ dl.dl-horizontal {
 .badge {
     font-size: $font-size-small - 2;
 }
+
+// FIXME - HACKS that need to be implemented
+.cms-blueprint {
+    z-index: 9999 !important;
+}

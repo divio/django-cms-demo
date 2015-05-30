@@ -6,8 +6,7 @@
         "django.contrib.sessions.middleware.SessionMiddleware", 
         "django.middleware.transaction.TransactionMiddleware", 
         "django.contrib.auth.middleware.AuthenticationMiddleware", 
-        "cmscloud.middleware.AccessControlMiddleware", 
-        "django.contrib.messages.middleware.MessageMiddleware", 
+        "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.locale.LocaleMiddleware", 
         "django.middleware.common.CommonMiddleware", 
         "django.middleware.csrf.CsrfViewMiddleware", 
@@ -35,17 +34,13 @@
             }
         ]
     }, 
-    "SENTRY_DSN": "https://001b0b4fd6734490993097c7de6385fb:eca21c7c364a47e883701702bf9282f6@app.getsentry.com/4077", 
-    "RESTARTER_URL": "https://control.aldryn.com/api/internal/v1/restart/", 
-    "ALDRYN_BOILERPLATE_NAME": "bootstrap3", 
-    "DJEESE_STORAGE_KEY": "L3ieJqYuKtn3MxhpTSQ2gux7lbeF2idgXiLI3enEAiLAHdK7d1dkhjAEChuHsUnp", 
-    "ALDRYN_FORMS_SHOW_ALL_RECIPIENTS": false, 
+    "ALDRYN_BOILERPLATE_NAME": "bootstrap3",
+    "ALDRYN_FORMS_SHOW_ALL_RECIPIENTS": false,
     "ALLOWED_HOSTS": [
         "xplorer-standardsite-minimalistic-stage.us-iad-rs.aldryn.io", 
         "*"
     ], 
-    "SYNC_CHANGED_FILES_URL": "https://control.aldryn.com/api/internal/v1/sync-changed-files/xplorer-standardsite-minimalistic/", 
-    "LAST_BOILERPLATE_COMMIT": "ada733db49f51f590db44bb87340fd232db91902", 
+    "LAST_BOILERPLATE_COMMIT": "ada733db49f51f590db44bb87340fd232db91902",
     "ALDRYN_STYLE_CLASS_NAMES": [
         [
             "feature-visual-narrow", 
@@ -98,8 +93,6 @@
         }
     }, 
     "DEBUG": true, 
-    "SHARING_VIEW_ONLY_SECRET_TOKEN": "a6ac660085ed9e5f49cd2fc43595918734071d276d37133f96f4428599392824", 
-    "DEFAULT_FILE_STORAGE": "fs.django_storage.DjeeseFSStorage", 
     "INSTALLED_APPS": [
         "django.contrib.auth", 
         "django.contrib.contenttypes", 
@@ -126,10 +119,7 @@
         "aldryn_bootstrap3"
     ], 
     "CACHE_URL": "db://django_dbcache", 
-    "DJEESE_STORAGE_ID": "1enaEFsxqEVsHSwYhK8cvsfURp0TCnvovCrOA0a6VHlQlimwOgsVUqiDlChBu9Ez", 
-    "DJEESE_STORAGE_HOST": "http://media.us-iad-rs.aldryn.net", 
-    "CMSCLOUD_SYNC_KEY": "Qcrx0OFq88n9aB7eyiWZEIYqgDEsZfZeFnIeLXJGDvaMliUGnJoWlkICOX5VSxxP", 
-    "TEMPLATE_DEBUG": true, 
+    "TEMPLATE_DEBUG": true,
     "TEMPLATE_CONTEXT_PROCESSORS": [
         "django.contrib.auth.context_processors.auth", 
         "django.core.context_processors.i18n", 
@@ -142,6 +132,5 @@
         "cmscloud.context_processors.boilerplate", 
         "cmscloud.context_processors.debug", 
         "aldryn_snake.template_api.template_processor"
-    ], 
-    "RESTARTER_PAYLOAD": "4438-1-3c3c4ea05958e22bfee86ad68cbe17dc542522f719a76369c8e318f44eb5e7e836988d694b949cdd739434005e9118340c946988f747eb4d3558a9978f091403"
+    ]
 }

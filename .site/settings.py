@@ -9,7 +9,7 @@ gettext = lambda s: s
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
-DATA_ROOT = os.path.join(PROJECT_DIR, 'data')
+DATA_ROOT = os.path.join(PROJECT_DIR, '../data')
 
 TEMPLATE_DEBUG = DEBUG = False
 
@@ -27,7 +27,9 @@ SITE_ID = 1
 USE_L10N = USE_I18N = True
 
 
-MEDIA_ROOT = os.path.join(DATA_ROOT, 'media')
+MEDIA_ROOT = os.path.abspath(os.path.join(DATA_ROOT, 'media'))
+print '#######################'
+print MEDIA_ROOT
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(DATA_ROOT, 'static_collected')
