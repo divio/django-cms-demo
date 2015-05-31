@@ -40,3 +40,4 @@ Gemfile.lock
 database.sql
 .site/cmscloud/.sync_commit_cache
 .site/static/css/base.css
+data/media/filer_public_thumbnails/filer_public/
