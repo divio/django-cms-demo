@@ -26,3 +26,16 @@ Installation
 - run ``make run`` to start the development server
 
 - run ``make update`` to update the project (this will not load new static files from the Aldryn site)
+
+
+*****
+Login
+*****
+
+The Aldryn auth system has been deactivated in order to run it without an active internet connection,
+simply open ``/admin/`` and use the following credentials to log in:
+
+- Username: **admin**
+- Password: **admin**
+
+An error will be shown if you are offline and not logged in.

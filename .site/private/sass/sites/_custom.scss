@@ -136,3 +136,18 @@ dl.dl-horizontal {
 .cms-blueprint {
     z-index: 9999 !important;
 }
+
+//##################################################
+// #CMS#
+.filer_image.left {
+    @extend .pull-left;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+.filer_image.right {
+    @extend .pull-right;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+}
