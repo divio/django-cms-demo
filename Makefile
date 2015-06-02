@@ -62,6 +62,13 @@ endif
 	$(PTYHON) $(PROJECT_DIR)/manage.py migrate
 	##### finished
 
+reset:
+	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
+	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
+	unzip ./database.sql.zip
+	. $(VENV); $(PTYHON) $(PROJECT_DIR)/manage.py dbshell < ./database.sql
+	rm ./database.sql
+
 run:
 	make -j4 server
 
