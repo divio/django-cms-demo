@@ -62,7 +62,7 @@ endif
 	$(PTYHON) $(PROJECT_DIR)/manage.py migrate
 	##### finished
 
-reset_db:
+reset:
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 	unzip ./database.sql.zip
