@@ -148,4 +148,4 @@ gulp.task('watch', function () {
     gulp.watch(patterns.jshint, ['lint']);
 });
 
-gulp.task('default', ['lint', 'browser', 'watch']);
+gulp.task('default', ['lint', 'watch']);

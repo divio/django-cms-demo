@@ -10,3 +10,5 @@ INSTALLED_APPS += [
 MIDDLEWARE_CLASSES += [
     'country_segment.middleware.ResolveCountryCodeMiddleware'
 ]
+
+DEBUG = False
