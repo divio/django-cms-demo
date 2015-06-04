@@ -1,3 +1,0 @@
-Form name: {{ form_name }}
-
-{% include "aldryn_forms/emails/includes/form_data.txt" %}
