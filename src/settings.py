@@ -15,7 +15,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -29,22 +28,14 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
+ROOT_URLCONF = 'urls'
 
-
-
-
-ROOT_URLCONF = 'demo.urls'
-
-WSGI_APPLICATION = 'demo.wsgi.application'
-
+WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -59,17 +50,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static_collected')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'demo', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 SITE_ID = 1
 
@@ -109,7 +99,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'demo', 'templates'),
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -131,13 +121,12 @@ INSTALLED_APPS = (
     'djangocms_inherit',
     'south',
     'reversion',
-    'demo'
 )
 
 LANGUAGES = (
     ## Customize this
-    ('en', gettext('en')),
-    ('de', gettext('de')),
+    ('en', gettext('English')),
+    ('de', gettext('Deutsch')),
 )
 
 CMS_LANGUAGES = {
@@ -178,5 +167,12 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default':
-        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'database.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
+        {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'djangocms_demo_local',
+            'HOST': 'localhost',
+            'USER': 'postgres',
+            'PASSWORD': '',
+            'PORT': ''
+        }
 }
