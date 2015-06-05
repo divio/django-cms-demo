@@ -1,13 +1,29 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+{% load i18n cms_tags menu_tags %}
 
-{% block title %}{% page_attribute 'page_title' %}{% endblock title %}
+{% block body_class %}tpl-sidebar-left{% endblock %}
 
-{% block content %}
-    <div style="width:20%; float:left;">
-        {% placeholder "sidebar" %}
+{% block extend_base %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-17 col-md-push-7">
+            {% block content %}
+                {% with 940 as width %}{% placeholder content %}{% endwith %}
+            {% endblock content %}
+        </div>
+        <aside class="col-md-7 col-md-pull-17">
+            <h3 class="sr-only">{% trans "Sidebar" %}</h3>
+            {% block subnav %}
+                {% page_attribute menu_title request.current_page.get_root as subtitle %}
+                <ul class="nav navbar-sidenav">
+                    {% show_menu 1 5 0 1 "includes/menu/navigation.html" %}
+                </ul>
+            {% endblock subnav %}
+
+            {% block sidebar %}
+                {% with 260 as width %}{% placeholder sidebar %}{% endwith %}
+            {% endblock sidebar %}
+        </aside>
     </div>
-    <div style="width:80%; float:left;">
-        {% placeholder "content" %}
-    </div>
-{% endblock content %}
+</div>
+{% endblock extend_base %}
