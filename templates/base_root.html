@@ -1,4 +1,4 @@
-<!doctype html>{% load i18n static cms_tags sekizai_tags %}
+<!doctype html>{% load i18n static cms_tags sekizai_tags compress %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="{% static 'favicon.png' %}" />
     <link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
     <!--[if IE]><link rel="shortcut icon" href="{% static 'favicon.ico' %}" /><![endif]-->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% compress css %}<link rel="stylesheet" type="text/x-scss" href="{% static 'sass/base.scss' %}" />{% endcompress %}
     {% render_block "css" %}
     <!--[if lt IE 9]>
     <script src="{% static 'js/libs/html5shiv.min.js' %}"></script>
