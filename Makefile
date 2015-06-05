@@ -22,7 +22,7 @@ install:
 	make reset
 
 run:
-	$(MANAGE) runserver 0.0.0.0:$(PORT)
+	make -j4 css runserver
 
 update:
 	$(MANAGE) syncdb
@@ -45,3 +45,9 @@ dump:
 	pg_dump $(DBNAME) --file=database.sql
 	zip -r database.sql.zip database.sql
 	rm -rf database.sql
+
+runserver:
+	$(MANAGE) runserver 0.0.0.0:$(PORT)
+
+css:
+	$(VENV); gulp sass
