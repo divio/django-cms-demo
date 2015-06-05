@@ -68,7 +68,8 @@ STATICFILES_DIRS = (
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
-
+# COMPRESS_ENABLED = False
+COMPRESS_OUTPUT_DIR = ''
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

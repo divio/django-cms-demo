@@ -15,7 +15,7 @@
         margin-top: 0;
         margin-bottom: 0;
         a {
-            @include hide-text();
+            @include hide-content();
             display: block;
             width: 210px;
             height: $navbar-height;
