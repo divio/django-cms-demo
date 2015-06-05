@@ -1,21 +1,18 @@
-#########################
-DjangoCon Europe CMS Demo
-#########################
+#######################
+django CMS demo project
+#######################
 
 
-This repository lets you run the latest django CMS with demo content added through Aldryn:
-https://control.aldryn.com/control/edit/4438/
+The aim of this project is to run django CMS with simple configurations and demo content.
+You can use this repository for debugging, development and research purposes on the backend or frontend-stack.
 
-The following addons are pre-installed from Aldryn:
+The following addons are available through this installation:
 
-- `Aldryn Bootstrap3 <https://github.com/aldryn/aldryn-bootstrap3>`_
-- `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
-- `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_
-
-The following addons are additionally added (not yet on Aldryn):
-
-- `Aldryn Blueprint <https://github.com/aldryn/aldryn-blueprint>`_
-- `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_
+- `Aldryn Blueprint <https://github.com/aldryn/aldryn-blueprint>`_ (tba)
+- `Aldryn Bootstrap3 <https://github.com/aldryn/aldryn-bootstrap3>`_ (tba)
+- `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_ (tba)
+- `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_ (tba)
+- `Aldryn Style <https://github.com/aldryn/aldryn-style>`_ (tba)
 
 
 ************
@@ -23,19 +20,24 @@ Installation
 ************
 
 - run ``make install`` to get started
-- run ``make`` to start the development server and compile the css files
+- run ``make run`` to start the development server
 
 - run ``make update`` to update the project (this will not load new static files from the Aldryn site)
+
+
+***********
+Development
+***********
+
+To get the tutorial experience from the django documentations just ``cd`` into ``src`` and
+run the usual commands (``python manage.py startapp...``).
 
 
 *****
 Login
 *****
 
-The Aldryn auth system has been deactivated in order to run it without an active internet connection,
-simply open ``/admin/`` and use the following credentials to log in:
+You can login to the cms by appending ``/?edit`` to the url. The credentials are:
 
 - Username: **admin**
 - Password: **admin**
-
-An error will be shown if you are offline and not logged in.
