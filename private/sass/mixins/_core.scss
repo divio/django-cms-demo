@@ -54,7 +54,8 @@
 }
 
 // hides text in an element so you can see the background.
-@mixin hide-text {
+// INFO: conflicts otherwise with hide-text from bootstrap
+@mixin hide-content() {
     $approximate-em-value: 12px / 1em;
     $wider-than-any-screen: -9999em;
     text-indent: $wider-than-any-screen * $approximate-em-value;

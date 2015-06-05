@@ -60,12 +60,13 @@ STATIC_ROOT = os.path.join(DATA_DIR, 'static_collected')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
 SITE_ID = 1
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader'
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,7 +81,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -94,7 +95,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
-    'cms.context_processors.cms_settings'
+    'cms.context_processors.cms_settings',
 )
 
 TEMPLATE_DIRS = (
@@ -157,7 +158,7 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
 )
 
 CMS_PERMISSION = True
@@ -172,6 +173,6 @@ DATABASES = {
             'HOST': 'localhost',
             'USER': 'postgres',
             'PASSWORD': '',
-            'PORT': ''
-        }
+            'PORT': '',
+        },
 }

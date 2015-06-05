@@ -7,7 +7,7 @@
 .accordion {
     border-bottom: 1px solid $gray-light;
     .panel {
-        @include box-shadow(none);
+        box-shadow: none;
         margin: 0;
         border: none;
     }
@@ -29,7 +29,7 @@
                 color: $link-hover-color;
             }
             &:before {
-                @include transition(rotate, $speed);
+                transition: rotate $speed;
                 float: right;
             }
             &.collapsed:before {

@@ -5,7 +5,7 @@
 // apply the "sites/" nesting described within the documentation if the file is getting to large
 
 .navbar-head {
-    @include transition(all, $speed);
+    transition: all $speed;
     font-size: $font-size-small;
     line-height: 1.4;
     // #LOGO#
@@ -15,7 +15,7 @@
         margin-top: 0;
         margin-bottom: 0;
         a {
-            @include hide-text();
+            @include hide-content();
             display: block;
             width: 210px;
             height: $navbar-height;
@@ -163,27 +163,27 @@
 // #TOGGLE#
 .navbar-toggle {
     .icon-bar {
-        @include transition(all $speed ease-in-out);
+        transition: all $speed ease-in-out;
     }
     .icon-bar:nth-child(1) {
-        @include transform(translateY(6px) rotate(45deg));
+        transform: translateY(6px) rotate(45deg);
     }
     .icon-bar:nth-child(2) {
         background-color: transparent;
     }
     .icon-bar:nth-child(3) {
-        @include transform(translateY(-6px) rotate(-45deg));
+        transform: translateY(-6px) rotate(-45deg);
     }
 }
 
 .navbar-toggle.collapsed {
     .icon-bar:nth-child(1) {
-        @include transform(none);
+        transform: none;
     }
     .icon-bar:nth-child(2) {
         background-color: $navbar-inverse-toggle-icon-bar-bg;
     }
     .icon-bar:nth-child(3) {
-        @include transform(none);
+        transform: none;
     }
 }

@@ -1,8 +1,6 @@
 //####################################################################################################################
 // #GLOBAL IMPORTS#
-@import "compass/css3";
-@import "compass/utilities";
-@import "bootstrap/variables"; // using https://github.com/twbs/bootstrap-sass
+@import "../libs/bootstrap/variables"; // using https://github.com/twbs/bootstrap-sass
 // Override Bootstrap variables here (defaults from bootstrap-sass v3.1.1.1):
 
 // a flag to toggle asset pipeline / compass integration

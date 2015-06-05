@@ -13,7 +13,9 @@ html {
     overflow-x: hidden;
 }
 
-.section-gray, .section-cyan, .section-violet {
+.section-gray,
+.section-cyan,
+.section-violet {
     position: relative;
     z-index: 10;
     font-size: $font-size-small;
@@ -29,7 +31,8 @@ html {
     }
     // tablet and up
     @media (min-width: $screen-sm-min) {
-        &:before, &:after {
+        &:before,
+        &:after {
             content: " ";
             display: block;
             position: absolute;
@@ -95,13 +98,15 @@ html {
 }
 .section-violet {
     background: $section-violet;
-    &:before, &:after {
+    &:before,
+    &:after {
         background: $section-violet;
     }
 }
 .section-cyan {
     background: $section-cyan;
-    &:before, &:after {
+    &:before,
+    &:after {
         background: $section-cyan;
     }
 }
@@ -133,12 +138,12 @@ html {
 //###########################################################
 // #ELEMENTS#
 .icon-rounded .icon {
-    @include border-radius(50%);
-    @include transition(all, $speed);
+    transition: all $speed;
     color: $brand-primary;
     font-size: 35px;
     line-height: 93px;
     text-align: center;
+    border-radius: 50%;
     width: 95px;
     height: 95px;
     margin-bottom: 14px;
