@@ -85,10 +85,6 @@ DATABASES = {
         'PASSWORD': '',
         'PORT': '',
     },
-    'simple': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
 }
 
 # Internationalization
@@ -197,3 +193,10 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
 )
+
+# django CMS migrations for django 1.7
+# https://docs.djangoproject.com/en/1.7/topics/migrations/#dependencies
+
+MIGRATION_MODULES = {
+    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
+}
