@@ -1,21 +1,22 @@
-import os
-gettext = lambda s: s
 """
-Django settings for demo project.
+Django settings for mysite project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
+https://docs.djangoproject.com/en/1.7/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
+gettext = lambda s: s
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'y&+f+)tw5sqkcy$@vwh8cy%y^9lwytqtn*y=lv7f9t39b(cufx'
@@ -29,15 +30,71 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+INSTALLED_APPS = (
+    # INFO: these plugins need to be first in order to work properly
+    # (for the admin style and placeholderField rendering)
+    'djangocms_admin_style',
+    'djangocms_text_ckeditor',
+    # django defaults
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # django CMS additions
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'djangocms_style',
+    'djangocms_inherit',
+    'cms',
+    'menus',
+    'sekizai',
+    'treebeard',
+    'reversion',
+)
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # django CMS additions
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.doc.XViewMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+)
+
 ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'djangocms_demo_local',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'PORT': '',
+    },
+    'simple': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
+# https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en'
 
@@ -50,7 +107,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
@@ -61,75 +118,55 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-SITE_ID = 1
-
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader',
-)
-
-MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.doc.XViewMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'cms.middleware.user.CurrentUserMiddleware',
-    'cms.middleware.page.CurrentPageMiddleware',
-    'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware',
-)
+# Templates
+# https://docs.djangoproject.com/en/1.7/ref/settings/#template-context-processors
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.i18n',
     'django.core.context_processors.debug',
-    'django.core.context_processors.request',
+    'django.core.context_processors.i18n',
     'django.core.context_processors.media',
-    'django.core.context_processors.csrf',
-    'django.core.context_processors.tz',
-    'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    # django CMS additions
+    'django.core.context_processors.csrf',
+    'django.core.context_processors.request',
+    'sekizai.context_processors.sekizai',
     'cms.context_processors.cms_settings',
+)
+
+# https://docs.djangoproject.com/en/1.7/ref/settings/#template-loaders
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    # django CMS additions
+    'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
-INSTALLED_APPS = (
-    'djangocms_admin_style',
-    'djangocms_text_ckeditor',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.staticfiles',
-    'django.contrib.messages',
-    'cms',
-    'menus',
-    'sekizai',
-    'treebeard',
-    'djangocms_style',
-    'djangocms_inherit',
-    'reversion',
-)
+# django CMS settings
+# http://docs.django-cms.org/en/latest/
+
+SITE_ID = 1
+
+CMS_PERMISSION = True
+
+CMS_PLACEHOLDER_CONF = {}
+
+# django CMS internationalization
+# http://docs.django-cms.org/en/latest/topics/i18n.html
 
 LANGUAGES = (
-    ## Customize this
     ('en', gettext('English')),
     ('de', gettext('Deutsch')),
 )
 
 CMS_LANGUAGES = {
-    ## Customize this
+    # Customize this
     'default': {
         'public': True,
         'hide_untranslated': False,
@@ -153,25 +190,12 @@ CMS_LANGUAGES = {
     ],
 }
 
+# django CMS templates
+# http://docs.django-cms.org/en/latest/how_to/templates.html
+
 CMS_TEMPLATES = (
-    ## Customize this
+    # Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
 )
-
-CMS_PERMISSION = True
-
-CMS_PLACEHOLDER_CONF = {}
-
-DATABASES = {
-    'default':
-        {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'djangocms_demo_local',
-            'HOST': 'localhost',
-            'USER': 'postgres',
-            'PASSWORD': '',
-            'PORT': '',
-        },
-}
