@@ -43,9 +43,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # django CMS additions
-    'django.contrib.sites',
     'django.contrib.sitemaps',
-    'djangocms_style',
+    'django.contrib.sites',
     'cms',
     'menus',
     'sekizai',
