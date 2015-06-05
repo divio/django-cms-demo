@@ -45,8 +45,6 @@ INSTALLED_APPS = (
     # django CMS additions
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'djangocms_style',
-    'djangocms_inherit',
     'cms',
     'menus',
     'sekizai',

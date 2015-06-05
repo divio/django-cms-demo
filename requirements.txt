@@ -9,9 +9,7 @@ django-reversion==1.8.5
 django-sekizai==0.8.1
 django-treebeard==3.0
 djangocms-admin-style==0.2.7
-djangocms-inherit==0.1
 djangocms-installer==0.7.6
-djangocms-style==1.5
 djangocms-text-ckeditor==2.5.1
 html5lib==0.999
 psycopg2==2.6
