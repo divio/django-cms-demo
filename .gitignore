@@ -1,4 +1,6 @@
 .idea/
 *.pyc
-env/
 data/
+env/
+node_modules/
+static/css/
