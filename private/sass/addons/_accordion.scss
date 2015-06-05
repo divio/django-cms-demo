@@ -29,7 +29,7 @@
                 color: $link-hover-color;
             }
             &:before {
-                @include transition(rotate, $speed);
+                transition: rotate $speed;
                 float: right;
             }
             &.collapsed:before {

@@ -67,7 +67,7 @@ $timeline-image-size: 190px;
     }
 
     img {
-        @include border-radius(50%);
+        border-radius: 50%;
         width: $timeline-image-size;
         height: $timeline-image-size;
         margin: 0 auto;

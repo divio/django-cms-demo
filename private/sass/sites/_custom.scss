@@ -103,7 +103,7 @@ h6 {
 }
 
 a {
-    @include transition(color, $speed);
+    transition: color $speed;
 }
 
 dl.dl-horizontal {
