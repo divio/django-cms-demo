@@ -59,14 +59,6 @@ STATIC_ROOT = os.path.join(DATA_DIR, 'static_collected')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    # NOTE: we need to expose private in order for django-libsass to work
-    # TODO: we need to find a way arount this as we do not want to expose the source files
-    os.path.join(BASE_DIR, 'private'),
-)
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
 SITE_ID = 1
