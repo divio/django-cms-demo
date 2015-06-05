@@ -64,17 +64,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'private'),
 )
 
-# 2.0.1 adding libsass
-COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-)
-# COMPRESS_ENABLED = False
-COMPRESS_OUTPUT_DIR = ''
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # 2.0.1 adding libsass
-    'compressor.finders.CompressorFinder',
 )
 
 SITE_ID = 1
@@ -137,9 +129,6 @@ INSTALLED_APPS = (
     'djangocms_inherit',
     'south',
     'reversion',
-
-    # 2.0.1 adding libsass
-    'compressor',
 )
 
 LANGUAGES = (
