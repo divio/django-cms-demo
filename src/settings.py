@@ -33,8 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     # INFO: these plugins need to be first in order to work properly
     # (for the admin style and placeholderField rendering)
+    # https://django-cms.readthedocs.org/en/develop/how_to/install.html#configuring-your-project-for-django-cms
     'djangocms_admin_style',
-    'djangocms_text_ckeditor',
     # django defaults
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,13 +43,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # django CMS additions
-    'django.contrib.sitemaps',
     'django.contrib.sites',
     'cms',
+    'treebeard',
     'menus',
     'sekizai',
-    'treebeard',
     'reversion',
+    # django CMS addons
+    'djangocms_text_ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,7 +63,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # django CMS additions
     'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.doc.XViewMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
@@ -124,7 +124,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     # django CMS additions
-    'django.core.context_processors.csrf',
     'django.core.context_processors.request',
     'sekizai.context_processors.sekizai',
     'cms.context_processors.cms_settings',
