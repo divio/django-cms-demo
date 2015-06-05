@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     # django CMS additions
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'djangocms_style',
     'cms',
     'menus',
     'sekizai',
@@ -88,7 +89,7 @@ DATABASES = {
     'simple': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
 }
 
 # Internationalization
