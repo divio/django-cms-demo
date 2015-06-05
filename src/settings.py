@@ -31,8 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    # INFO: these plugins need to be first in order to work properly
-    # (for the admin style and placeholderField rendering)
+    # djangocms_admin_style needs to be before django.contrib.admin!
     # https://django-cms.readthedocs.org/en/develop/how_to/install.html#configuring-your-project-for-django-cms
     'djangocms_admin_style',
     # django defaults
