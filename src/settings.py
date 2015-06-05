@@ -119,7 +119,6 @@ INSTALLED_APPS = (
     'treebeard',
     'djangocms_style',
     'djangocms_inherit',
-    'south',
     'reversion',
 )
 
@@ -141,14 +140,14 @@ CMS_LANGUAGES = {
             'public': True,
             'code': 'en',
             'hide_untranslated': False,
-            'name': gettext('en'),
+            'name': gettext('English'),
             'redirect_on_fallback': True,
         },
         {
             'public': True,
             'code': 'de',
             'hide_untranslated': False,
-            'name': gettext('de'),
+            'name': gettext('German'),
             'redirect_on_fallback': True,
         },
     ],

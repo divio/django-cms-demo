@@ -25,7 +25,6 @@ run:
 	make -j4 css runserver
 
 update:
-	$(MANAGE) syncdb
 	$(MANAGE) migrate
 	$(PIP) install -r requirements.txt --upgrade
 
