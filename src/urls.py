@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.i18n import i18n_patterns
