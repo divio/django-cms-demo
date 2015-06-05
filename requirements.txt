@@ -13,8 +13,8 @@ djangocms-admin-style==0.2.7
 djangocms-inherit==0.1
 djangocms-installer==0.7.6
 djangocms-style==1.5
-djangocms-text-ckeditor==2.5.0
-html5lib==0.99999
+djangocms-text-ckeditor==2.5.1
+html5lib==0.999
 psycopg2==2.6
 pytz==2015.4
 requests==2.7.0
