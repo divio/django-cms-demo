@@ -55,7 +55,7 @@ INSTALLED_APPS = (
     'mptt',
     'easy_thumbnails',
     # > requires django filer to be installed
-    'aldryn_bootstrap3',
+    # 'aldryn_bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
