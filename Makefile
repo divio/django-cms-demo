@@ -50,4 +50,4 @@ runserver:
 	$(MANAGE) runserver 0.0.0.0:$(PORT)
 
 css:
-	$(VENV); gulp sass
+	$(VENV); gulp watch
