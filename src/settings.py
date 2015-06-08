@@ -50,6 +50,12 @@ INSTALLED_APPS = (
     'reversion',
     # django CMS addons
     'djangocms_text_ckeditor',
+    # > django filer requirements
+    'filer',
+    'mptt',
+    'easy_thumbnails',
+    # > requires django filer to be installed
+    'aldryn_bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -191,6 +197,7 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
+    ('tpl_home.html', 'Home Template'),
 )
 
 # django CMS migrations for django 1.7
