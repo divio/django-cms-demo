@@ -18,7 +18,7 @@ all:
 
 install:
 	virtualenv $(ENV)
-	$(PIP) install -r requirements.txt
+	make update
 	make reset
 
 run:
@@ -27,6 +27,7 @@ run:
 update:
 	git pull
 	$(PIP) install -r requirements.txt
+	$(VENV); npm install
 	$(MANAGE) migrate
 
 
@@ -50,4 +51,5 @@ runserver:
 	$(MANAGE) runserver 0.0.0.0:$(PORT)
 
 css:
+	$(VENV); gulp sass
 	$(VENV); gulp watch
