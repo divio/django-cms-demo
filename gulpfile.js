@@ -9,6 +9,7 @@
 // #IMPORTS#
 var autoprefixer = require('gulp-autoprefixer');
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
@@ -32,9 +33,8 @@ var PROJECT_PATTERNS = {
 gulp.task('sass', function () {
     gulp.src(PROJECT_PATTERNS.sass)
         .pipe(sourcemaps.init())
-        .pipe(sass({
-            'errLogToConsole': true
-        }))
+        .pipe(sass())
+        .on('error', gutil.log.bind(console))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
