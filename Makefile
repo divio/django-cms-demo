@@ -25,8 +25,9 @@ run:
 	make -j4 css runserver
 
 update:
+	git pull
+	$(PIP) install -r requirements.txt
 	$(MANAGE) migrate
-	$(PIP) install -r requirements.txt --upgrade
 
 
 ##### HELPER COMMANDS

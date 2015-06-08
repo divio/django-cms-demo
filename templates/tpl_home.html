@@ -1,3 +1,27 @@
 {% extends "fullwidth.html" %}
+{% load i18n static cms_tags %}
 
 {% block body_class %}tpl-home{% endblock %}
+
+{% block extend_base %}
+    <div class="feature-wrapper js-feature-wrapper">
+        {% block feature %}
+            {% placeholder "feature" or %}
+                <div class="feature-visual">
+                    <img src="{% static 'img/visuals/feature-default.jpg' %}" alt="">
+                </div>
+                <div class="feature-content text-center">
+                    <div class="spacer spacer-xs">&nbsp;</div>
+                    <h1>{% trans "The Next Giant Leap For Mankind" %}</h1>
+                </div>
+            {% endplaceholder %}
+        {% endblock feature %}
+    </div>
+
+    <div class="container">
+        {% block messages %}
+            {% include "includes/messages.html" %}
+        {% endblock messages %}
+        {% block content %}{% endblock %}
+    </div>
+{% endblock extend_base %}
