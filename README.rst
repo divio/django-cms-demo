@@ -14,7 +14,6 @@ The following addons are available through this installation:
 
 - `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
 - `Aldryn Blueprint <https://github.com/aldryn/aldryn-blueprint>`_ (tba)
-- `Aldryn Bootstrap3 <https://github.com/aldryn/aldryn-bootstrap3>`_ (tba)
 - `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_ (tba)
 - `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_ (tba)
 - `Aldryn Style <https://github.com/aldryn/aldryn-style>`_ (tba)
