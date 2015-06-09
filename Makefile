@@ -25,7 +25,7 @@ run:
 	make -j4 css runserver
 
 update:
-	git pull
+	-git pull
 	$(PIP) install -r requirements.txt
 	$(VENV); npm install
 	$(MANAGE) migrate
