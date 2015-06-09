@@ -50,7 +50,7 @@ INSTALLED_APPS = (
     'reversion',
     # django CMS addons
     'djangocms_text_ckeditor',
-    # > addons requirements
+    # > prerequisite addons requirements
     'filer',
     'mptt',
     'easy_thumbnails',
