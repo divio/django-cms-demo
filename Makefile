@@ -43,7 +43,7 @@ reset:
 
 full_reset:
 	rm -rf env/
-	make reset
+	make install
 
 dump:
 	rm -rf database.sql.zip
