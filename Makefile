@@ -41,7 +41,7 @@ pulldata:
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect
 
-# recreate the entire project WITHOUT data
+# recreate the entire project and run installation
 nuke:
 	rm -rf env/
 	rm -rf data/

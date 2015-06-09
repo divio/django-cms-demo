@@ -5,5 +5,5 @@ djangocms-text-ckeditor==2.5.1      # not a part of django-cms core
 psycopg2==2.6                       # required for django.db.backends.postgresql_psycopg2
 
 # additional addons
-# we always want to use the bleeding-edge version in order to test if releases break
+# use the bleeding-edge version for testing purposes
 aldryn-bootstrap3                   # adds django-filer
