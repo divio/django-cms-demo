@@ -33,6 +33,7 @@ update:
 
 pulldata:
 	make database
+	unzip database.sql.zip
 	$(VENV); $(MANAGE) dbshell < database.sql
 	rm database.sql
 
