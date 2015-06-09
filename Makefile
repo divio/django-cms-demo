@@ -18,28 +18,40 @@ all:
 
 install:
 	virtualenv $(ENV)
+	make database
 	make update
-	make reset
+	make pulldata
 
 run:
 	make -j4 css runserver
 
 update:
-	git pull
+	-git pull
 	$(PIP) install -r requirements.txt
 	$(VENV); npm install
-	$(MANAGE) migrate
+	$(MANAGE) migrate --noinput
+
+pulldata:
+	make database
+	unzip database.sql.zip
+	$(VENV); $(MANAGE) dbshell < database.sql
+	rm database.sql
 
 
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect
 
-reset:
+# recreate the entire project and run installation
+nuke:
+	rm -rf env/
+	rm -rf data/
+	rm -rf node_modules/
+	rm -rf static/css/
+	make install
+
+database:
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
-	unzip database.sql.zip
-	$(VENV); $(MANAGE) dbshell < database.sql
-	rm database.sql
 
 dump:
 	rm -rf database.sql.zip

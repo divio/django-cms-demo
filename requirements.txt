@@ -1,8 +1,9 @@
 Django==1.7.8
 django-cms==3.1.0
-django-reversion==1.8.5
-djangocms-text-ckeditor==2.5.1
-psycopg2==2.6
+django-reversion==1.8.5             # not a part of django-cms core
+djangocms-text-ckeditor==2.5.1      # not a part of django-cms core
+psycopg2==2.6                       # required for django.db.backends.postgresql_psycopg2
 
-# aldryn addons
--e git+git@github.com:aldryn/aldryn-bootstrap3.git@feautre/django-1.7#egg=aldryn-bootstrap3
+# additional addons
+# use the bleeding-edge version for testing purposes
+aldryn-bootstrap3                   # adds django-filer
