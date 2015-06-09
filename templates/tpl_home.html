@@ -22,6 +22,9 @@
         {% block messages %}
             {% include "includes/messages.html" %}
         {% endblock messages %}
-        {% block content %}{% endblock %}
+
+        {% block content %}
+            {% with 940 as width %}{% placeholder content %}{% endwith %}
+        {% endblock content %}
     </div>
 {% endblock extend_base %}
