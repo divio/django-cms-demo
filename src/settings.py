@@ -50,12 +50,12 @@ INSTALLED_APPS = (
     'reversion',
     # django CMS addons
     'djangocms_text_ckeditor',
-    # > django filer requirements
+    # > addons requirements
     'filer',
     'mptt',
     'easy_thumbnails',
-    # > requires django filer to be installed
-    # 'aldryn_bootstrap3',
+    # > addons
+    'aldryn_bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
