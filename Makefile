@@ -41,6 +41,10 @@ reset:
 	$(VENV); $(MANAGE) dbshell < database.sql
 	rm database.sql
 
+full_reset:
+	rm -rf env/
+	make reset
+
 dump:
 	rm -rf database.sql.zip
 	pg_dump $(DBNAME) --file=database.sql
