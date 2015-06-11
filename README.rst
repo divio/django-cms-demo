@@ -1,6 +1,6 @@
-#######################
-django CMS demo project
-#######################
+###############
+django CMS demo
+###############
 
 |Build Status| |Coverage Status| |Code Climate| |Requirements Status|
 
