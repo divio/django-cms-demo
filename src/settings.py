@@ -156,6 +156,8 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+CMS_TOOLBAR_SIMPLE_STRUCTURE_MODE = True
+
 # django CMS internationalization
 # http://docs.django-cms.org/en/latest/topics/i18n.html
 
