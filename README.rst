@@ -1,7 +1,8 @@
-#######################
-django CMS demo project
-#######################
+###############
+django CMS demo
+###############
 
+|Build Status| |Requirements Status|
 
 The aim of this project is to run django CMS with standard configurations including demo content and helpful addons.
 You can use this repository for tutorial, debugging, development and research purposes.
@@ -45,3 +46,9 @@ You can login to the cms by appending ``/?edit`` to the url. The credentials are
 
 - Username: **admin**
 - Password: **admin**
+
+
+.. |Build Status| image:: https://travis-ci.org/divio/django-cms-demo.svg?branch=master
+   :target: https://travis-ci.org/divio/django-cms-demo
+.. |Requirements Status| image:: https://requires.io/github/divio/django-cms-demo/requirements.svg?branch=master
+   :target: https://requires.io/github/divio/django-cms-demo/requirements/?branch=master

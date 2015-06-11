@@ -203,6 +203,4 @@ CMS_TEMPLATES = (
 # django CMS migrations for django 1.7
 # https://docs.djangoproject.com/en/1.7/topics/migrations/#dependencies
 
-MIGRATION_MODULES = {
-    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
-}
+# MIGRATION_MODULES = {}
