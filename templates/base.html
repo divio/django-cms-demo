@@ -72,7 +72,15 @@
 {# start: content #}
 <hr class="sr-only" id="page-content" />
 {% block extend_base %}
-    {% block feature %}{% placeholder "feature" %}{% endblock feature %}
+    {% placeholder "feature" or %}
+        <div class="feature-visual">
+            <img src="{% static 'img/visuals/feature-default.jpg' %}" alt="">
+        </div>
+        <div class="feature-content text-center">
+            <div class="spacer spacer-xs"></div>
+            <h1>{% trans "The Next Giant Leap For Mankind" %}</h1>
+        </div>
+    {% endplaceholder %}
     <div class="container">
         {% block messages %}
             {% include "includes/messages.html" %}
