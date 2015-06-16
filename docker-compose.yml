@@ -1,0 +1,11 @@
+web:
+    build: .
+    volumes:
+        - .:/project
+    ports:
+        - "8000:8000"
+    links:
+        - db
+    command: make install
+db:
+    image: postgres
