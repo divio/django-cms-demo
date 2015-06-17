@@ -29,6 +29,11 @@ Installation
 
 - run ``make update`` to update the project (this will not load new static files from the Aldryn site)
 
+Docker
+------
+
+- run ``make docker`` which sets the docker image up and runs it in the background
+
 
 ***********
 Development
