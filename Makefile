@@ -37,6 +37,13 @@ pulldata:
 	$(VENV); $(MANAGE) dbshell < database.sql
 	rm database.sql
 
+docker:
+	# required docker-compose http://docs.docker.com/compose/install/
+	# docker-compose build
+	docker-compose up -d
+	docker-compose run web src/manage.py migrate
+	docker-compose ps
+	-boot2docker ip
 
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect

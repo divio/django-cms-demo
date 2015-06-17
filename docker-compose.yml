@@ -2,8 +2,9 @@ web:
     build: .
     environment:
         - DB_HOST=postgres
+        - DB_NAME=postgres
     links:
-        - postgres:postgres
+        - postgres
     ports:
         - "8000:8000"
     volumes:
