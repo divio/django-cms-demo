@@ -11,7 +11,7 @@ web:
         - .:/project
 
 postgres:
-    image: postgres
+    image: postgres:latest
     volumes_from:
         - data
 

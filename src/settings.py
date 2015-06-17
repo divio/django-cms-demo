@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-# we use os.getenv to be able to overwrite the default database settings for the docker setup
+# we use os.getenv to be able to override the default database settings for the docker setup
 
 DATABASES = {
     'default': {

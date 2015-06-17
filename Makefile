@@ -75,4 +75,3 @@ docker:
 	docker-compose run web src/manage.py createsuperuser --username=admin --email=admin@example.com
 	docker-compose ps
 	-boot2docker ip
-
