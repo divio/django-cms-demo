@@ -69,8 +69,15 @@ css:
 ##### required docker-compose http://docs.docker.com/compose/install/
 
 docker:
+	make docker_install
+	sleep 1s && make docker_run
+
+docker_install:
+	docker-compose rm
 	docker-compose build
 	docker-compose up -d
+
+docker_run:
 	docker-compose run web src/manage.py migrate
 	docker-compose run web src/manage.py createsuperuser --username=admin --email=admin@example.com
 	docker-compose ps
