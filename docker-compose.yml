@@ -1,11 +1,20 @@
 web:
     build: .
-    volumes:
-        - .:/project
+    environment:
+        - DB_HOST=postgres
+    links:
+        - postgres:postgres
     ports:
         - "8000:8000"
-    links:
-        - db
-    command: make install
-db:
+    volumes:
+        - .:/project
+
+postgres:
     image: postgres
+    volumes_from:
+        - data
+
+data:
+    image: postgres:latest
+    volumes:
+        - /var/lib/postgresql
