@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME', 'djangocms_demo_local'),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'DB_PASSWORD'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
         'PORT': os.getenv('DB_PORT', ''),
     },
 }
