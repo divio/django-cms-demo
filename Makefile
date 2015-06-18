@@ -70,17 +70,20 @@ css:
 
 docker:
 	make docker_install
+	make docker_pulldata
 	make docker_run
 
 docker_install:
 	docker-compose stop
 	docker-compose rm --force -v
 	docker-compose build
-	docker-compose up -d
 
 docker_run:
+	docker-compose up -d
+	docker-compose ps
+	-boot2docker ip
+
+docker_pulldata:
 	unzip database.sql.zip
 	docker-compose run web src/manage.py dbshell < database.sql
 	rm -rf database.sql
-	docker-compose ps
-	-boot2docker ip
