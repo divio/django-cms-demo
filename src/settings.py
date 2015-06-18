@@ -50,12 +50,22 @@ INSTALLED_APPS = (
     'reversion',
     # django CMS addons
     'djangocms_text_ckeditor',
-    # > prerequisite addons requirements
+    # > prerequisites for aldryn-bootstrap3
     'filer',
     'mptt',
     'easy_thumbnails',
+    # > prerequisites for aldryn-newsblog
+    'aldryn_apphooks_config',
+    'aldryn_boilerplates',
+    'aldryn_categories',
+    'aldryn_people',
+    'aldryn_reversion',
+    'parler',
+    'sortedm2m',
+    'taggit',
     # > addons
     'aldryn_bootstrap3',
+    'aldryn_newsblog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -133,11 +143,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'sekizai.context_processors.sekizai',
     'cms.context_processors.cms_settings',
+    # aldryn-newsblog
+    'aldryn_boilerplates.context_processors.boilerplate',
 )
 
 # https://docs.djangoproject.com/en/1.7/ref/settings/#template-loaders
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
+    # aldryn-bpolerplates needs the following line to be placed exactly there
+    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
     'django.template.loaders.app_directories.Loader',
     # django CMS additions
     'django.template.loaders.eggs.Loader',
@@ -206,3 +220,14 @@ CMS_TEMPLATES = (
 # https://docs.djangoproject.com/en/1.7/topics/migrations/#dependencies
 
 # MIGRATION_MODULES = {}
+
+# aldryn addon configurations
+# DOCS: https://pypi.python.org/pypi/aldryn-boilerplates/
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # aldryn-bpolerplates needs the following line to be placed exactly there
+    'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
