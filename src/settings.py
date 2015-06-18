@@ -81,15 +81,16 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+# we use os.getenv to be able to override the default database settings for the docker setup
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangocms_demo_local',
-        'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'PORT': '',
+        'NAME': os.getenv('DB_NAME', 'djangocms_demo_local'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'PORT': os.getenv('DB_PORT', ''),
     },
 }
 

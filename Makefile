@@ -37,7 +37,6 @@ pulldata:
 	$(VENV); $(MANAGE) dbshell < database.sql
 	rm database.sql
 
-
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect
 
@@ -65,3 +64,32 @@ runserver:
 css:
 	$(VENV); gulp sass
 	$(VENV); gulp watch
+
+##### DOCKER INTEGRATION
+##### required docker-compose http://docs.docker.com/compose/install/
+DOCKER_IP = `boot2docker ip`
+
+docker:
+	make docker_install
+	make docker_run
+	make docker_pulldata
+	make docker_ip
+
+docker_install:
+	docker-compose stop
+	docker-compose rm --force -v
+	docker-compose build
+
+docker_run:
+	docker-compose up -d
+
+docker_pulldata:
+	unzip database.sql.zip
+	docker-compose run web src/manage.py dbshell < database.sql
+	rm -rf database.sql
+
+docker_ip:
+	docker-compose ps
+	@echo ---------------------------------------------------------------------------------
+	@echo SERVER RUNNING ON: $(DOCKER_IP):$(PORT)
+	@echo ---------------------------------------------------------------------------------
