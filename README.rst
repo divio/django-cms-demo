@@ -18,7 +18,7 @@ The following addons are available through this installation:
 - `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_ (tba)
 - `Aldryn News & Blog <https://github.com/aldryn/aldryn-newsblog>`_
 - `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_ (tba)
-- `Aldryn Style <https://github.com/aldryn/aldryn-style>`_ (tba)
+- `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
 
 
 ************
