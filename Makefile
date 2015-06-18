@@ -70,15 +70,17 @@ css:
 
 docker:
 	make docker_install
-	sleep 1s && make docker_run
+	make docker_run
 
 docker_install:
-	docker-compose rm
+	docker-compose stop
+	docker-compose rm --force -v
 	docker-compose build
 	docker-compose up -d
 
 docker_run:
-	docker-compose run web src/manage.py migrate
-	docker-compose run web src/manage.py createsuperuser --username=admin --email=admin@example.com
+	unzip database.sql.zip
+	docker-compose run web src/manage.py dbshell < database.sql
+	rm -rf database.sql
 	docker-compose ps
 	-boot2docker ip
