@@ -67,11 +67,13 @@ css:
 
 ##### DOCKER INTEGRATION
 ##### required docker-compose http://docs.docker.com/compose/install/
+DOCKER_IP = `boot2docker ip`
 
 docker:
 	make docker_install
-	make docker_pulldata
 	make docker_run
+	make docker_pulldata
+	make docker_ip
 
 docker_install:
 	docker-compose stop
@@ -80,10 +82,14 @@ docker_install:
 
 docker_run:
 	docker-compose up -d
-	docker-compose ps
-	-boot2docker ip
 
 docker_pulldata:
 	unzip database.sql.zip
 	docker-compose run web src/manage.py dbshell < database.sql
 	rm -rf database.sql
+
+docker_ip:
+	docker-compose ps
+	@echo ---------------------------------------------------------------------------------
+	@echo SERVER RUNNING ON: $(DOCKER_IP):$(PORT)
+	@echo ---------------------------------------------------------------------------------
