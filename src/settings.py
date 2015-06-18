@@ -1,3 +1,5 @@
+from django.utils.translation import ugettext_lazy as _
+
 """
 Django settings for this project.
 
@@ -10,7 +12,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-gettext = lambda s: s
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
@@ -50,12 +51,23 @@ INSTALLED_APPS = (
     'reversion',
     # django CMS addons
     'djangocms_text_ckeditor',
-    # > prerequisite addons requirements
+    # > prerequisites for aldryn-bootstrap3
     'filer',
     'mptt',
     'easy_thumbnails',
+    # > prerequisites for aldryn-newsblog
+    'aldryn_apphooks_config',
+    'aldryn_boilerplates',
+    'aldryn_categories',
+    'aldryn_people',
+    'aldryn_reversion',
+    'parler',
+    'sortedm2m',
+    'taggit',
     # > addons
     'aldryn_bootstrap3',
+    'aldryn_newsblog',
+    'aldryn_style',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -134,11 +146,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'sekizai.context_processors.sekizai',
     'cms.context_processors.cms_settings',
+    # aldryn-newsblog
+    'aldryn_boilerplates.context_processors.boilerplate',
 )
 
 # https://docs.djangoproject.com/en/1.7/ref/settings/#template-loaders
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
+    # aldryn-bpolerplates needs the following line to be placed exactly there
+    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
     'django.template.loaders.app_directories.Loader',
     # django CMS additions
     'django.template.loaders.eggs.Loader',
@@ -163,8 +179,8 @@ CMS_TOOLBAR_SIMPLE_STRUCTURE_MODE = True
 # http://docs.django-cms.org/en/latest/topics/i18n.html
 
 LANGUAGES = (
-    ('en', gettext('English')),
-    ('de', gettext('Deutsch')),
+    ('en', _('English')),
+    ('de', _('Deutsch')),
 )
 
 CMS_LANGUAGES = {
@@ -179,14 +195,14 @@ CMS_LANGUAGES = {
             'public': True,
             'code': 'en',
             'hide_untranslated': False,
-            'name': gettext('English'),
+            'name': _('English'),
             'redirect_on_fallback': True,
         },
         {
             'public': True,
             'code': 'de',
             'hide_untranslated': False,
-            'name': gettext('German'),
+            'name': _('German'),
             'redirect_on_fallback': True,
         },
     ],
@@ -207,3 +223,30 @@ CMS_TEMPLATES = (
 # https://docs.djangoproject.com/en/1.7/topics/migrations/#dependencies
 
 # MIGRATION_MODULES = {}
+
+# aldryn-newsblog required configurations
+# DOCS: https://pypi.python.org/pypi/aldryn-boilerplates/
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # aldryn-bpolerplates needs the following line to be placed exactly there
+    'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    # aldryn-newsblog neews to override the default scale_and_crop
+    # 'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+    'easy_thumbnails.processors.background',
+)
+
+ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
+
+# aldryn-style required configurations
+# DOCS: https://github.com/aldryn/aldryn-style
+ALDRYN_STYLE_CLASS_NAMES = (
+    ('container', _('bootstrap container')),
+)
