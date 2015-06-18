@@ -1,4 +1,4 @@
-from django.utils.translations import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
 
 """
 Django settings for this project.
