@@ -1,5 +1,4 @@
 FROM python:2.7
-ENV PYTHONUNBUFFERED 1
 
 ADD . /project
 WORKDIR /project
