@@ -66,6 +66,7 @@ INSTALLED_APPS = (
     # > addons
     'aldryn_bootstrap3',
     'aldryn_newsblog',
+    'aldryn_style',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -221,7 +222,7 @@ CMS_TEMPLATES = (
 
 # MIGRATION_MODULES = {}
 
-# aldryn addon configurations
+# aldryn-newsblog required configurations
 # DOCS: https://pypi.python.org/pypi/aldryn-boilerplates/
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -241,3 +242,9 @@ THUMBNAIL_PROCESSORS = (
 )
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
+
+# aldryn-style required configurations
+# DOCS: https://github.com/aldryn/aldryn-style
+ALDRYN_STYLE_CLASS_NAMES = (
+    ('container', gettext('bootstrap container')),
+)
