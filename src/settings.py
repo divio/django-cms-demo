@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-gettext = lambda s: s
+_ = lambda s: s
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
@@ -177,8 +177,8 @@ CMS_TOOLBAR_SIMPLE_STRUCTURE_MODE = True
 # http://docs.django-cms.org/en/latest/topics/i18n.html
 
 LANGUAGES = (
-    ('en', gettext('English')),
-    ('de', gettext('Deutsch')),
+    ('en', _('English')),
+    ('de', _('Deutsch')),
 )
 
 CMS_LANGUAGES = {
@@ -193,14 +193,14 @@ CMS_LANGUAGES = {
             'public': True,
             'code': 'en',
             'hide_untranslated': False,
-            'name': gettext('English'),
+            'name': _('English'),
             'redirect_on_fallback': True,
         },
         {
             'public': True,
             'code': 'de',
             'hide_untranslated': False,
-            'name': gettext('German'),
+            'name': _('German'),
             'redirect_on_fallback': True,
         },
     ],
@@ -246,5 +246,5 @@ ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 # aldryn-style required configurations
 # DOCS: https://github.com/aldryn/aldryn-style
 ALDRYN_STYLE_CLASS_NAMES = (
-    ('container', gettext('bootstrap container')),
+    ('container', _('bootstrap container')),
 )
