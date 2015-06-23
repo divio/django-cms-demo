@@ -64,10 +64,13 @@ INSTALLED_APPS = (
     'parler',
     'sortedm2m',
     'taggit',
+    # > prerequisites for aldryn-faq
+    'adminsortable2',
     # > addons
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
+    'aldryn_faq',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -250,3 +253,11 @@ ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ALDRYN_STYLE_CLASS_NAMES = (
     ('container', _('bootstrap container')),
 )
+
+# djangocms-ckeditor-settings additional configuration
+# DOCS: https://github.com/divio/djangocms-text-ckeditor
+
+CKEDITOR_SETTINGS = {
+    'stylesSet': 'default:/static/js/addons/ckeditor.wysiwyg.js',
+    'contentsCss': ['/static/css/base.css'],
+}
