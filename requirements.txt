@@ -9,4 +9,4 @@ psycopg2==2.6.1                     # required for django.db.backends.postgresql
 aldryn-bootstrap3==0.5.1            # adds django-filer
 aldryn-style==0.2.1
 aldryn-newsblog==0.9.6              # adds boilerplates, parler...
-aldryn-faq==0.12.6
+aldryn-faq==0.12.7
