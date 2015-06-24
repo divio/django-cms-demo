@@ -1,0 +1,17 @@
+//######################################################################################################################
+// #FAQ#
+
+// adds faq style for /faq/
+
+// custom title for right navigation
+.aldryn-faq-sidebar {
+    h3 {
+        @extend .text-uppercase;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brand-primary;
+    }
+}

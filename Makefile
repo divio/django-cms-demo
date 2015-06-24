@@ -29,7 +29,7 @@ update:
 	-git pull
 	$(PIP) install -r requirements.txt
 	$(VENV); npm install
-	$(MANAGE) migrate --noinput
+	make migrate
 
 pulldata:
 	make database
@@ -51,6 +51,9 @@ nuke:
 database:
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
+
+migrate:
+	$(MANAGE) migrate --noinput
 
 dump:
 	rm -rf database.sql.zip
