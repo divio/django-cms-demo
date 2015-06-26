@@ -39,7 +39,7 @@
                         {% render_model_block request.current_page "changelist" %}
                             {% with dropdown="true" %}
                                 <ul class="nav navbar-nav">
-                                    {% show_menu 0 1 100 100 "includes/menu/navigation.html" %}
+                                    {% show_menu 0 0 100 100 "includes/menu/navigation.html" %}
                                     <li class="divider" role="presentation"><span class="sr-only">{% trans "Separator" %}</span></li>
                                     {% show_menu_below_id "meta" 0 0 100 100 "includes/menu/navigation.html" %}
                                     {% language_chooser "includes/menu/langnav.html" "native" %}
@@ -53,22 +53,6 @@
     </header>
 {% endblock header %}
 
-{# DOCS: http://getbootstrap.com/components/#breadcrumbs #}
-{% block breadcrumb %}
-    {% if not request.current_page.is_home %}
-        <nav class="navbar navbar-breadcrumb" role="navigation">
-            <h3 class="sr-only">{% trans "You are here" %}</h3>
-            <div class="container">
-                <ol class="breadcrumb">
-                    {% block extend_breadcrumb %}
-                        {% show_breadcrumb 0 "includes/menu/breadcrumb.html" %}
-                    {% endblock extend_breadcrumb %}
-                </ol>
-            </div>
-        </nav>
-    {% endif %}
-{% endblock breadcrumb %}
-
 {# start: content #}
 <hr class="sr-only" id="page-content" />
 {% block extend_base %}
@@ -81,6 +65,23 @@
             <h1>{% trans "The Next Giant Leap For Mankind" %}</h1>
         </div>
     {% endplaceholder %}
+
+    {# DOCS: http://getbootstrap.com/components/#breadcrumbs #}
+    {% block breadcrumb %}
+        {% if not request.current_page.is_home %}
+            <nav class="navbar navbar-breadcrumb" role="navigation">
+                <h3 class="sr-only">{% trans "You are here" %}</h3>
+                <div class="container">
+                    <ol class="breadcrumb">
+                        {% block extend_breadcrumb %}
+                            {% show_breadcrumb 0 "includes/menu/breadcrumb.html" %}
+                        {% endblock extend_breadcrumb %}
+                    </ol>
+                </div>
+            </nav>
+        {% endif %}
+    {% endblock breadcrumb %}
+
     <div class="container">
         {% block messages %}
             {% include "includes/messages.html" %}
