@@ -122,6 +122,12 @@ dl.dl-horizontal {
 .breadcrumb {
     margin-bottom: $line-height-computed / 2;
 }
+.breadcrumb > li {
+    @extend .fa;
+}
+.breadcrumb > li + li:before {
+    content: "\f061" !important; // required to overwrite bootstrap default
+}
 
 .dropdown-menu,
 .alert {
