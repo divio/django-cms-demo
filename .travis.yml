@@ -8,8 +8,9 @@ services:
   - "postgresql"
 
 env:
-  - "DJANGO=1.6"
-  - "DJANGO=1.7"
+  matrix:
+    - "DJANGO=1.6"
+    - "DJANGO=1.7"
   global:
     - secure: Ar3k6AtGWdnvut/wcsZdZnGCqu1C2KX8hl11GTpj5UfCz4yvworjHk1Vpeka5n0OC4ZaMmy9/0dtKGB50RzX1hO9UHIr88M1maddBYY/Let7m5NeWfOAODUalkU/mDdktfH4MJzBKuCKNeZec3Vjf3rZGxwZevOlO8NUOvhcX9s2rJ9vzlYuTbODGreZnotwnixVM9jpWgoKgLQMdOsRUagxi6SvOVd6S+FLJp/5XspT1VzXJHdXMz/sPVS3mL0hRuqMNcW+0szRlwzeNmV4ufF979fTCEvzvqhl1w2J7e08DRZ6vU5SNm2qbluun8F0wdbyZRBcdyQvsMNZtLf6/GhMJ05ZKP2n90wOpbNkC6HsX3OOm7ePn4kTiRAKAvnHLtgDxdNvkF/oaL3knE9ukKr0wo1N0pnAJpVuDu249YDO+80tHDvjK1kH0Yc5vsSUJ1vcyZJ+EA0ZAh/2Q5FmvVgxA3fOxpNYDkCT0KKqJrvGWlLMV0MgxQ5CyjevjJLWptJyAH9kDXvmXbDLjEtQVMRoS9YjhApFcgnAKhXSYcg5+/njJexYdqRV7XsKlBw1bFjZ1rTU2oVT1JUqSn7/4qRFdohpRo4c/PKNFoy0DoH9MvkomGrQYlnLIFvJEjcDzOF2meXKV0A4nmPV9ao9vCTk8ivsLSHTTXKQKoANVhs=
 
