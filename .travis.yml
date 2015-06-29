@@ -12,11 +12,21 @@ env:
   - "DJANGO=1.7"
 
 before_install:
+  - "gem install scss-lint"
+  - "npm install -g npm"
   - "psql -c 'CREATE DATABASE djangocms_demo_local;' -U postgres"
 
 install:
   - "pip install -r requirements.txt"
   - "python src/manage.py migrate --noinput"
 
+before_script:
+  - "npm install -g gulp"
+  - "npm install -g codeclimate-test-reporter"
+
+after_script:
+  - "codeclimate < tests/coverage/**/lcov.info"
+
 script:
   - "echo 'Project build successfull'"
+  - "gulp tests"
