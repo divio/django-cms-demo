@@ -9,6 +9,12 @@
 // #CONFIGURATION#
 module.exports = function (config) {
 
+    if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
+        console.log('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY ' +
+            'environment variables are set.');
+        process.exit(1);
+    }
+
     // Browsers to run on Sauce Labs
     // Check out https://saucelabs.com/platforms for all browser/OS combos
     var customLaunchers = {
@@ -89,7 +95,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
+        browsers: Object.keys(customLaunchers),
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
