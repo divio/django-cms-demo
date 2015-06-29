@@ -46,6 +46,25 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(PROJECT_PATH.css));
 });
 
+// #########################################################
+// #TESTS#
+gulp.task('tests', function () {
+    // run javascript tests
+    karma.start({
+        'configFile': __dirname + '/tests/karma.conf.js',
+        'singleRun': true
+    });
+});
+
+gulp.task('karma', function () {
+    // run javascript tests
+    karma.start({
+        'configFile': __dirname + '/tests/karma.conf.js'
+    });
+});
+
+// #####################################################################################################################
+// #COMMANDS#
 gulp.task('watch', function () {
     gulp.watch(PROJECT_PATTERNS.sass, ['sass']);
 });
