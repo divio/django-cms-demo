@@ -108,6 +108,7 @@ module.exports = function (config) {
         sauceLabs: {
             testName: 'Karma Test Runner'
         },
+        captureTimeout: 120000,
         customLaunchers: customLaunchers
     });
 };
