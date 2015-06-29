@@ -1,12 +1,12 @@
 Django==1.7.8                       # rq.filter: >=1.6,<1.8
-django-cms==3.1.0
+django-cms>=3.1.0
 django-reversion==1.8.7             # not a part of django-cms core
 djangocms-text-ckeditor==2.5.2      # not a part of django-cms core
 psycopg2==2.6.1                     # required for django.db.backends.postgresql_psycopg2
 
 # additional addons
 # always freeze versions, requires.io will show outdated dependencies
-aldryn-bootstrap3==0.5.1            # adds django-filer
-aldryn-style==0.2.1
-aldryn-newsblog==1.0.0              # adds boilerplates, parler...
-aldryn-faq==0.12.7
+aldryn-bootstrap3>=0.5.1            # adds django-filer
+aldryn-style>=0.2.1
+aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
+aldryn-faq>=0.13.0
