@@ -10,6 +10,7 @@
 var autoprefixer = require('gulp-autoprefixer');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var karma = require('karma').server;
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
