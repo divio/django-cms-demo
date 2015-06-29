@@ -8,31 +8,30 @@
 // #####################################################################################################################
 // #CONFIGURATION#
 module.exports = function (config) {
-
-    if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
-        console.log('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY ' +
-            'environment variables are set.');
-        process.exit(1);
-    }
+    var browsers = {
+        'PhantomJS': 'used for local testing'
+    };
 
     // Browsers to run on Sauce Labs
     // Check out https://saucelabs.com/platforms for all browser/OS combos
-    var customLaunchers = {
-        sl_ie_9: {
-            base: 'SauceLabs',
-            browserName: 'internet explorer',
-            platform: 'Windows 7',
-            version: '9.0'
-        },
-        sl_firefox: {
-            base: 'SauceLabs',
-            browserName: 'firefox',
-            platform: 'Windows 8',
-            version: '38'
-        }
-    };
+    if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
+        browsers = {
+            sl_ie_9: {
+                base: 'SauceLabs',
+                browserName: 'internet explorer',
+                platform: 'Windows 7',
+                version: '9.0'
+            },
+            sl_firefox: {
+                base: 'SauceLabs',
+                browserName: 'firefox',
+                platform: 'Windows 8',
+                version: '38'
+            }
+        };
+    }
 
-    config.set({
+    var settings = {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '..',
 
@@ -98,17 +97,20 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: Object.keys(customLaunchers),
+        browsers: Object.keys(browsers),
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
+        singleRun: false
+    };
 
-        // configure sauce labs
-        sauceLabs: {
+    if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
+        settings.sauceLabs = {
             testName: 'Karma Test Runner'
-        },
-        captureTimeout: 120000,
-        customLaunchers: customLaunchers
-    });
+        };
+        settings.captureTimeout = 120000;
+        settings.customLaunchers = browsers
+    }
+
+    config.set(settings);
 };

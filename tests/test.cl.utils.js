@@ -38,49 +38,6 @@
             });
         });
 
-        describe('.setStorage() and .getStorage()', function () {
-            beforeEach(function () {
-                localStorage.clear();
-            });
-
-            it('use the local storage of the browser', function () {
-                if (typeof (Storage) !== void(0)) {
-                    expect(Storage).toEqual(jasmine.any(Object));
-                } else {
-                    expect(Storage).toThrowError(ReferenceError);
-                }
-
-                expect(Cl.Utils._isStorageSupported).toBe(true);
-            });
-
-            it('one can store a value', function () {
-                expect(localStorage.getItem('test#1')).toBeNull();
-
-                var returnValue = Cl.Utils.setStorage('test#1', 'true');
-                expect(returnValue).toBe('true');
-                expect(localStorage.getItem('test#1')).toBe('true');
-            });
-
-            it('the other retrieve a value', function () {
-                expect(localStorage.getItem('test#2')).toBeNull();
-
-                Cl.Utils.setStorage('test#2', 'true');
-                var returnValue = Cl.Utils.getStorage('test#2');
-                expect(returnValue).toBe('true');
-                expect(localStorage.getItem('test#2')).toBe('true');
-            });
-
-            it('handle exceptions as expected', function () {
-                Cl.Utils._isStorageSupported = false;
-
-                expect(Cl.Utils.getStorage('test#3')).toBe(false);
-                expect(Cl.Utils.getStorage()).toBe(false);
-
-                expect(Cl.Utils.setStorage('test#3', 'true')).toBe(false);
-                expect(Cl.Utils.setStorage('test#3')).toBe(false);
-                expect(Cl.Utils.setStorage()).toBe(false);
-            })
-        });
     });
 
 })();
