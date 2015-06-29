@@ -8,8 +8,22 @@
 // #####################################################################################################################
 // #CONFIGURATION#
 module.exports = function (config) {
-    config.set({
 
+    // Browsers to run on Sauce Labs
+    // Check out https://saucelabs.com/platforms for all browser/OS combos
+    var customLaunchers = {
+        'SL_Chrome': {
+            base: 'SauceLabs',
+            browserName: 'chrome'
+        },
+        'SL_Firefox': {
+            base: 'SauceLabs',
+            browserName: 'firefox',
+            version: '26'
+        }
+    };
+
+    config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '..',
 
@@ -57,7 +71,7 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: ['progress', 'coverage', 'saucelabs'],
 
         // web server port
         port: 9876,
@@ -79,6 +93,12 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false
+        singleRun: false,
+
+        // configure sauce labs
+        sauceLabs: {
+            testName: 'Karma Test Runner'
+        },
+        customLaunchers: customLaunchers
     });
 };
