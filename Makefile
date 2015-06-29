@@ -37,6 +37,9 @@ pulldata:
 	$(VENV); $(MANAGE) dbshell < database.sql
 	rm database.sql
 
+tests:
+	gulp tests
+
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect
 
