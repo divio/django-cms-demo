@@ -23,6 +23,7 @@ install:
 before_script:
   - "npm install -g gulp"
   - "npm install -g codeclimate-test-reporter"
+  - "npm install"
 
 after_script:
   - "codeclimate < tests/coverage/**/lcov.info"
