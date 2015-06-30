@@ -73,8 +73,8 @@ module.exports = function (config) {
             'static/js/base.js': ['coverage'],
             'static/js/addons/cl.utils.js': ['coverage'],
             // for fixtures
-            '**/*.html'   : ['html2js'],
-            '**/*.json'   : ['json_fixtures']
+            '**/*.html': ['html2js'],
+            '**/*.json': ['json_fixtures']
         },
 
         // optionally, configure the reporter
@@ -90,12 +90,6 @@ module.exports = function (config) {
         jsonFixturesPreprocessor: {
             variableName: '__json__'
         },
-
-        plugins: [
-            'karma-fixture',
-            'karma-html2js-preprocessor',
-            'karma-json-fixtures-preprocessor'
-        ],
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
