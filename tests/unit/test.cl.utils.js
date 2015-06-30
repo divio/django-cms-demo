@@ -35,7 +35,6 @@
                 window.location.href.replace('#testRedirect', '');
                 expect(window.location.href).not.toMatch('#testRedirect');
                 Cl.Utils.redirectTo('#testRedirect');
-                console.log(window.location.href);
                 expect(window.location.href).toMatch('#testRedirect');
             });
         });
