@@ -53,7 +53,7 @@ module.exports = function (config) {
             'static/js/*.js',
 
             // tests themselves
-            'tests/*.js',
+            'tests/unit/*.js',
 
             // fixture patterns
             {

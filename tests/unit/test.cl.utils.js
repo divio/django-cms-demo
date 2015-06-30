@@ -47,7 +47,7 @@
 
             it('use the local storage of the browser', function () {
                 if (typeof (Storage) !== void(0)) {
-                    expect(Storage).toEqual(jasmine.any(Function));
+                    expect(Storage).toBeDefined();
                 } else {
                     expect(Storage).toThrowError(ReferenceError);
                 }
