@@ -9,7 +9,6 @@
 // #CONFIGURATION#
 module.exports = function (config) {
     var browsers = {
-        'Chrome': 'used for local testing',
         'PhantomJS': 'used for local testing'
     };
 
@@ -121,7 +120,7 @@ module.exports = function (config) {
 
     if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
         settings.sauceLabs = {
-            testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER
+            testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER + ' – PR: ' + TRAVIS_PULL_REQUEST
         };
         settings.captureTimeout = 120000;
         settings.customLaunchers = browsers
