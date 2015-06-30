@@ -1,5 +1,5 @@
 {
-    "name": "Django CMS Demo",
+    "name": "django-cms-demo",
     "private": true,
     "engines": {
         "node": "0.9.0"
