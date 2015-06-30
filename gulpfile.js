@@ -23,7 +23,8 @@ var webdriverUpdate = require('gulp-protractor').webdriver_update;
 var PROJECT_ROOT = '.';
 var PROJECT_PATH = {
     'sass': PROJECT_ROOT + '/private/sass',
-    'css': PROJECT_ROOT + '/static/css'
+    'css': PROJECT_ROOT + '/static/css',
+    'tests': PROJECT_ROOT + '/tests'
 };
 
 var PROJECT_PATTERNS = {
@@ -52,7 +53,8 @@ gulp.task('sass', function () {
 
 // #########################################################
 // #TESTS#
-gulp.task('tests', function () {
+gulp.task('tests', ['tests:unit', 'tests:integration']);
+gulp.task('tests:unit', function () {
     // run javascript tests
     karma.start({
         'configFile': __dirname + '/tests/karma.conf.js',
@@ -60,11 +62,11 @@ gulp.task('tests', function () {
     });
 });
 
-gulp.task('webdriver:update', webdriverUpdate);
-gulp.task('tests:integration', ['webdriver:update'], function () {
-    gulp.src(['./tests/integration/*.js'])
+gulp.task('tests:webdriver', webdriverUpdate);
+gulp.task('tests:integration', ['tests:webdriver'], function () {
+    gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
         .pipe(protractor({
-            configFile: 'tests/protractor.conf.js',
+            configFile: PROJECT_PATH.tests + '/protractor.conf.js',
             args: ['--baseUrl', 'http://127.0.0.1:8000']
         }))
         .on('error', function (error) {
