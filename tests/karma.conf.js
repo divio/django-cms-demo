@@ -124,7 +124,7 @@ module.exports = function (config) {
             testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER
         };
         settings.captureTimeout = 120000;
-        settings.customLaunchers = browsers
+        settings.customLaunchers = browsers;
     }
 
     config.set(settings);
