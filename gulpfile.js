@@ -67,7 +67,7 @@ gulp.task('tests:integration', ['tests:webdriver'], function () {
     gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
         .pipe(protractor({
             configFile: PROJECT_PATH.tests + '/protractor.conf.js',
-            args: ['--baseUrl', 'http://127.0.0.1:8000']
+            args: []
         }))
         .on('error', function (error) {
             gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
