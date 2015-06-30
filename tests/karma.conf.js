@@ -9,6 +9,7 @@
 // #CONFIGURATION#
 module.exports = function (config) {
     var browsers = {
+        'Chrome': 'used for local testing',
         'PhantomJS': 'used for local testing'
     };
 
@@ -37,7 +38,7 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'fixture'],
 
         // list of files / patterns to load in the browser
         // tests/${path}
@@ -52,7 +53,12 @@ module.exports = function (config) {
             'static/js/*.js',
 
             // tests themselves
-            'tests/*.js'
+            'tests/*.js',
+
+            // fixture patterns
+            {
+                pattern: 'tests/fixtures/**/*'
+            }
         ],
 
         // list of files to exclude
@@ -65,7 +71,10 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             'static/js/base.js': ['coverage'],
-            'static/js/addons/cl.utils.js': ['coverage']
+            'static/js/addons/cl.utils.js': ['coverage'],
+            // for fixtures
+            '**/*.html'   : ['html2js'],
+            '**/*.json'   : ['json_fixtures']
         },
 
         // optionally, configure the reporter
@@ -75,6 +84,18 @@ module.exports = function (config) {
                 { type: 'lcov', dir: 'tests/coverage/' }
             ]
         },
+
+        // fixtures dependency
+        // https://github.com/billtrik/karma-fixture
+        jsonFixturesPreprocessor: {
+            variableName: '__json__'
+        },
+
+        plugins: [
+            'karma-fixture',
+            'karma-html2js-preprocessor',
+            'karma-json-fixtures-preprocessor'
+        ],
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
@@ -106,7 +127,7 @@ module.exports = function (config) {
 
     if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
         settings.sauceLabs = {
-            testName: 'Karma Test Runner'
+            testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER
         };
         settings.captureTimeout = 120000;
         settings.customLaunchers = browsers
