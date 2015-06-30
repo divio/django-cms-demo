@@ -20,5 +20,9 @@
     },
     "engines": {
         "node": "0.9.0"
+    },
+    "devDependencies": {
+        "gulp-protractor": "^1.0.0",
+        "protractor": "^2.1.0"
     }
 }

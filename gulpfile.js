@@ -14,6 +14,9 @@ var karma = require('karma').server;
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
+var protractor = require('gulp-protractor').protractor;
+// Download and update the selenium driver
+var webdriver_update = require('gulp-protractor').webdriver_update;
 
 // #####################################################################################################################
 // #SETTINGS#
@@ -55,6 +58,16 @@ gulp.task('tests', function () {
         'configFile': __dirname + '/tests/karma.conf.js',
         'singleRun': true
     });
+});
+
+gulp.task('webdriver_update', webdriver_update);
+gulp.task('tests:integration', ['webdriver_update'], function () {
+    gulp.src(['./tests/integration/*.js'])
+        .pipe(protractor({
+            configFile: 'tests/protractor.conf.js',
+            args: ['--baseUrl', 'http://127.0.0.1:8000']
+        }))
+        .on('error', function(e) { throw e; });
 });
 
 gulp.task('karma', function () {
