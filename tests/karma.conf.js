@@ -121,7 +121,7 @@ module.exports = function (config) {
     if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
         settings.sauceLabs = {
             testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER +
-                ' – PR: ' + process.env.TRAVIS_PULL_REQUEST
+                ' – PullRequest #' + process.env.TRAVIS_PULL_REQUEST
         };
         settings.captureTimeout = 120000;
         settings.customLaunchers = browsers
