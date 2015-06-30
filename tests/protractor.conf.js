@@ -1,4 +1,12 @@
-var packagejson = require('../package.json');
+var formatTaskName = function (browserName) {
+    return [
+        'Test', browserName, 'for',
+        process.env.TRAVIS_REPO_SLUG,
+        (provess.env.TRAVIS_PULL_REQUEST ? 'pull request #' + process.env.TRAVIS_PULL_REQUEST : ''),
+        '#' + process.env.TRAVIS_BUILD_NUMBER
+    ].join(' ');
+};
+
 var config = {
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
@@ -21,23 +29,25 @@ if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
     config.capabilities = null;
     config.sauceUser = process.env.SAUCE_USERNAME;
     config.sauceKey = process.env.SAUCE_ACCESS_KEY;
-    config.multiCapabilities = [{
-        name: 'Protractor Firefox for ' + packagejson.name + ' #' + process.env.TRAVIS_BUILD_NUMBER,
-        browserName: 'firefox',
-        shardTestFiles: true,
-        maxInstances: 2
-    }, {
-        name: 'Protractor Chrome for ' + packagejson.name + ' #' + process.env.TRAVIS_BUILD_NUMBER,
-        browserName: 'chrome',
-        shardTestFiles: true,
-        maxInstances: 2,
-        chromeOptions: {
-            // Get rid of --ignore-certificate yellow warning, run in
-            // 'incognito' mode (disabled as blocks screenshots creation)
-            // and set English language.
-            args: ['--no-sandbox', '--test-type=browser', '--lang=en']
+    config.multiCapabilities = [
+        {
+            name: formatTaskName('Firefox'),
+            browserName: 'firefox',
+            shardTestFiles: true,
+            maxInstances: 2
+        }, {
+            name: formatTaskName('Chrome'),
+            browserName: 'chrome',
+            shardTestFiles: true,
+            maxInstances: 2,
+            chromeOptions: {
+                // Get rid of --ignore-certificate yellow warning, run in
+                // 'incognito' mode (disabled as blocks screenshots creation)
+                // and set English language.
+                args: ['--no-sandbox', '--test-type=browser', '--lang=en']
+            }
         }
-    }];
+    ];
 }
 
 exports.config = config;
