@@ -8,14 +8,36 @@
 // #####################################################################################################################
 // #CONFIGURATION#
 module.exports = function (config) {
-    config.set({
+    var browsers = {
+        'PhantomJS': 'used for local testing'
+    };
 
+    // Browsers to run on Sauce Labs
+    // Check out https://saucelabs.com/platforms for all browser/OS combos
+    if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
+        browsers = {
+            sl_ie_9: {
+                base: 'SauceLabs',
+                browserName: 'internet explorer',
+                platform: 'Windows 7',
+                version: '9.0'
+            },
+            sl_firefox: {
+                base: 'SauceLabs',
+                browserName: 'firefox',
+                platform: 'Windows 8',
+                version: '38'
+            }
+        };
+    }
+
+    var settings = {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '..',
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'fixture'],
 
         // list of files / patterns to load in the browser
         // tests/${path}
@@ -30,7 +52,12 @@ module.exports = function (config) {
             'static/js/*.js',
 
             // tests themselves
-            'tests/*.js'
+            'tests/unit/*.js',
+
+            // fixture patterns
+            {
+                pattern: 'tests/fixtures/**/*'
+            }
         ],
 
         // list of files to exclude
@@ -43,7 +70,10 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             'static/js/base.js': ['coverage'],
-            'static/js/addons/cl.utils.js': ['coverage']
+            'static/js/addons/cl.utils.js': ['coverage'],
+            // for fixtures
+            '**/*.html': ['html2js'],
+            '**/*.json': ['json_fixtures']
         },
 
         // optionally, configure the reporter
@@ -54,10 +84,16 @@ module.exports = function (config) {
             ]
         },
 
+        // fixtures dependency
+        // https://github.com/billtrik/karma-fixture
+        jsonFixturesPreprocessor: {
+            variableName: '__json__'
+        },
+
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: ['progress', 'coverage', 'saucelabs'],
 
         // web server port
         port: 9876,
@@ -75,10 +111,21 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
+        browsers: Object.keys(browsers),
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false
-    });
+    };
+
+    if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
+        settings.sauceLabs = {
+            testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER +
+                ' – Branch ' + process.env.TRAVIS_BRANCH
+        };
+        settings.captureTimeout = 120000;
+        settings.customLaunchers = browsers
+    }
+
+    config.set(settings);
 };
