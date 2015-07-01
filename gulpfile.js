@@ -54,17 +54,17 @@ gulp.task('sass', function () {
 // #########################################################
 // #TESTS#
 gulp.task('tests', ['tests:unit', 'tests:integration']);
-gulp.task('tests:unit', function () {
+gulp.task('tests:unit', function (done) {
     // run javascript tests
     karma.start({
         'configFile': __dirname + '/tests/karma.conf.js',
         'singleRun': true
-    });
+    }, done);
 });
 
 gulp.task('tests:webdriver', webdriverUpdate);
 gulp.task('tests:integration', ['tests:webdriver'], function () {
-    gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
+    return gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
         .pipe(protractor({
             configFile: PROJECT_PATH.tests + '/protractor.conf.js',
             args: []
