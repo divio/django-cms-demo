@@ -7,29 +7,17 @@
 
 // #####################################################################################################################
 // #CONFIGURATION#
+var baseConf = require('./base.conf.js');
+
 module.exports = function (config) {
     var browsers = {
-        'Chrome': 'used for local testing',
         'PhantomJS': 'used for local testing'
     };
 
     // Browsers to run on Sauce Labs
     // Check out https://saucelabs.com/platforms for all browser/OS combos
     if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
-        browsers = {
-            sl_ie_9: {
-                base: 'SauceLabs',
-                browserName: 'internet explorer',
-                platform: 'Windows 7',
-                version: '9.0'
-            },
-            sl_firefox: {
-                base: 'SauceLabs',
-                browserName: 'firefox',
-                platform: 'Windows 8',
-                version: '38'
-            }
-        };
+        browsers = baseConf.sauceLabsBrowsers;
     }
 
     var settings = {
@@ -121,7 +109,7 @@ module.exports = function (config) {
 
     if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
         settings.sauceLabs = {
-            testName: 'Karma Build #' + process.env.TRAVIS_BUILD_NUMBER
+            testName: baseConf.formatTaskName('Unit')
         };
         settings.captureTimeout = 120000;
         settings.customLaunchers = browsers;
