@@ -14,13 +14,17 @@ var karma = require('karma').server;
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
+var protractor = require('gulp-protractor').protractor;
+// Download and update the selenium driver
+var webdriverUpdate = require('gulp-protractor').webdriver_update;
 
 // #####################################################################################################################
 // #SETTINGS#
 var PROJECT_ROOT = '.';
 var PROJECT_PATH = {
     'sass': PROJECT_ROOT + '/private/sass',
-    'css': PROJECT_ROOT + '/static/css'
+    'css': PROJECT_ROOT + '/static/css',
+    'tests': PROJECT_ROOT + '/tests'
 };
 
 var PROJECT_PATTERNS = {
@@ -49,12 +53,25 @@ gulp.task('sass', function () {
 
 // #########################################################
 // #TESTS#
-gulp.task('tests', function () {
+gulp.task('tests', ['tests:unit', 'tests:integration']);
+gulp.task('tests:unit', function (done) {
     // run javascript tests
     karma.start({
         'configFile': __dirname + '/tests/karma.conf.js',
         'singleRun': true
-    });
+    }, done);
+});
+
+gulp.task('tests:webdriver', webdriverUpdate);
+gulp.task('tests:integration', ['tests:webdriver'], function () {
+    return gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
+        .pipe(protractor({
+            configFile: PROJECT_PATH.tests + '/protractor.conf.js',
+            args: []
+        }))
+        .on('error', function (error) {
+            gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
+        });
 });
 
 gulp.task('karma', function () {
