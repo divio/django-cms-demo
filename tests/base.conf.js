@@ -4,7 +4,7 @@ module.exports = {
             'Test', browserName, 'for',
             process.env.TRAVIS_REPO_SLUG,
             (process.env.TRAVIS_PULL_REQUEST ? 'pull request #' + process.env.TRAVIS_PULL_REQUEST : ''),
-            '#' + process.env.TRAVIS_BUILD_NUMBER
+            'build #' + process.env.TRAVIS_BUILD_NUMBER
         ].join(' ');
     },
 
