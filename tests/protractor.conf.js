@@ -1,4 +1,13 @@
-var baseConf = require('./base.conf.js');
+/*!
+ * @author:    Divio AG
+ * @copyright: http://www.divio.ch
+ */
+
+'use strict';
+
+// #####################################################################################################################
+// #CONFIGURATION#
+var baseConf = require('./base.conf');
 var formatTaskName = baseConf.formatTaskName;
 var browsers = baseConf.sauceLabsBrowsers;
 

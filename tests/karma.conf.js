@@ -7,7 +7,7 @@
 
 // #####################################################################################################################
 // #CONFIGURATION#
-var baseConf = require('./base.conf.js');
+var baseConf = require('./base.conf');
 
 module.exports = function (config) {
     var browsers = {
