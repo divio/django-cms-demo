@@ -66,11 +66,19 @@ INSTALLED_APPS = (
     'taggit',
     # > prerequisites for aldryn-faq
     'adminsortable2',
+    # > prerequisites for aldryn-events
+    'aldryn_common',
+    'appconf',
+    'bootstrap3',
+    'django_tablib',
+    'extended_choices',
+    'standard_form',
     # > addons
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
     'aldryn_faq',
+    'aldryn_events',
 )
 
 MIDDLEWARE_CLASSES = (
