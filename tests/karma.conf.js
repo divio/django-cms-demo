@@ -51,8 +51,7 @@ module.exports = function (config) {
 
         // list of files to exclude
         exclude: [
-            'static/js/addons/ckeditor.wysiwyg.js',
-            'tests/karma.conf.js'
+            'static/js/addons/ckeditor.wysiwyg.js'
         ],
 
         // preprocess matching files before serving them to the browser
