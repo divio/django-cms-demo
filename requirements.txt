@@ -10,3 +10,4 @@ aldryn-bootstrap3>=0.5.1            # adds django-filer
 aldryn-style>=0.2.1
 aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
 aldryn-faq>=0.13.0
+-e git+ssh://git@github.com/aldryn/aldryn-events.git@master#egg=aldryn-events
