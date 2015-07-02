@@ -23,7 +23,7 @@ install:
 	make pulldata
 
 run:
-	make -j4 css runserver
+	make -j css runserver
 
 update:
 	-git pull
