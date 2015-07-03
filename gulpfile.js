@@ -56,8 +56,8 @@ gulp.task('tests', ['tests:unit', 'tests:integration']);
 gulp.task('tests:unit', function (done) {
     // run javascript tests
     karma.start({
-        'configFile': PROJECT_PATH.tests + '/karma.conf.js',
-        'singleRun': true
+        configFile: PROJECT_PATH.tests + '/karma.conf.js',
+        singleRun: true
     }, done);
 });
 
@@ -65,8 +65,8 @@ gulp.task('tests:webdriver', webdriverUpdate);
 gulp.task('tests:integration', ['tests:webdriver'], function () {
     return gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
         .pipe(protractor({
-            'configFile': PROJECT_PATH.tests + '/protractor.conf.js',
-            'args': []
+            configFile: PROJECT_PATH.tests + '/protractor.conf.js',
+            args: []
         }))
         .on('error', function (error) {
             gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
@@ -76,7 +76,7 @@ gulp.task('tests:integration', ['tests:webdriver'], function () {
 gulp.task('tests:watch', function () {
     // run javascript tests
     karma.start({
-        'configFile': PROJECT_PATH.tests + '/karma.conf.js'
+        configFile: PROJECT_PATH.tests + '/karma.conf.js'
     });
 });
 
