@@ -5,7 +5,7 @@
 
 'use strict';
 
-// #####################################################################################################################
+// #############################################################################
 // #IMPORTS#
 var autoprefixer = require('gulp-autoprefixer');
 var gulp = require('gulp');
@@ -15,12 +15,11 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
 var protractor = require('gulp-protractor').protractor;
-// Download and update the selenium driver
 var webdriverUpdate = require('gulp-protractor').webdriver_update;
 
-// #####################################################################################################################
+// #############################################################################
 // #SETTINGS#
-var PROJECT_ROOT = '.';
+var PROJECT_ROOT = __dirname;
 var PROJECT_PATH = {
     'sass': PROJECT_ROOT + '/private/sass',
     'css': PROJECT_ROOT + '/static/css',
@@ -33,7 +32,7 @@ var PROJECT_PATTERNS = {
     ]
 };
 
-// #####################################################################################################################
+// #############################################################################
 // #TASKS#
 gulp.task('sass', function () {
     gulp.src(PROJECT_PATTERNS.sass)
@@ -51,13 +50,13 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(PROJECT_PATH.css));
 });
 
-// #########################################################
+// #######################################
 // #TESTS#
 gulp.task('tests', ['tests:unit', 'tests:integration']);
 gulp.task('tests:unit', function (done) {
     // run javascript tests
     karma.start({
-        'configFile': __dirname + '/tests/karma.conf.js',
+        'configFile': PROJECT_PATH.tests + '/karma.conf.js',
         'singleRun': true
     }, done);
 });
@@ -66,22 +65,22 @@ gulp.task('tests:webdriver', webdriverUpdate);
 gulp.task('tests:integration', ['tests:webdriver'], function () {
     return gulp.src([PROJECT_PATH.tests + '/integration/*.js'])
         .pipe(protractor({
-            configFile: PROJECT_PATH.tests + '/protractor.conf.js',
-            args: []
+            'configFile': PROJECT_PATH.tests + '/protractor.conf.js',
+            'args': []
         }))
         .on('error', function (error) {
             gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
         });
 });
 
-gulp.task('karma', function () {
+gulp.task('tests:watch', function () {
     // run javascript tests
     karma.start({
-        'configFile': __dirname + '/tests/karma.conf.js'
+        'configFile': PROJECT_PATH.tests + '/karma.conf.js'
     });
 });
 
-// #####################################################################################################################
+// #############################################################################
 // #COMMANDS#
 gulp.task('watch', function () {
     gulp.watch(PROJECT_PATTERNS.sass, ['sass']);
