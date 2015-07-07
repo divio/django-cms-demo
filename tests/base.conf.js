@@ -10,5 +10,6 @@ module.exports = {
         ].join(' ');
     },
 
+    // browsers are coming from the browserslist file
     sauceLabsBrowsers: b2s()
 };
