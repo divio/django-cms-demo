@@ -4,6 +4,8 @@ django CMS demo
 
 |Build Status| |Coverage Status| |Code Climate| |Requirements Status|
 
+|Browser Matrix|
+
 The aim of this project is to run django CMS with standard configurations including demo content and helpful addons.
 You can use this repository for tutorial, debugging, development and research purposes.
 
@@ -63,3 +65,5 @@ You can login to the cms by appending ``/?edit`` to the url. The credentials are
    :target: https://codeclimate.com/github/divio/django-cms-demo
 .. |Requirements Status| image:: https://requires.io/github/divio/django-cms-demo/requirements.svg?branch=master
    :target: https://requires.io/github/divio/django-cms-demo/requirements/?branch=master
+.. |Browser Matrix| image:: https://saucelabs.com/browser-matrix/django-cms-demo.svg
+   :target: https://saucelabs.com/u/django-cms-demo
