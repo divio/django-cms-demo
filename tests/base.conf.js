@@ -1,3 +1,5 @@
+var b2s = require('browserslist-saucelabs');
+
 module.exports = {
     formatTaskName: function formatTaskName (browserName) {
         return [
@@ -8,18 +10,6 @@ module.exports = {
         ].join(' ');
     },
 
-    sauceLabsBrowsers: {
-        sl_ie_9: {
-            base: 'SauceLabs',
-            browserName: 'internet explorer',
-            platform: 'Windows 7',
-            version: '9.0'
-        },
-        sl_firefox: {
-            base: 'SauceLabs',
-            browserName: 'firefox',
-            platform: 'Windows 8',
-            version: '38'
-        }
-    }
+    // browsers are coming from the browserslist file
+    sauceLabsBrowsers: b2s()
 };
