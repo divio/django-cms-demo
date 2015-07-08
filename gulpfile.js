@@ -42,7 +42,7 @@ gulp.task('sass', function () {
             gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.messageFormatted));
         })
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            // browsers are coming from browserslist file
             cascade: false
         }))
         .pipe(minifyCss())

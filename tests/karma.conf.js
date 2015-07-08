@@ -17,7 +17,11 @@ module.exports = function (config) {
     // Browsers to run on Sauce Labs
     // Check out https://saucelabs.com/platforms for all browser/OS combos
     if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
-        browsers = baseConf.sauceLabsBrowsers;
+        browsers = baseConf.sauceLabsBrowsers.reduce(function (browsers, capability) {
+            browsers[JSON.stringify(capability)] = capability;
+            browsers[JSON.stringify(capability)].base = 'SauceLabs';
+            return browsers;
+        }, {});
     }
 
     var settings = {
@@ -51,8 +55,7 @@ module.exports = function (config) {
 
         // list of files to exclude
         exclude: [
-            'static/js/addons/ckeditor.wysiwyg.js',
-            'tests/karma.conf.js'
+            'static/js/addons/ckeditor.wysiwyg.js'
         ],
 
         // preprocess matching files before serving them to the browser
@@ -111,7 +114,7 @@ module.exports = function (config) {
         settings.sauceLabs = {
             testName: baseConf.formatTaskName('Unit')
         };
-        settings.captureTimeout = 120000;
+        settings.captureTimeout = 240000;
         settings.customLaunchers = browsers;
     }
 
