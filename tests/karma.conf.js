@@ -114,7 +114,7 @@ module.exports = function (config) {
         settings.sauceLabs = {
             testName: baseConf.formatTaskName('Unit')
         };
-        settings.captureTimeout = 120000;
+        settings.captureTimeout = 240000;
         settings.customLaunchers = browsers;
     }
 
