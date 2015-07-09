@@ -1,39 +1,39 @@
 language:
-  - "python"
+  - python
 
 python:
-  - "2.7"
+  - 2.7
 
 services:
-  - "postgresql"
+  - postgresql
 
 env:
   matrix:
-    - "DJANGO=1.6"
-    - "DJANGO=1.7"
+    - DJANGO=1.6
+    - DJANGO=1.7
   global:
     - secure: Ar3k6AtGWdnvut/wcsZdZnGCqu1C2KX8hl11GTpj5UfCz4yvworjHk1Vpeka5n0OC4ZaMmy9/0dtKGB50RzX1hO9UHIr88M1maddBYY/Let7m5NeWfOAODUalkU/mDdktfH4MJzBKuCKNeZec3Vjf3rZGxwZevOlO8NUOvhcX9s2rJ9vzlYuTbODGreZnotwnixVM9jpWgoKgLQMdOsRUagxi6SvOVd6S+FLJp/5XspT1VzXJHdXMz/sPVS3mL0hRuqMNcW+0szRlwzeNmV4ufF979fTCEvzvqhl1w2J7e08DRZ6vU5SNm2qbluun8F0wdbyZRBcdyQvsMNZtLf6/GhMJ05ZKP2n90wOpbNkC6HsX3OOm7ePn4kTiRAKAvnHLtgDxdNvkF/oaL3knE9ukKr0wo1N0pnAJpVuDu249YDO+80tHDvjK1kH0Yc5vsSUJ1vcyZJ+EA0ZAh/2Q5FmvVgxA3fOxpNYDkCT0KKqJrvGWlLMV0MgxQ5CyjevjJLWptJyAH9kDXvmXbDLjEtQVMRoS9YjhApFcgnAKhXSYcg5+/njJexYdqRV7XsKlBw1bFjZ1rTU2oVT1JUqSn7/4qRFdohpRo4c/PKNFoy0DoH9MvkomGrQYlnLIFvJEjcDzOF2meXKV0A4nmPV9ao9vCTk8ivsLSHTTXKQKoANVhs=
     - secure: Cav89romXj5PYNq1ocxWDyGDlpfgSSC/+0XcqPkWRdzD/dNyCSP5N2M81hr59TjP07DdOjB9PTCExlqg8Aue3QGsdI1kvnFXO2pKsx+zQhojniEfzMo8tKYEe1ijJ2xzL3ftg2Mn+MiC7+my0EstLCIqYk36rNek2y+MYUIsaP107PdRdls7ThgBbZxkMSKTL4/A7MIWfXMB3mrdM6nmUHvgSQLjZ3szzCardu05mK8S0VChNL97MNDMJaK5ZBpM+RNj+xiKpT2rf13vElboYVOtZOJuQwrANtYIQQIt+vkvJYBmJJSL8ppBCQL+dtM0tV9FNdV/KTXXYjl/PshYzeU3AQsHbmzqgOTAgOM6iNYqiE1+PiFWT5qlkbCwJGhzJxilEJu60v4cBNwCAk+1JVUQy1+ZiktfEQYQxUgbZIKg5EyNxyxt3RQ/1mu8Y1Jt0X9+x4AAzWXhvXqrSo+MJcTPV+jP3UYxs0kemXA6E59FLkBplqAkynl1H4GIw4ni9c2B+zimEb1lSVayHI/3MEIrBZ1BkV+UJeu2xBL1pNjOh4w28trf2KeUsPCxVvxtjVtBeBprP1epYeBUHEynlFSzKFjnDRqjdaDr8hAuThAEvvzUUkom4H4yByOFq/u5UDumUHb0JDMXc8YD0at2xeD41vHnHSluFulV02NJd1A=
     - secure: CR5gP1Lme42XfABnbEunDDTPiltGyFsKsuDOG3J+jR//3fgexI4veNd9usCsnwcub13KA91Ng0Iy8V92GbUaPSrNQvDvVIJ2BEFoG/ilzF9rDqqSvsp6pOLJaTBNWmBwd5C4ag8tr1XCNTlgaJeDfCseSFhE4b06By3VAo1vJR5jO+eYNTTPXNGlNByoXyvGJpkAT3LJKB6WCjVqooxJQjPJR7g7cBA7WPDAGl8ljGGlw2nJEvhrb/p+OPNc78qpHHuXhR5hpckMiAE1Um2/F+9c371avh4Xl09aiberUAyhDoZbtaEO1ErNWDW/Ltu7ZUfTUEWqBW6KGPS608L8S6T6wj/6b416RFLrOwpkZsYxkdgpYbLWcmjkDdYwR5yjCde22WNq9Y65x2AA869Ymgr1mv0fg5lAh4xAyeHBvxIyf0QdbuX/oPae25FQPV6gScA6ujCZjVLxqrHlfti6gRocrxQZOkkj2dy2n6F3ijEe8ElkXsG4lon/q6vgiqkyyRUPn0HnqsoU7HDEyIljF9lyQDBu/CA3bi7jZeHzLezC0Rz0WCdJJUlh6dc66SP9Ddw4mR+VR8OOtWPfUZ4+fVvEC5mSc3/BRJAa4kf+ycuJCXmFP0CMtVwLMY/e02hxM5cNgB4BB3ezme51L+OLfumovpoP0BMtM2cMY1trQ70=
 
 before_install:
-  - "gem install scss-lint"
-  - "npm install -g npm"
-  - "psql -c 'CREATE DATABASE djangocms_demo_local;' -U postgres"
+  - gem install scss-lint
+  - npm install -g npm"
+  - psql -c 'CREATE DATABASE djangocms_demo_local;' -U postgres
 
 install:
-  - "pip install -r requirements.txt"
-  - "python src/manage.py migrate --noinput"
+  - pip install -r requirements.txt
+  - python src/manage.py migrate --noinput
 
 before_script:
-  - "npm install -g gulp"
-  - "npm install -g codeclimate-test-reporter"
-  - "npm install"
+  - npm install -g gulp
+  - npm install -g codeclimate-test-reporter
+  - npm install
 
 after_script:
-  - "codeclimate < tests/coverage/**/lcov.info"
+  - codeclimate < tests/coverage/**/lcov.info
 
 script:
-  - "echo 'Project build successfull'"
-  - "gulp tests:unit"
-  - "gulp tests:integration"
+  - echo 'Project build successfull'
+  - gulp tests:unit
+  - gulp tests:integration
