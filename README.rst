@@ -20,6 +20,7 @@ The following addons are available through this installation:
 - `Aldryn Events <https://github.com/aldryn/aldryn-events>`_
 - `Aldryn FAQ <https://github.com/aldryn/aldryn-faq>`_
 - `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_ (tba)
+- `Aldryn Jobs <https://github.com/aldryn/aldryn-jobs>`_
 - `Aldryn News & Blog <https://github.com/aldryn/aldryn-newsblog>`_
 - `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_ (tba)
 - `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
