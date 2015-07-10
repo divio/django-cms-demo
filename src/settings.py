@@ -73,12 +73,16 @@ INSTALLED_APPS = (
     'django_tablib',
     'extended_choices',
     'standard_form',
+    # > prerequisites for aldryn-jobs
+    'absolute',
+    'emailit',
     # > addons
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
     'aldryn_faq',
     'aldryn_events',
+    'aldryn_jobs',
 )
 
 MIDDLEWARE_CLASSES = (
