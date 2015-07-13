@@ -39,7 +39,9 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .on('error', function (error) {
-            gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.messageFormatted));
+            gutil.log(gutil.colors.red(
+                'Error (' + error.plugin + '): ' + error.messageFormatted)
+            );
         })
         .pipe(autoprefixer({
             // browsers are coming from browserslist file
@@ -69,7 +71,9 @@ gulp.task('tests:integration', ['tests:webdriver'], function () {
             args: []
         }))
         .on('error', function (error) {
-            gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
+            gutil.log(gutil.colors.red(
+                'Error (' + error.plugin + '): ' + error.message)
+            );
         });
 });
 
