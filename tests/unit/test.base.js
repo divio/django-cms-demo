@@ -4,10 +4,10 @@
  */
 
 'use strict';
-/* global describe, it, expect */
+/* global Cl, describe, it, expect, fixture, beforeEach, outdatedBrowser */
 
-// #####################################################################################################################
-// #TESTS#
+// #############################################################################
+// UNIT TEST
 describe('base.js', function () {
     beforeEach(function () {
         fixture.setBase('tests/fixtures');
@@ -21,11 +21,5 @@ describe('base.js', function () {
 
     it('loads outdatedBrowser', function () {
         expect(outdatedBrowser).toBeDefined();
-    });
-
-    it('loads Cl.Debug', function () {
-        expect(Cl.Debug).toBeDefined();
-        new Cl.Debug();
-        expect($('#divio-dt').length).toBeTruthy();
     });
 });

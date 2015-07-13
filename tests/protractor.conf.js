@@ -4,9 +4,10 @@
  */
 
 'use strict';
+/* global browser */
 
-// #####################################################################################################################
-// #CONFIGURATION#
+// #############################################################################
+// CONFIGURATION
 var baseConf = require('./base.conf');
 var formatTaskName = baseConf.formatTaskName;
 var browsers = baseConf.sauceLabsBrowsers;

@@ -5,8 +5,8 @@
 
 'use strict';
 
-// #####################################################################################################################
-// #CONFIGURATION#
+// #############################################################################
+// CONFIGURATION
 var baseConf = require('./base.conf');
 
 module.exports = function (config) {
@@ -61,6 +61,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
+            // add specific files for coverage
             'static/js/base.js': ['coverage'],
             'static/js/addons/cl.utils.js': ['coverage'],
             // for fixtures
@@ -85,7 +86,7 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage', 'saucelabs'],
+        reporters: ['progress', 'coverage', 'coveralls', 'saucelabs'],
 
         // web server port
         port: 9876,
