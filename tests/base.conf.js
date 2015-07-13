@@ -5,8 +5,8 @@
 
 'use strict';
 
-// #####################################################################################################################
-// #CONFIGURATION#
+// #############################################################################
+// CONFIGURATION
 var b2s = require('browserslist-saucelabs');
 
 module.exports = {
@@ -14,11 +14,11 @@ module.exports = {
         return [
             'Test', browserName, 'for',
             process.env.TRAVIS_REPO_SLUG,
-            (process.env.TRAVIS_PULL_REQUEST ? 'pull request #' + process.env.TRAVIS_PULL_REQUEST : ''),
-            'build #' + process.env.TRAVIS_BUILD_NUMBER
+            (process.env.TRAVIS_PULL_REQUEST !== 'false' ?
+            'pull request #' + process.env.TRAVIS_PULL_REQUEST : ''),
+            'build #' + process.env.TRAVIS_JOB_NUMBER
         ].join(' ');
     },
 
-    // browsers are coming from the browserslist file
     sauceLabsBrowsers: b2s()
 };
