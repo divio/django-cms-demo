@@ -1,11 +1,11 @@
-//######################################################################################################################
-// #HEADER#
+// #############################################################################
+// HEADER
 
 // all styles related to the global header should be declared within this file
 // apply the "sites/" nesting described within the documentation if the file is getting to large
 
 .navbar-head {
-    transition: all $speed;
+    transition: all $speed-base;
     font-size: $font-size-small;
     line-height: 1.4;
     // #LOGO#
@@ -100,8 +100,8 @@
     }
 }
 
-//##################################################
-// #FEATURE#
+// #############################################################################
+// FEATURE
 .feature-visual, .feature-visual-narrow {
     position: relative;
     overflow: hidden;
@@ -159,11 +159,11 @@
     }
 }
 
-//##################################################
-// #TOGGLE#
+// #############################################################################
+// TOGGLE
 .navbar-toggle {
     .icon-bar {
-        transition: all $speed ease-in-out;
+        transition: all $speed-base ease-in-out;
     }
     .icon-bar:nth-child(1) {
         transform: translateY(6px) rotate(45deg);

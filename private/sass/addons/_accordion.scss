@@ -1,5 +1,5 @@
-//######################################################################################################################
-// #ACCORDION#
+// #############################################################################
+// ACCORDION
 
 // the default bootstrap panel and collapsable allow for an accordion-like behavior
 // the additional accordion class controls the styling for that component
@@ -29,7 +29,7 @@
                 color: $link-hover-color;
             }
             &:before {
-                transition: rotate $speed;
+                transition: rotate $speed-base;
                 float: right;
             }
             &.collapsed:before {

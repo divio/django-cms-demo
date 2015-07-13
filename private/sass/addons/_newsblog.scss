@@ -1,5 +1,5 @@
-//######################################################################################################################
-// #BLOG#
+// #############################################################################
+// BLOG
 
 // adds blog style for /blog/
 
@@ -41,7 +41,7 @@
 
 
 // #############################################################################
-// #HELPERS#
+// HELPERS
 
 // meta information for listview, detail and the authors plugin
 .aldryn-newsblog-meta {
@@ -121,7 +121,7 @@
 }
 
 // #############################################################################
-// #DETAIL#
+// DETAIL
 .aldryn-newsblog-detail {
     // tags on detail view
     .tags {
@@ -149,8 +149,7 @@
 
 
 // #############################################################################
-// #PLUGINS#
-
+// PLUGINS
 .aldryn-newsblog-categories,
 .aldryn-newsblog-authors,
 .aldryn-newsblog-tags,
@@ -222,7 +221,7 @@
     li {
         @extend .label;
         @extend .label-default;
-        transition: background $speed;
+        transition: background $speed-base;
         display: inline-block;
         text-transform: uppercase;
         padding: 5px 8px;
