@@ -35,5 +35,4 @@ after_script:
 
 script:
   - echo 'Project build successfull'
-  - gulp tests:unit
-  - gulp tests:integration
+  - gulp tests
