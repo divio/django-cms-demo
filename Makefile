@@ -72,7 +72,7 @@ css:
 	$(VENV); gulp watch
 
 ##### DOCKER INTEGRATION
-##### required docker-compose http://docs.docker.com/compose/install/
+##### requires docker-compose http://docs.docker.com/compose/install/
 DOCKER_IP = `boot2docker ip`
 
 docker:

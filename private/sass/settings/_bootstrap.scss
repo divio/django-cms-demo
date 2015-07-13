@@ -1,7 +1,5 @@
 // #############################################################################
-// GLOBAL IMPORTS
-@import "../libs/bootstrap/variables"; // using https://github.com/twbs/bootstrap-sass
-// Override Bootstrap variables here (defaults from bootstrap-sass v3.1.1.1):
+// SETTINGS
 
 // a flag to toggle asset pipeline / compass integration
 // defaults to true if twbs-font-path function is present (no function => twbs-font-path('') parsed as string == right side)
@@ -182,6 +180,11 @@ $btn-danger-border:              darken($btn-danger-bg, 5%);
 
 $btn-link-disabled-color:        $gray-light;
 
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         $border-radius-base;
+$btn-border-radius-large:        $border-radius-large;
+$btn-border-radius-small:        $border-radius-small;
+
 
 // #############################################################################
 // Forms
@@ -218,6 +221,9 @@ $input-height-large:             (ceil($font-size-large * $line-height-large) + 
 //** Small `.form-control` height
 $input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
 
+//** `.form-group` margin
+$form-group-margin-bottom:       15px;
+
 $legend-color:                   $gray-dark;
 $legend-border-color:            #e5e5e5;
 
@@ -244,11 +250,11 @@ $dropdown-fallback-border:       #fff;
 $dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-$dropdown-link-color:            $navbar-inverse-color;
+$dropdown-link-color:            #fff;
 //** Hover color for dropdown links.
 $dropdown-link-hover-color:      #fff;
 //** Hover background for dropdown links.
-$dropdown-link-hover-bg:         $navbar-inverse-link-hover-color;
+$dropdown-link-hover-bg:         #fff;
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color:     $component-active-color;
@@ -278,6 +284,7 @@ $zindex-dropdown:          1000;
 $zindex-popover:           1060;
 $zindex-tooltip:           1070;
 $zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
 $zindex-modal:             1040;
 
 
@@ -487,6 +494,7 @@ $jumbotron-color:                inherit;
 $jumbotron-bg:                   $gray-lighter;
 $jumbotron-heading-color:        inherit;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5));
+$jumbotron-heading-font-size:    ceil(($font-size-base * 4.5));
 
 
 // #############################################################################
@@ -804,9 +812,7 @@ $carousel-caption-color:                      #000;
 // #############################################################################
 // Close
 
-$alert-padding:               15px;
-$alert-border-radius:         $border-radius-base;
-$alert-link-font-weight:      bold;
+$close-font-weight:           bold;
 $close-color:                 #000;
 $close-text-shadow:           0 1px 0 #fff;
 
