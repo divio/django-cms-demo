@@ -18,7 +18,7 @@ env:
 
 before_install:
   - gem install scss-lint
-  - npm install -g npm"
+  - npm install -g npm
   - psql -c 'CREATE DATABASE djangocms_demo_local;' -U postgres
 
 install:
