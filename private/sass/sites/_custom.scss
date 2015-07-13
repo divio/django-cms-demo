@@ -1,14 +1,11 @@
-//######################################################################################################################
-// #CUSTOM#
+// #############################################################################
+// CUSTOM
 
 // this file is the starting point for custom style and structure
 // feel free to organise your code here as you wish
 // keep in mind that you can use deeper folder nesting for more structure and refinement
 
-//##################################################
-// #HELPERS#
-
-// #HELPERS/spacer#
+// HELPERS/spacer
 .spacer {
     margin-top: $line-height-computed;
     margin-bottom: $line-height-computed;
@@ -17,9 +14,12 @@
     margin-top: $line-height-computed / 2;
     margin-bottom: $line-height-computed / 2;
 }
+.spacer-sm {
+    margin-top: $line-height-computed / 1.5;
+    margin-bottom: $line-height-computed / 1.5;
+}
 .spacer-md {
-    margin-top: $line-height-computed * 1.5;
-    margin-bottom: $line-height-computed * 1.5;
+    @extend .spacer;
 }
 .spacer-lg {
     margin-top: $line-height-computed * 2;
@@ -30,28 +30,30 @@
 }
 .spacer:after,
 .spacer-xs:after,
+.spacer-sm:after,
+.spacer-md:after,
 .spacer-lg:after,
 .spacer-zero:after {
-    clear: both;
     content: "";
     display: table;
+    clear: both;
 }
 
-// #HELPERS/accessibility#
+// HELPERS/accessibility
 .skip-links {
     @extend .list-unstyled;
     position: absolute;
-    z-index: 9999;
     top: $navbar-height;
     right: 0;
     left: 0;
+    z-index: 9999;
     a {
         @extend .sr-only;
         @extend .sr-only-focusable;
     }
 }
 
-// #HELPERS/colors#
+// HELPERS/colors
 @include bg-variant(".brand-primary", $brand-primary);
 @include bg-variant(".brand-secondary", $brand-secondary);
 @include bg-variant(".brand-success", $brand-success);
@@ -66,7 +68,7 @@
 @include bg-variant(".brand-gray-light", $gray-light);
 @include bg-variant(".brand-gray-lighter", $gray-lighter);
 
-// #HELPERS/styleguide#
+// HELPERS/styleguide
 .styleguide {
     padding: $line-height-computed 0;
 }
@@ -74,8 +76,8 @@
     border-left: 1px dotted $gray-light;
 }
 
-//##################################################
-// #TYPOGRAPHY#
+// #############################################################################
+// TYPOGRAPHY
 body,
 .lead {
     font-weight: 100;
@@ -103,7 +105,7 @@ h6 {
 }
 
 a {
-    transition: color $speed;
+    transition: color $speed-base;
 }
 
 dl.dl-horizontal {
@@ -112,8 +114,8 @@ dl.dl-horizontal {
     }
 }
 
-//##################################################
-// #BOOTSTRAP#
+// #############################################################################
+// BOOTSTRAP
 .breadcrumb,
 .navbar-breadcrumb {
     min-height: 0;
@@ -143,8 +145,8 @@ dl.dl-horizontal {
     z-index: 9999 !important;
 }
 
-//##################################################
-// #CMS#
+// #############################################################################
+// django CMS
 .filer_image.left {
     @extend .pull-left;
     position: relative;

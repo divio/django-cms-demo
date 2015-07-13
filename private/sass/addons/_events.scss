@@ -1,5 +1,5 @@
-//######################################################################################################################
-// #EVENTS#
+// #############################################################################
+// EVENTS
 
 // adds events style for /events/
 
@@ -70,7 +70,7 @@ $events-visual-size: 240px;
 
 
 // #############################################################################
-// #HELPERS#
+// HELPERS
 
 // meta information for listview and detail
 .aldryn-events-meta {
@@ -181,7 +181,7 @@ $events-visual-size: 240px;
 
 
 // #############################################################################
-// #CALENDAR#
+// CALENDAR
 
 .aldryn-events-calendar {
     h3 {
@@ -236,14 +236,14 @@ $events-visual-size: 240px;
 }
 
 // #############################################################################
-// #REGISTRATION#
+// REGISTRATION
 
 .aldryn-events-registration {
     margin-top: $line-height-computed * 2;
 }
 
 // #############################################################################
-// #PLUGINS#
+// PLUGINS
 
 .aldryn-events-upcoming,
 .aldryn-events-listplugin {
