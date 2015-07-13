@@ -1,4 +1,4 @@
-Django==1.7.8                       # rq.filter: >=1.6,<1.8
+Django==1.7.9                       # rq.filter: <1.8
 django-cms>=3.1.0
 django-reversion==1.8.7             # not a part of django-cms core
 djangocms-text-ckeditor==2.5.2      # not a part of django-cms core
@@ -11,4 +11,4 @@ aldryn-style>=0.2.1
 aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
 aldryn-faq>=1.0.0
 aldryn-events>=1.0.0
-aldryn-jobs>=1.0.0
+-e git://github.com/aldryn/aldryn-jobs.git#egg=aldryn-jobs
