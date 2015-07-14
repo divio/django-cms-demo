@@ -61,8 +61,8 @@ You can login to the cms by appending ``/?edit`` to the url. The credentials are
 
 .. |Build Status| image:: https://travis-ci.org/divio/django-cms-demo.svg?branch=master
    :target: https://travis-ci.org/divio/django-cms-demo
-.. |Coverage Status| image:: https://coveralls.io/repos/github/divio/django-cms-demo/badge.svg?branch=master%2Fcoveralls
-   :target: https://coveralls.io/github/divio/django-cms-demo?branch=master%2Fcoveralls
+.. |Coverage Status| image:: https://coveralls.io/repos/divio/django-cms-demo/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/divio/django-cms-demo?branch=master
 .. |Code Climate| image:: https://codeclimate.com/github/divio/django-cms-demo/badges/gpa.svg
    :target: https://codeclimate.com/github/divio/django-cms-demo
 .. |Requirements Status| image:: https://requires.io/github/divio/django-cms-demo/requirements.svg?branch=master
