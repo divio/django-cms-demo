@@ -1,7 +1,7 @@
 Django==1.7.9                       # rq.filter: <1.8
 django-cms>=3.1.0
 django-reversion==1.8.7             # not a part of django-cms core
-djangocms-text-ckeditor==2.5.2      # not a part of django-cms core
+djangocms-text-ckeditor==2.5.3      # not a part of django-cms core
 psycopg2==2.6.1                     # required for django.db.backends.postgresql_psycopg2
 
 # additional addons
