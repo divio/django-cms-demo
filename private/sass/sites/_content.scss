@@ -6,8 +6,7 @@ $section-cyan: #3aa9a5;
 $section-violet: #61285b;
 
 // INFO: this might cause issues on vertical scrolling but is required to hide &:after
-body,
-html {
+body {
     overflow-x: hidden;
 }
 
