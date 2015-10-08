@@ -65,24 +65,24 @@ INSTALLED_APPS = (
     'sortedm2m',
     'taggit',
     # > prerequisites for aldryn-faq
-    'adminsortable2',
+    # 'adminsortable2',
     # > prerequisites for aldryn-events
-    'aldryn_common',
-    'appconf',
-    'bootstrap3',
-    'django_tablib',
-    'extended_choices',
-    'standard_form',
+    # 'aldryn_common',
+    # 'appconf',
+    # 'bootstrap3',
+    # 'django_tablib',
+    # 'extended_choices',
+    # 'standard_form',
     # > prerequisites for aldryn-jobs
-    'absolute',
-    'emailit',
+    # 'absolute',
+    # 'emailit',
     # > addons
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
-    'aldryn_faq',
-    'aldryn_events',
-    'aldryn_jobs',
+    # 'aldryn_faq',
+    # 'aldryn_events',
+    # 'aldryn_jobs',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -187,8 +187,6 @@ SITE_ID = 1
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
-CMS_TOOLBAR_SIMPLE_STRUCTURE_MODE = True
 
 # django CMS internationalization
 # http://docs.django-cms.org/en/latest/topics/i18n.html
