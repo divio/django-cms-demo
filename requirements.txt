@@ -11,4 +11,8 @@ aldryn-style>=0.2.1
 aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
 aldryn-faq>=1.0.0
 aldryn-events>=1.0.0
--e git://github.com/aldryn/aldryn-jobs.git#egg=aldryn-jobs
+aldryn-jobs>=1.0.0
+
+# required by aldryn-events to be added manually
+# https://github.com/aldryn/aldryn-events
+django-tablib
