@@ -70,7 +70,6 @@ INSTALLED_APPS = (
     'aldryn_common',
     'appconf',
     'bootstrap3',
-    'django_tablib',
     'extended_choices',
     'standard_form',
     # > prerequisites for aldryn-jobs
