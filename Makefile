@@ -29,6 +29,7 @@ update:
 	-git pull
 	$(PIP) install -r requirements.txt
 	$(VENV); npm install
+	gulp sass
 	make migrate
 
 pulldata:
