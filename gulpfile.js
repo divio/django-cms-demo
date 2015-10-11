@@ -47,7 +47,10 @@ gulp.task('sass', function () {
             // browsers are coming from browserslist file
             cascade: false
         }))
-        .pipe(minifyCss())
+        .pipe(minifyCss({
+            // fixes font imports from google fonts
+            rebase: false
+        }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(PROJECT_PATH.css));
 });
