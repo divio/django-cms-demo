@@ -82,12 +82,10 @@
         {% endif %}
     {% endblock breadcrumb %}
 
-    <div class="container">
-        {% block messages %}
-            {% include "includes/messages.html" %}
-        {% endblock messages %}
-        {% block content %}{% endblock %}
-    </div>
+    {% block messages %}
+        {% include "includes/messages.html" %}
+    {% endblock messages %}
+    {% block content %}{% endblock %}
 {% endblock extend_base %}
 <hr class="sr-only" />
 {# end: content #}
