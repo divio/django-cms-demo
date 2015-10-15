@@ -135,7 +135,7 @@ TEMPLATES = [
                 # django CMS additions
                 'django.template.loaders.eggs.Loader',
             ],
-            'debug': True,
+            'debug': DEBUG,
         },
     },
 ]
