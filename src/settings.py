@@ -79,7 +79,7 @@ INSTALLED_APPS = (
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
-    'aldryn_faq',
+    # 'aldryn_faq', // disabled as of https://goo.gl/zVBDTE
     'aldryn_events',
     'aldryn_jobs',
 )
