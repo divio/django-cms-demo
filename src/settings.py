@@ -70,7 +70,6 @@ INSTALLED_APPS = (
     'aldryn_common',
     'appconf',
     'bootstrap3',
-    'django_tablib',
     'extended_choices',
     'standard_form',
     # > prerequisites for aldryn-jobs
@@ -80,7 +79,7 @@ INSTALLED_APPS = (
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
-    'aldryn_faq',
+    # 'aldryn_faq', // disabled as of https://goo.gl/zVBDTE
     'aldryn_events',
     'aldryn_jobs',
 )
