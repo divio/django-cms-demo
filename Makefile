@@ -86,6 +86,13 @@ docker_install:
 	docker-compose rm --force -v
 	docker-compose build
 
+docker_database:
+	docker-compose run web src/manage.py migrate --noinput
+
+docker_node:
+	docker-compose run nodejs npm install gulp
+	docker-compose run nodejs npm install
+
 docker_run:
 	docker-compose up -d
 
@@ -96,6 +103,6 @@ docker_pulldata:
 
 docker_ip:
 	docker-compose ps
-	@echo ---------------------------------------------------------------------------------
+	@echo --------------------------------------------------
 	@echo SERVER RUNNING ON: $(DOCKER_IP):$(PORT)
-	@echo ---------------------------------------------------------------------------------
+	@echo --------------------------------------------------
