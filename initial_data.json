@@ -1,0 +1,119 @@
+[
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": null,
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$3nxFwmci7PP3$rirBPfi+kZMvTBM2G49K8u9hTAjxUyYAYqn8PkuIcVs=",
+        "email": "",
+        "date_joined": "2015-10-15T10:09:21.913Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "domain": "example.com",
+        "name": "example.com"
+    },
+    "model": "sites.site",
+    "pk": 1
+},
+{
+    "fields": {
+        "slot": "events_detail_bottom",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 1
+},
+{
+    "fields": {
+        "slot": "events_detail_footer",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 2
+},
+{
+    "fields": {
+        "slot": "events_detail_top",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 3
+},
+{
+    "fields": {
+        "slot": "events_list_top",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 4
+},
+{
+    "fields": {
+        "slot": "events_list_top_ongoing",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 5
+},
+{
+    "fields": {
+        "slot": "events_registration",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 6
+},
+{
+    "fields": {
+        "slot": "events_registration_footer",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 7
+},
+{
+    "fields": {
+        "slot": "events_sidebar",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 8
+},
+{
+    "fields": {
+        "slot": "events_top",
+        "default_width": null
+    },
+    "model": "cms.placeholder",
+    "pk": 9
+},
+{
+    "fields": {
+        "placeholder_events_sidebar": 8,
+        "placeholder_events_detail_footer": 2,
+        "placeholder_events_detail_top": 3,
+        "latest_first": false,
+        "placeholder_events_list_top": 4,
+        "namespace": "aldryn_events",
+        "placeholder_events_registration_footer": 7,
+        "placeholder_events_registration": 6,
+        "placeholder_events_top": 9,
+        "app_data": "{}",
+        "type": "",
+        "placeholder_events_list_top_ongoing": 5,
+        "placeholder_events_detail_bottom": 1
+    },
+    "model": "aldryn_events.eventsconfig",
+    "pk": 1
+}
+]

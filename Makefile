@@ -32,10 +32,7 @@ update:
 	make migrate
 
 pulldata:
-	make database
-	unzip database.sql.zip
-	$(VENV); $(MANAGE) dbshell < database.sql
-	rm database.sql
+	$(MANAGE) migrate --noinput
 
 tests:
 	gulp tests
@@ -56,13 +53,10 @@ database:
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 
 migrate:
-	$(MANAGE) migrate --noinput
+	$(MANAGE) migrate --noinput --no-initial-data
 
 dump:
-	rm -rf database.sql.zip
-	pg_dump $(DBNAME) --file=database.sql
-	zip -r database.sql.zip database.sql
-	rm -rf database.sql
+	$(MANAGE) dumpdata -e contenttypes -e admin -e auth.permission --natural --indent=4 > initial_data.json
 
 runserver:
 	$(MANAGE) runserver 0.0.0.0:$(PORT)
