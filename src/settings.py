@@ -27,8 +27,6 @@ SECRET_KEY = 'y&+f+)tw5sqkcy$@vwh8cy%y^9lwytqtn*y=lv7f9t39b(cufx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -137,6 +135,7 @@ TEMPLATES = [
                 # django CMS additions
                 'django.template.loaders.eggs.Loader',
             ],
+            'debug': True,
         },
     },
 ]
