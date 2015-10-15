@@ -12,5 +12,3 @@ aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
 aldryn-faq>=1.0.0
 aldryn-events>=1.0.0
 aldryn-jobs>=1.0.0
-
-django-tablib
