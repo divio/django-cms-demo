@@ -1,14 +1,19 @@
-/*!
- * @author:    Divio AG
- * @copyright: http://www.divio.ch
+/*
+ * Copyright (c) 2013, Divio AG
+ * Licensed under BSD
+ * http://github.com/aldryn/aldryn-boilerplate-bootstrap3
  */
 
-//##############################################################################
+// #############################################################################
 // NAMESPACES
+/**
+ * @module Cl
+ */
+// istanbul ignore next
 var Cl = window.Cl || {};
 
 //##############################################################################
-// UTILS
+// EXPLORER
 (function ($) {
     'use strict';
 
