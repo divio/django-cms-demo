@@ -78,8 +78,6 @@ $footer-height: 117px;
 html {
     position: relative;
     min-height: 100%;
-    // remove django-cms margin top on debug mode
-    margin-top: 0 !important;
 }
 
 // tablet and up
