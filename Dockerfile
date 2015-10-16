@@ -1,12 +1,11 @@
 FROM python:2.7
 
+ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE settings
 
 ADD . /project
 WORKDIR /project
 
-RUN apt-get -y update
-RUN apt-get -y install postgresql-client
 RUN pip install -r requirements.txt
 
 EXPOSE 80
