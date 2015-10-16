@@ -6,7 +6,7 @@ web:
     links:
         - postgres:postgres
     ports:
-        - 8000:8000
+        - 8000:80
     volumes:
         - .:/project
 
@@ -20,3 +20,9 @@ data:
     volumes:
         - /var/lib/postgresql
     command: true
+
+nodejs:
+    image: node:latest
+    working_dir: /project
+    volumes_from:
+        - web

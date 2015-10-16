@@ -1,14 +1,12 @@
 FROM python:2.7
 
+ENV DJANGO_SETTINGS_MODULE settings
+
 ADD . /project
 WORKDIR /project
 
-RUN apt-get -y update
-RUN apt-get -y install postgresql-client
 RUN pip install -r requirements.txt
 
-EXPOSE 8000
+EXPOSE 80
 
-ENV DJANGO_SETTINGS_MODULE settings
-
-CMD python src/manage.py runserver 0.0.0.0:8000
+CMD python src/manage.py runserver 0.0.0.0:80

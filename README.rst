@@ -18,7 +18,7 @@ The following addons are available through this installation:
 - `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
 - `Aldryn Blueprint <https://github.com/aldryn/aldryn-blueprint>`_ (tba)
 - `Aldryn Events <https://github.com/aldryn/aldryn-events>`_
-- `Aldryn FAQ <https://github.com/aldryn/aldryn-faq>`_
+- `Aldryn FAQ <https://github.com/aldryn/aldryn-faq>`_ (disabled)
 - `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_ (tba)
 - `Aldryn Jobs <https://github.com/aldryn/aldryn-jobs>`_
 - `Aldryn News & Blog <https://github.com/aldryn/aldryn-newsblog>`_

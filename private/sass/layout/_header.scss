@@ -84,12 +84,12 @@
 
 // INFO: we need to modify the navbar behaviour as we want some borders
 .navbar {
-    .nav > li > a > span:not(.caret) {
+    .nav > li > a > span {
         padding-bottom: 5px;
         border-bottom: 2px solid transparent;
     }
-    .nav > .active > a > span:not(.caret),
-    .nav > li:hover > a > span:not(.caret) {
+    .nav > .active > a > span,
+    .nav > li:hover > a > span {
         border-color: $brand-primary;
     }
     // mobile only

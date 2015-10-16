@@ -33,10 +33,7 @@ update:
 	make migrate
 
 pulldata:
-	make database
-	unzip database.sql.zip
-	$(VENV); $(MANAGE) dbshell < database.sql
-	rm database.sql
+	$(MANAGE) migrate --noinput
 
 tests:
 	gulp tests
@@ -57,13 +54,10 @@ database:
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 
 migrate:
-	$(MANAGE) migrate --noinput
+	$(MANAGE) migrate --noinput --no-initial-data
 
 dump:
-	rm -rf database.sql.zip
-	pg_dump $(DBNAME) --file=database.sql
-	zip -r database.sql.zip database.sql
-	rm -rf database.sql
+	$(MANAGE) dumpdata -e contenttypes -e admin -e auth.permission --natural --indent=4 > initial_data.json
 
 runserver:
 	$(MANAGE) runserver 0.0.0.0:$(PORT)
@@ -74,11 +68,12 @@ css:
 
 ##### DOCKER INTEGRATION
 ##### requires docker-compose http://docs.docker.com/compose/install/
-DOCKER_IP = `boot2docker ip`
+DOCKER_IP = `docker-machine ip default`
 
 docker:
 	make docker_install
 	make docker_run
+	make docker_database
 	make docker_pulldata
 	make docker_ip
 
@@ -89,14 +84,20 @@ docker_install:
 
 docker_run:
 	docker-compose up -d
+	sleep 5
+
+docker_database:
+	docker-compose run web src/manage.py migrate --noinput --no-initial-data
 
 docker_pulldata:
-	unzip database.sql.zip
-	docker-compose run web src/manage.py dbshell < database.sql
-	rm -rf database.sql
+	docker-compose run web src/manage.py migrate --noinput
+
+docker_node:
+	docker-compose run nodejs npm install gulp
+	docker-compose run nodejs npm install
 
 docker_ip:
 	docker-compose ps
-	@echo ---------------------------------------------------------------------------------
+	@echo ---------------------------------------------
 	@echo SERVER RUNNING ON: $(DOCKER_IP):$(PORT)
-	@echo ---------------------------------------------------------------------------------
+	@echo ---------------------------------------------

@@ -250,11 +250,11 @@ $dropdown-fallback-border:       #fff;
 $dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-$dropdown-link-color:            $brand-primary;
+$dropdown-link-color:            #fff;
 //** Hover color for dropdown links.
-$dropdown-link-hover-color:      $brand-primary;
+$dropdown-link-hover-color:      #fff;
 //** Hover background for dropdown links.
-$dropdown-link-hover-bg:         $gray-lighter;
+$dropdown-link-hover-bg:         #fff;
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color:     $component-active-color;
@@ -285,7 +285,7 @@ $zindex-popover:           1060;
 $zindex-tooltip:           1070;
 $zindex-navbar-fixed:      1030;
 $zindex-modal-background:  1040;
-$zindex-modal:             1050;
+$zindex-modal:             1040;
 
 
 // #############################################################################
