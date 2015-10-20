@@ -12,9 +12,3 @@ aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
 aldryn-faq>=1.0.0
 aldryn-events>=1.0.0
 aldryn-jobs>=1.0.0
-
-# develop version
-https://github.com/divio/django-cms/archive/develop.zip
-https://github.com/divio/djangocms-text-ckeditor/archive/master.zip
-https://github.com/divio/djangocms-admin-style/archive/develop.zip
-https://github.com/stefanfoulis/django-filer/archive/develop.zip
