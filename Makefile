@@ -7,6 +7,7 @@ PIP = $(VENV); $(ENV)/bin/pip
 MANAGE = $(VENV); $(ENV)/bin/python src/manage.py
 DBUSER = postgres
 DBNAME = djangocms_demo_local
+REQUIREMENTS = develop
 
 
 ##### REQUIRED COMMANDS
@@ -27,7 +28,7 @@ run:
 
 update:
 	-git pull
-	$(PIP) install -r requirements.txt
+	$(PIP) install -r requirements/$(REQUIREMENTS).txt --no-cache
 	$(VENV); npm install
 	gulp sass
 	make migrate
@@ -47,6 +48,7 @@ nuke:
 	rm -rf data/
 	rm -rf node_modules/
 	rm -rf static/css/
+	find . -name '*.pyc' -delete
 	make install
 
 database:
