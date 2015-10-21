@@ -81,7 +81,7 @@ docker:
 
 docker_install:
 	docker-compose stop
-	docker-compose rm --force -v
+	docker-compose rm -f -v
 	docker-compose build
 
 docker_run:

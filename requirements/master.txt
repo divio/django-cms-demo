@@ -1,7 +1,7 @@
 Django>=1.8.5
 django-cms>=3.1.3
 django-reversion>=1.9.3             # not a part of django-cms core
-djangocms-text-ckeditor>=2.6.0    # not a part of django-cms core
+djangocms-text-ckeditor>=2.6.0      # not a part of django-cms core
 psycopg2>=2.6.1                     # required for django.db.backends.postgresql_psycopg2
 
 # additional addons
