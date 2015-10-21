@@ -5,7 +5,7 @@ ENV DJANGO_SETTINGS_MODULE settings
 ADD . /project
 WORKDIR /project
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements/develop.txt
 
 EXPOSE 80
 
