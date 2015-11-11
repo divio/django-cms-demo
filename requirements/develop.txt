@@ -2,7 +2,7 @@ Django>=1.8.5
 https://github.com/divio/djangocms-admin-style/archive/develop.zip
 https://github.com/divio/django-cms/archive/develop.zip
 https://github.com/stefanfoulis/django-filer/archive/develop.zip
-django-reversion>=1.9.3             # not a part of django-cms core
+django-reversion>=1.8.2,<1.8.6      # not a part of django-cms core
 djangocms-text-ckeditor>=2.6.0      # not a part of django-cms core
 psycopg2>=2.6.1                     # required for django.db.backends.postgresql_psycopg2
 
