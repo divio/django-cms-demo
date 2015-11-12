@@ -204,6 +204,25 @@ LANGUAGES = (
     ('de', _('Deutsch')),
 )
 
+PARLER_LANGUAGES = {
+    'default': {
+        'hide_untranslated': False,
+        'redirect_on_fallback': True,
+    },
+    1: [
+        {
+            'code': 'en',
+            'hide_untranslated': False,
+            'redirect_on_fallback': True,
+        },
+        {
+            'code': 'de',
+            'hide_untranslated': False,
+            'redirect_on_fallback': True,
+        },
+    ],
+}
+
 CMS_LANGUAGES = {
     # Customize this
     'default': {
