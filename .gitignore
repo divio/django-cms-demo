@@ -3,5 +3,4 @@
 data/
 env/
 node_modules/
-static/css/
 tests/coverage/
