@@ -6,10 +6,10 @@
 // custom title for right navigation
 .aldryn-jobs-sidebar {
     h3 {
-        @extend .text-uppercase;
         display: inline-block;
         font-size: 14px;
         line-height: 1.4;
+        text-transform: uppercase;
         margin-bottom: 20px;
         padding-bottom: 5px;
         border-bottom: 2px solid $brand-primary;
