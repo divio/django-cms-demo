@@ -29,22 +29,16 @@ html {
     }
     // tablet and up
     @media (min-width: $screen-sm-min) {
-        &:before,
-        &:after {
-            content: " ";
+        &:before {
             display: block;
+            content: "";
             position: absolute;
             top: 0;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            background: $section-gray;
-        }
-        &:before {
-            left: -100%;
-        }
-        &:after {
-            right: -100%;
+            bottom: 0;
+            left: -9999px;
+            right: 0;
+            border-left: 9999px solid $section-gray;
+            box-shadow: 9999px 0 0 $section-gray;
         }
     }
     // additional styling
@@ -96,16 +90,16 @@ html {
 }
 .section-violet {
     background: $section-violet;
-    &:before,
-    &:after {
-        background: $section-violet;
+    &:before {
+        border-left: 9999px solid $section-violet;
+        box-shadow: 9999px 0 0 $section-violet;
     }
 }
 .section-cyan {
     background: $section-cyan;
-    &:before,
-    &:after {
-        background: $section-cyan;
+    &:before {
+        border-left: 9999px solid $section-cyan;
+        box-shadow: 9999px 0 0 $section-cyan;
     }
 }
 
