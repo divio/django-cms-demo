@@ -21,7 +21,7 @@ html {
     color: white;
     padding: $line-height-computed * 2 0;
     background: $section-gray;
-    // mobilel only
+    // mobile only
     @media (max-width: $screen-xs-max) {
         margin-left: -10px;
         margin-right: -10px;
