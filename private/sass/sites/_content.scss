@@ -33,6 +33,7 @@ $section-violet: #61285b;
             right: 0;
             border-left: 9999px solid $section-gray;
             box-shadow: 9999px 0 0 $section-gray;
+            z-index: -1;
         }
     }
     // additional styling
