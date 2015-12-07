@@ -56,7 +56,7 @@ database:
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 
 migrate:
-	$(MANAGE) migrate --noinput --no-initial-data
+	$(MANAGE) migrate --noinput
 
 dump:
 	$(MANAGE) dumpdata -e contenttypes -e admin -e auth.permission --natural --indent=4 > initial_data.json
@@ -76,7 +76,6 @@ docker:
 	make docker_install
 	make docker_run
 	make docker_database
-	make docker_pulldata
 	make docker_ip
 
 docker_install:
@@ -89,9 +88,6 @@ docker_run:
 	sleep 5
 
 docker_database:
-	docker-compose run web src/manage.py migrate --noinput --no-initial-data
-
-docker_pulldata:
 	docker-compose run web src/manage.py migrate --noinput
 
 docker_node:
