@@ -5,12 +5,6 @@ $section-gray: #3c3740;
 $section-cyan: #3aa9a5;
 $section-violet: #61285b;
 
-// INFO: this might cause issues on vertical scrolling but is required to hide &:after
-body,
-html {
-    overflow-x: hidden;
-}
-
 .section-gray,
 .section-cyan,
 .section-violet {
@@ -21,7 +15,7 @@ html {
     color: white;
     padding: $line-height-computed * 2 0;
     background: $section-gray;
-    // mobilel only
+    // mobile only
     @media (max-width: $screen-xs-max) {
         margin-left: -10px;
         margin-right: -10px;
@@ -29,22 +23,17 @@ html {
     }
     // tablet and up
     @media (min-width: $screen-sm-min) {
-        &:before,
-        &:after {
-            content: " ";
+        &:before {
             display: block;
+            content: "";
             position: absolute;
             top: 0;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            background: $section-gray;
-        }
-        &:before {
-            left: -100%;
-        }
-        &:after {
-            right: -100%;
+            bottom: 0;
+            left: -9999px;
+            right: 0;
+            border-left: 9999px solid $section-gray;
+            box-shadow: 9999px 0 0 $section-gray;
+            z-index: -1;
         }
     }
     // additional styling
@@ -96,16 +85,16 @@ html {
 }
 .section-violet {
     background: $section-violet;
-    &:before,
-    &:after {
-        background: $section-violet;
+    &:before {
+        border-left: 9999px solid $section-violet;
+        box-shadow: 9999px 0 0 $section-violet;
     }
 }
 .section-cyan {
     background: $section-cyan;
-    &:before,
-    &:after {
-        background: $section-cyan;
+    &:before {
+        border-left: 9999px solid $section-cyan;
+        box-shadow: 9999px 0 0 $section-cyan;
     }
 }
 
