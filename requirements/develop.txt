@@ -1,16 +1,16 @@
 Django>=1.8.5,<1.9
+django-reversion>=1.8.2,<1.8.6      # not a part of django-cms core
+psycopg2>=2.6.1                     # required for django.db.backends.postgresql_psycopg2
 https://github.com/divio/djangocms-admin-style/archive/master.zip
 https://github.com/divio/django-cms/archive/develop.zip
 https://github.com/stefanfoulis/django-filer/archive/develop.zip
-django-reversion>=1.8.2,<1.8.6      # not a part of django-cms core
 https://github.com/divio/djangocms-text-ckeditor/archive/master.zip # not a part of django-cms core
-psycopg2>=2.6.1                     # required for django.db.backends.postgresql_psycopg2
 
 # additional addons
 # always freeze versions, requires.io will show outdated dependencies
-aldryn-bootstrap3>=0.5.1            # adds django-filer
-aldryn-style>=0.2.1
-aldryn-newsblog>=1.0.0              # adds boilerplates, parler...
-aldryn-faq>=1.0.0
-aldryn-events>=1.0.0
-aldryn-jobs>=1.0.0
+https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip
+https://github.com/aldryn/aldryn-newsblog/archive/master.zip
+https://github.com/aldryn/aldryn-faq/archive/master.zip
+https://github.com/aldryn/aldryn-events/archive/master.zip
+https://github.com/aldryn/aldryn-jobs/archive/master.zip
+https://github.com/aldryn/aldryn-style/archive/master.zip
