@@ -3,7 +3,7 @@ django-reversion>=1.8.2,<1.8.6      # not a part of django-cms core
 psycopg2>=2.6.1                     # required for django.db.backends.postgresql_psycopg2
 https://github.com/divio/djangocms-admin-style/archive/master.zip
 https://github.com/divio/django-cms/archive/develop.zip
-https://github.com/stefanfoulis/django-filer/archive/develop.zip
+https://github.com/divio/django-filer/archive/develop.zip
 https://github.com/divio/djangocms-text-ckeditor/archive/master.zip # not a part of django-cms core
 
 # additional addons
