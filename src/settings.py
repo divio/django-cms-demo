@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# Enable this to additionally show the debug toolbar
+# INTERNAL_IPS = ['localhost', '127.0.0.1']
 
 # Application definition
 
