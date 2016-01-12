@@ -1,5 +1,5 @@
-Django>=1.8.8,<1.9
-django-reversion=1.8.7              # not a part of django-cms core
+Django>=1.8.6,<1.9
+django-reversion==1.8.7             # not a part of django-cms core
 psycopg2>=2.6.1                     # required for django.db.backends.postgresql_psycopg2
 https://github.com/divio/djangocms-admin-style/archive/master.zip
 https://github.com/finalangel/django-cms/archive/release/3.2.x.zip
