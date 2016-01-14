@@ -19,6 +19,7 @@ all:
 
 install:
 	virtualenv $(ENV)
+	make get_theme
 	make database
 	make update
 	make pulldata
@@ -44,10 +45,8 @@ tests:
 
 # recreate the entire project and run installation
 nuke:
-	rm -rf env/
-	rm -rf data/
-	rm -rf node_modules/
-	rm -rf static/css/
+	rm -rf env/ data/ node_modules/ static/css/
+	make clean_theme
 	find . -name '*.pyc' -delete
 	make install
 
@@ -67,6 +66,15 @@ runserver:
 css:
 	$(VENV); gulp sass
 	$(VENV); gulp watch
+
+
+get_theme:
+	curl -L https://github.com/divio/django-cms-explorer/archive/master.zip | tar -xz
+	mv django-cms-explorer-master/* .
+	rm -rf django-cms-explorer-master/ ./master.zip
+
+clean_theme:
+	rm -rf private/ static/ templates/ tests/ browserslist gulpfile.js package.json
 
 ##### DOCKER INTEGRATION
 ##### requires docker-compose http://docs.docker.com/compose/install/
