@@ -26,6 +26,8 @@ before_install:
 
 install:
   - pip install -r requirements/master.txt
+  - curl -L https://github.com/divio/django-cms-explorer/archive/master.zip | tar -xz
+  - mv -n django-cms-explorer-master/* .
   - python src/manage.py migrate --noinput --no-initial-data
   - python src/manage.py migrate --noinput
 
