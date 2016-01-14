@@ -104,10 +104,6 @@ docker_database:
 docker_pulldata:
 	docker-compose run web python manage.py migrate --noinput
 
-docker_node:
-	docker-compose run nodejs npm install gulp
-	docker-compose run nodejs npm install
-
 docker_ip:
 	docker-compose ps
 	@echo ---------------------------------------------
