@@ -19,7 +19,7 @@ all:
 
 install:
 	virtualenv $(ENV)
-	make get_theme
+	make theme
 	make database
 	make update
 	make pulldata
@@ -40,15 +40,12 @@ pulldata:
 tests:
 	gulp tests
 
+nuke:
+	make clean
+	make install
+
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect
-
-# recreate the entire project and run installation
-nuke:
-	rm -rf env/ data/ node_modules/ static/css/
-	make clean_theme
-	find . -name '*.pyc' -delete
-	make install
 
 database:
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
@@ -67,14 +64,18 @@ css:
 	$(VENV); gulp sass
 	$(VENV); gulp watch
 
-
-get_theme:
+theme:
 	curl -L https://github.com/divio/django-cms-explorer/archive/master.zip | tar -xz
 	mv django-cms-explorer-master/* .
 	rm -rf django-cms-explorer-master/ ./master.zip
 
-clean_theme:
+clean:
+	# cleaning theme files
 	rm -rf private/ static/ templates/ tests/ browserslist gulpfile.js package.json
+	# cleaning remainings
+	rm -rf env/ data/ node_modules/ static/css/
+	# remove pyc files
+	find . -name '*.pyc' -delete
 
 ##### DOCKER INTEGRATION
 ##### requires docker-compose http://docs.docker.com/compose/install/
