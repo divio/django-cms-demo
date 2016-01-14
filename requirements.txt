@@ -16,7 +16,10 @@ https://github.com/divio/djangocms-text-ckeditor/archive/master.zip
 
 # essential addons
 https://github.com/aldryn/aldryn-newsblog/archive/master.zip
-https://github.com/aldryn/aldryn-people/archive/master.zip
+# we cannot use the latest master of people yet as there are problems
+# with django tablib (https://github.com/divio/django-tablib/tree/diviointernal)
+# aldryn-newsblog will install the latest released version
+# https://github.com/aldryn/aldryn-people/archive/master.zip
 https://github.com/aldryn/aldryn-faq/archive/master.zip
 https://github.com/aldryn/aldryn-events/archive/master.zip
 https://github.com/aldryn/aldryn-jobs/archive/master.zip
