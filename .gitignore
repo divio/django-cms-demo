@@ -4,3 +4,11 @@ data/
 env/
 node_modules/
 tests/coverage/
+
+private/
+static/
+templates/
+tests/
+browserslist
+gulpfile.js
+package.json
