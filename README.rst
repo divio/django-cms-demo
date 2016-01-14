@@ -22,7 +22,7 @@ The following **essential addons** are available through this installation:
 - `Aldryn News & Blog <https://github.com/aldryn/aldryn-newsblog>`_
 - `Aldryn People <https://github.com/aldryn/aldryn-people>`_
 
-There are also additional **recomennded addons** available:
+There are also additional **recommended addons** available:
 
 - `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
 - `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_
