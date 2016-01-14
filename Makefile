@@ -66,7 +66,7 @@ css:
 
 theme:
 	curl -L https://github.com/divio/django-cms-explorer/archive/master.zip | tar -xz
-	mv django-cms-explorer-master/* .
+	mv -n django-cms-explorer-master/* .
 	rm -rf django-cms-explorer-master/ ./master.zip
 
 clean:
