@@ -4,10 +4,9 @@ PORT = 8000
 ENV = env
 VENV = source $(ENV)/bin/activate
 PIP = $(VENV); $(ENV)/bin/pip
-MANAGE = $(VENV); $(ENV)/bin/python src/manage.py
+MANAGE = $(VENV); $(ENV)/bin/python manage.py
 DBUSER = postgres
 DBNAME = djangocms_demo_local
-REQUIREMENTS = develop
 
 
 ##### REQUIRED COMMANDS
@@ -19,6 +18,7 @@ all:
 
 install:
 	virtualenv $(ENV)
+	make theme
 	make database
 	make update
 	make pulldata
@@ -28,7 +28,7 @@ run:
 
 update:
 	-git pull
-	$(PIP) install -r requirements/$(REQUIREMENTS).txt --no-cache
+	$(PIP) install -r requirements.txt --no-cache
 	$(VENV); npm install
 	gulp sass
 	make migrate
@@ -39,17 +39,12 @@ pulldata:
 tests:
 	gulp tests
 
+nuke:
+	make clean
+	make install
+
 ##### HELPER COMMANDS
 ##### helpers and other non-related commands omitted from divio-architect
-
-# recreate the entire project and run installation
-nuke:
-	rm -rf env/
-	rm -rf data/
-	rm -rf node_modules/
-	rm -rf static/css/
-	find . -name '*.pyc' -delete
-	make install
 
 database:
 	-psql -U $(DBUSER) -c 'DROP DATABASE $(DBNAME);'
@@ -67,6 +62,21 @@ runserver:
 css:
 	$(VENV); gulp sass
 	$(VENV); gulp watch
+
+theme:
+	curl -LOk https://github.com/divio/django-cms-explorer/archive/master.tar.gz
+	tar -xzf master.tar.gz
+	mv -n django-cms-explorer-master/* .
+	rm -rf django-cms-explorer-master/ ./master.tar.gz
+
+clean:
+	# cleaning theme files
+	rm -rf private/ static/ templates/ tests/ browserslist gulpfile.js package.json
+	# cleaning remainings
+	rm -rf env/ data/ node_modules/ static/css/
+	# remove pyc files
+	find . -name '*.pyc' -delete
+
 
 ##### DOCKER INTEGRATION
 ##### requires docker-compose http://docs.docker.com/compose/install/
@@ -89,10 +99,10 @@ docker_run:
 	sleep 5
 
 docker_database:
-	docker-compose run web src/manage.py migrate --noinput --no-initial-data
+	docker-compose run web python manage.py migrate --noinput --no-initial-data
 
 docker_pulldata:
-	docker-compose run web src/manage.py migrate --noinput
+	docker-compose run web python manage.py migrate --noinput
 
 docker_node:
 	docker-compose run nodejs npm install gulp

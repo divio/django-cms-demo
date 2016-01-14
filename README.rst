@@ -49,14 +49,6 @@ Docker
 For additional information checkout the ``Makefile``.
 
 
-***********
-Development
-***********
-
-To get the tutorial experience from the django documentations just ``cd``
-into ``src`` and run the usual commands (``python manage.py startapp...``).
-
-
 *****
 Login
 *****
