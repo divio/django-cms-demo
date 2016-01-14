@@ -12,3 +12,4 @@ tests/
 browserslist
 gulpfile.js
 package.json
+.editorconfig
