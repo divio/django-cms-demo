@@ -64,9 +64,10 @@ css:
 	$(VENV); gulp watch
 
 theme:
-	curl -L https://github.com/divio/django-cms-explorer/archive/master.zip | tar -xz
+	curl -LOk https://github.com/divio/django-cms-explorer/archive/master.tar.gz
+	tar -xzf master.tar.gz
 	mv -n django-cms-explorer-master/* .
-	rm -rf django-cms-explorer-master/ ./master.zip
+	rm -rf django-cms-explorer-master/ ./master.tar.gz
 
 clean:
 	# cleaning theme files
@@ -75,6 +76,7 @@ clean:
 	rm -rf env/ data/ node_modules/ static/css/
 	# remove pyc files
 	find . -name '*.pyc' -delete
+
 
 ##### DOCKER INTEGRATION
 ##### requires docker-compose http://docs.docker.com/compose/install/
@@ -97,10 +99,10 @@ docker_run:
 	sleep 5
 
 docker_database:
-	docker-compose run web manage.py migrate --noinput --no-initial-data
+	docker-compose run web python manage.py migrate --noinput --no-initial-data
 
 docker_pulldata:
-	docker-compose run web manage.py migrate --noinput
+	docker-compose run web python manage.py migrate --noinput
 
 docker_node:
 	docker-compose run nodejs npm install gulp
