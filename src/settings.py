@@ -83,7 +83,7 @@ INSTALLED_APPS = (
     'aldryn_bootstrap3',
     'aldryn_newsblog',
     'aldryn_style',
-    # 'aldryn_faq',
+    'aldryn_faq',
     'aldryn_events',
     'aldryn_jobs',
     # aldryn_forms
@@ -114,7 +114,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'src.urls'
 
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'src.wsgi.application'
 
 
 # Templates
