@@ -4,10 +4,9 @@ PORT = 8000
 ENV = env
 VENV = source $(ENV)/bin/activate
 PIP = $(VENV); $(ENV)/bin/pip
-MANAGE = $(VENV); $(ENV)/bin/python src/manage.py
+MANAGE = $(VENV); $(ENV)/bin/python manage.py
 DBUSER = postgres
 DBNAME = djangocms_demo_local
-REQUIREMENTS = develop
 
 
 ##### REQUIRED COMMANDS
@@ -29,7 +28,7 @@ run:
 
 update:
 	-git pull
-	$(PIP) install -r requirements/$(REQUIREMENTS).txt --no-cache
+	$(PIP) install -r requirements.txt --no-cache
 	$(VENV); npm install
 	gulp sass
 	make migrate
@@ -98,10 +97,10 @@ docker_run:
 	sleep 5
 
 docker_database:
-	docker-compose run web src/manage.py migrate --noinput --no-initial-data
+	docker-compose run web manage.py migrate --noinput --no-initial-data
 
 docker_pulldata:
-	docker-compose run web src/manage.py migrate --noinput
+	docker-compose run web manage.py migrate --noinput
 
 docker_node:
 	docker-compose run nodejs npm install gulp
