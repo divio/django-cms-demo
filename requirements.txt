@@ -14,10 +14,17 @@ https://github.com/divio/djangocms-admin-style/archive/master.zip
 https://github.com/divio/django-filer/archive/develop.zip
 https://github.com/divio/djangocms-text-ckeditor/archive/master.zip
 
+# we need to load a custom tablib version as there are unmerged errors
+https://github.com/divio/django-tablib/archive/diviointernal.zip
+
 # essential addons
-https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip
 https://github.com/aldryn/aldryn-newsblog/archive/master.zip
-https://github.com/aldryn/aldryn-faq/archive/master.zip
+https://github.com/aldryn/aldryn-people/archive/master.zip
 https://github.com/aldryn/aldryn-events/archive/master.zip
+https://github.com/aldryn/aldryn-faq/archive/master.zip
 https://github.com/aldryn/aldryn-jobs/archive/master.zip
+
+# other addons
+https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip
+https://github.com/aldryn/aldryn-forms/archive/master.zip
 https://github.com/aldryn/aldryn-style/archive/master.zip

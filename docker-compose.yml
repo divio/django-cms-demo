@@ -20,9 +20,3 @@ data:
     volumes:
         - /var/lib/postgresql
     command: "true"
-
-nodejs:
-    image: node:latest
-    working_dir: /project
-    volumes_from:
-        - web

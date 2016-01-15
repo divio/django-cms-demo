@@ -7,25 +7,25 @@ django CMS demo
 |Browser Matrix|
 
 The aim of this project is to run django CMS with standard configurations
-including demo content and helpful addons. You can use this repository for
+including recommended addons and best practices. You can use this repository for
 tutorial, debugging, development and research purposes.
 
-We are using `Aldryn Boilerplate Bootstrap 3
-<github.com/aldryn/aldryn-boilerplate-bootstrap3>`_ as the base
-starting point for frontend development. Please consult the
-`documentation <https://aldryn-boilerplate-bootstrap3.readthedocs.org/en/latest/>`_
-for further help.
+The setup process will automatically pull the `Explorer Theme
+<https://github.com/divio/django-cms-explorer>`_ files into the project to
+provide example templates and static files.
 
-The following addons are available through this installation:
+The following **essential addons** are available through this installation:
 
-- `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
-- `Aldryn Blueprint <https://github.com/aldryn/aldryn-blueprint>`_ (tba)
 - `Aldryn Events <https://github.com/aldryn/aldryn-events>`_
 - `Aldryn FAQ <https://github.com/aldryn/aldryn-faq>`_
-- `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_ (tba)
 - `Aldryn Jobs <https://github.com/aldryn/aldryn-jobs>`_
 - `Aldryn News & Blog <https://github.com/aldryn/aldryn-newsblog>`_
-- `Aldryn Segmentation <https://github.com/aldryn/aldryn-segmentation>`_ (tba)
+- `Aldryn People <https://github.com/aldryn/aldryn-people>`_
+
+There are also additional **recommended addons** available:
+
+- `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
+- `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_
 - `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
 
 
@@ -38,8 +38,8 @@ Virtualenv
 
 - run ``make install`` to get started
 - run ``make run`` to start the development server
-
-- run ``make update`` to update the project (this will not load new static files from the Aldryn site)
+- run ``make update`` to update the project
+  (this will not load new static files from the Aldryn site)
 
 Docker
 ------
