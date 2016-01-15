@@ -1,6 +1,6 @@
 FROM python:2.7
 
-ENV DJANGO_SETTINGS_MODULE src/settings
+ENV DJANGO_SETTINGS_MODULE src.settings
 
 ADD . /project
 WORKDIR /project
