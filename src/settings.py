@@ -79,6 +79,8 @@ INSTALLED_APPS = (
     # > prerequisites for aldryn-jobs
     'absolute',
     'emailit',
+    # > prerequisites for aldryn-forms
+    'captcha',
     # > addons
     'aldryn_bootstrap3',
     'aldryn_newsblog',
@@ -86,10 +88,8 @@ INSTALLED_APPS = (
     'aldryn_faq',
     'aldryn_events',
     'aldryn_jobs',
-    # aldryn_forms
     'aldryn_forms',
     'aldryn_forms.contrib.email_notifications',
-    'captcha',
 )
 
 MIDDLEWARE_CLASSES = (
