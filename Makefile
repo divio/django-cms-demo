@@ -71,8 +71,8 @@ theme:
 
 clean:
 	# cleaning theme files
-	rm -rf private/ static/ templates/ tools/ tests/ browserslist gulpfile.js package.json
-	rm -rf .bowerrc .csscomb.json .jscsrc .jshintrc bower.json
+	rm -rf private/ static/ templates/ tools/ tests/ browserslist gulpfile.js
+	rm -rf .bowerrc .csscomb.json .jscsrc .jshintrc bower.json package.json
 	# cleaning remainings
 	rm -rf env/ data/ node_modules/ static/css/
 	# remove pyc files
