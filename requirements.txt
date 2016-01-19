@@ -1,10 +1,10 @@
 Django>=1.8.8,<1.9
-django-reversion>=1.10,<1.11
+django-reversion>=1.8.2,<1.8.6
+# django-reversion>=1.10,<1.11
 psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
 
 # we can modify the django CMS installation at will to test certain features
-# https://github.com/finalangel/django-cms/archive/release/3.2.x.zip
-https://github.com/yakky/django-cms/archive/feature/fix_reversion.zip
+https://github.com/finalangel/django-cms/archive/release/3.2.x.zip
 
 # always freeze versions, requires.io will show outdated dependencies
 # this file will always use the latest master (which might be unreleased)
