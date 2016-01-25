@@ -7,6 +7,9 @@ django-classy-tags>=0.5,<0.7.1
 # we can modify the django CMS installation at will to test certain features
 https://github.com/finalangel/django-cms/archive/release/3.2.x.zip
 
+# compatible classy-tags for django-cms
+django-classy-tags>=0.5,<0.7.1
+
 # always freeze versions, requires.io will show outdated dependencies
 # this file will always use the latest master (which might be unreleased)
 
