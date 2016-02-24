@@ -16,3 +16,4 @@ tools/
 browserslist
 gulpfile.js
 package.json
+bower.json
