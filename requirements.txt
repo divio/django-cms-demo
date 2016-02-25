@@ -4,7 +4,7 @@ django-reversion>=1.8.2,<1.8.6
 psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
 
 # we can modify the django CMS installation at will to test certain features
-https://github.com/finalangel/django-cms/archive/release/3.2.x.zip
+https://github.com/divio/django-cms/archive/release/3.2.x.zip
 
 # compatible classy-tags for django-cms
 django-classy-tags>=0.5,<0.7.1
