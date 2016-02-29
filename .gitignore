@@ -17,3 +17,7 @@ browserslist
 gulpfile.js
 package.json
 bower.json
+.bowerrc
+.csscomb.json
+.jscsrc
+.jshintrc
