@@ -22,7 +22,7 @@ env:
 before_install:
   - curl -LOk https://github.com/divio/django-cms-explorer/archive/master.tar.gz
   - tar -xzf master.tar.gz
-  - mv -n django-cms-explorer-master/* .
+  - mv -n django-cms-explorer-master/{*,.*} .
   - gem install scss-lint
   - npm install -g npm
   - psql -c 'CREATE DATABASE djangocms_demo_local;' -U postgres
