@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'aldryn_jobs',
     'aldryn_forms',
     'aldryn_forms.contrib.email_notifications',
+    'aldryn_locations',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -313,3 +314,8 @@ CKEDITOR_SETTINGS = {
     'stylesSet': 'default:/static/js/addons/ckeditor.wysiwyg.js',
     'contentsCss': ['/static/css/base.css'],
 }
+
+# aldryn-locations google map API key
+# DOCS: https://github.com/aldryn/aldryn-locations
+
+ALDRYN_LOCATIONS_GOOGLEMAPS_APIKEY = 'AIzaSyAPRlT90_MNog80v7Q2tlDPeJzJdzlM1oc'

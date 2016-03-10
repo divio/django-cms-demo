@@ -31,3 +31,4 @@ https://github.com/aldryn/aldryn-jobs/archive/master.zip
 https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip
 https://github.com/aldryn/aldryn-forms/archive/master.zip
 https://github.com/aldryn/aldryn-style/archive/master.zip
+https://github.com/aldryn/aldryn-locations/archive/master.zip
