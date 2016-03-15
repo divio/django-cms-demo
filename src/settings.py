@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     # django CMS addons
     'djangocms_text_ckeditor',
     # > prerequisites for aldryn-bootstrap3
+    'filer',
     'mptt',
     'easy_thumbnails',
     # > prerequisites for aldryn-newsblog
@@ -90,7 +91,6 @@ INSTALLED_APPS = (
     'aldryn_forms',
     'aldryn_forms.contrib.email_notifications',
     'aldryn_locations',
-    'filer',
 )
 
 MIDDLEWARE_CLASSES = (
