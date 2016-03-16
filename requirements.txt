@@ -4,7 +4,7 @@ django-reversion>=1.8.2,<1.8.6
 psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
 
 # we can modify the django CMS installation at will to test certain features
-https://github.com/divio/django-cms/archive/develop.zip
+https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
 
 # compatible classy-tags for django-cms
 django-classy-tags>=0.5,<0.7.1
@@ -14,21 +14,21 @@ django-classy-tags>=0.5,<0.7.1
 
 # core addons
 https://github.com/divio/djangocms-admin-style/archive/master.zip#egg=djangocms-admin-style
-https://github.com/divio/django-filer/archive/develop.zip
-https://github.com/divio/djangocms-text-ckeditor/archive/master.zip
+https://github.com/divio/django-filer/archive/develop.zip#egg=django-filer
+https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
 
 # we need to load a custom tablib version as there are unmerged errors
-https://github.com/divio/django-tablib/archive/diviointernal.zip
+https://github.com/divio/django-tablib/archive/diviointernal.zip#egg=django-tablib
 
 # essential addons
-https://github.com/aldryn/aldryn-newsblog/archive/master.zip
-https://github.com/aldryn/aldryn-people/archive/master.zip
-https://github.com/aldryn/aldryn-events/archive/master.zip
-https://github.com/aldryn/aldryn-faq/archive/master.zip
-https://github.com/aldryn/aldryn-jobs/archive/master.zip
+https://github.com/aldryn/aldryn-newsblog/archive/master.zip#egg=aldryn-newsblog
+https://github.com/aldryn/aldryn-people/archive/master.zip#egg=aldryn-people
+https://github.com/aldryn/aldryn-events/archive/master.zip#egg=aldryn-events
+https://github.com/aldryn/aldryn-faq/archive/master.zip#egg=aldryn-faq
+https://github.com/aldryn/aldryn-jobs/archive/master.zip#egg=aldryn-jobs
 
 # other addons
-https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip
-https://github.com/aldryn/aldryn-forms/archive/master.zip
-https://github.com/aldryn/aldryn-style/archive/master.zip
-https://github.com/aldryn/aldryn-locations/archive/master.zip
+https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip#egg=aldryn-bootstrap3
+https://github.com/aldryn/aldryn-forms/archive/master.zip#egg=aldryn-forms
+https://github.com/aldryn/aldryn-style/archive/master.zip#egg=aldryn-style
+https://github.com/aldryn/aldryn-locations/archive/master.zip#egg=aldryn-locations
