@@ -3,12 +3,6 @@ django-reversion>=1.8.2,<1.8.6
 # django-reversion>=1.10,<1.11
 psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
 
-# we can modify the django CMS installation at will to test certain features
-https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
-
-# compatible classy-tags for django-cms
-django-classy-tags>=0.5,<0.7.1
-
 # always freeze versions, requires.io will show outdated dependencies
 # this file will always use the latest master (which might be unreleased)
 
@@ -16,9 +10,6 @@ django-classy-tags>=0.5,<0.7.1
 https://github.com/divio/djangocms-admin-style/archive/master.zip#egg=djangocms-admin-style
 https://github.com/divio/django-filer/archive/develop.zip#egg=django-filer
 https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
-
-# we need to load a custom tablib version as there are unmerged errors
-https://github.com/divio/django-tablib/archive/diviointernal.zip#egg=django-tablib
 
 # essential addons
 https://github.com/aldryn/aldryn-newsblog/archive/master.zip#egg=aldryn-newsblog
