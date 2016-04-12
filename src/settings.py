@@ -76,7 +76,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'extended_choices',
     'standard_form',
-    'tablib',
+    'django_tablib',
     # > prerequisites for aldryn-jobs
     'absolute',
     'emailit',
