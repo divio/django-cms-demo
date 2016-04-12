@@ -2,9 +2,13 @@ Django>=1.8.8,<1.9
 django-reversion>=1.8.2,<1.8.6
 # django-reversion>=1.10,<1.11
 psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
+django-tablib
 
 # we can modify the django CMS installation at will to test certain features
 https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
+
+# we need to load a custom tablib version as there are unmerged errors
+https://github.com/divio/django-tablib/archive/diviointernal.zip#egg=django-tablib
 
 # always freeze versions, requires.io will show outdated dependencies
 # this file will always use the latest master (which might be unreleased)
