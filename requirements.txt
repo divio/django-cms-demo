@@ -12,6 +12,7 @@ https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
 # core addons
 https://github.com/divio/djangocms-admin-style/archive/master.zip#egg=djangocms-admin-style
 https://github.com/divio/django-filer/archive/develop.zip#egg=django-filer
+https://github.com/divio/cmsplugin-filer/archive/develop.zip#egg=cmsplugin-filer
 https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
 
 # essential addons
