@@ -16,13 +16,13 @@ https://github.com/divio/cmsplugin-filer/archive/develop.zip#egg=cmsplugin-filer
 # https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
 https://github.com/divio/djangocms-text-ckeditor/archive/feature/sane-add-plugin.zip#egg=djangocms-text-ckeditor
 
-
 # essential addons
 https://github.com/aldryn/aldryn-newsblog/archive/master.zip#egg=aldryn-newsblog
 https://github.com/aldryn/aldryn-people/archive/master.zip#egg=aldryn-people
 https://github.com/aldryn/aldryn-events/archive/master.zip#egg=aldryn-events
 https://github.com/aldryn/aldryn-faq/archive/master.zip#egg=aldryn-faq
 https://github.com/aldryn/aldryn-jobs/archive/master.zip#egg=aldryn-jobs
+https://github.com/aldryn/aldryn-categories/archive/master.zip#egg=aldryn-categories
 
 # other addons
 https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip#egg=aldryn-bootstrap3
