@@ -326,3 +326,6 @@ CKEDITOR_SETTINGS = {
 # DOCS: https://github.com/aldryn/aldryn-locations
 
 ALDRYN_LOCATIONS_GOOGLEMAPS_APIKEY = 'AIzaSyAPRlT90_MNog80v7Q2tlDPeJzJdzlM1oc'
+
+# CMS Wizard
+CMS_PAGE_WIZARD_CONTENT_PLACEHOLDER = 'content'
