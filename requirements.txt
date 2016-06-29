@@ -13,8 +13,8 @@ https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
 https://github.com/divio/djangocms-admin-style/archive/master.zip#egg=djangocms-admin-style
 https://github.com/divio/django-filer/archive/develop.zip#egg=django-filer
 https://github.com/divio/cmsplugin-filer/archive/develop.zip#egg=cmsplugin-filer
-# https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
-https://github.com/divio/djangocms-text-ckeditor/archive/develop.zip#egg=djangocms-text-ckeditor
+https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
+# https://github.com/divio/djangocms-text-ckeditor/archive/develop.zip#egg=djangocms-text-ckeditor
 
 # essential addons
 https://github.com/aldryn/aldryn-newsblog/archive/master.zip#egg=aldryn-newsblog
