@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     # > prerequisites for aldryn-jobs
     'absolute',
     'emailit',
+    'aldryn_translation_tools',
     # > prerequisites for aldryn-forms
     'captcha',
     # > addons
