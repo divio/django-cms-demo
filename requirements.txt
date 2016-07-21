@@ -2,6 +2,8 @@ Django>=1.8.8,<1.9
 django-reversion>=1.8.2,<1.8.6
 # django-reversion>=1.10,<1.11
 psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
+# https://github.com/divio/djangocms-text-ckeditor/pull/335
+html5lib>=0.90,!=0.9999,!=0.99999,<0.99999999
 
 # we can modify the django CMS installation at will to test certain features
 https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
