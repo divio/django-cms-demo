@@ -34,7 +34,7 @@ update:
 	make migrate
 
 pulldata:
-	$(MANAGE) migrate --noinput
+	$(MANAGE) loaddata initial_data.json
 
 tests:
 	gulp tests
@@ -51,7 +51,7 @@ database:
 	psql -U $(DBUSER) -c 'CREATE DATABASE $(DBNAME);'
 
 migrate:
-	$(MANAGE) migrate --noinput --no-initial-data
+	$(MANAGE) migrate --noinput
 
 dump:
 	$(MANAGE) dumpdata -e contenttypes -e admin -e auth.permission --natural --indent=4 > initial_data.json
@@ -81,14 +81,12 @@ clean:
 
 ##### DOCKER INTEGRATION
 ##### requires docker-compose http://docs.docker.com/compose/install/
-DOCKER_IP = `docker-machine ip default`
 
 docker:
 	make docker_install
 	make docker_run
 	make docker_database
 	make docker_pulldata
-	make docker_ip
 
 docker_install:
 	docker-compose stop
@@ -97,16 +95,10 @@ docker_install:
 
 docker_run:
 	docker-compose up -d
-	sleep 5
+	sleep 10
 
 docker_database:
-	docker-compose run web python manage.py migrate --noinput --no-initial-data
-
-docker_pulldata:
 	docker-compose run web python manage.py migrate --noinput
 
-docker_ip:
-	docker-compose ps
-	@echo ---------------------------------------------
-	@echo SERVER RUNNING ON: $(DOCKER_IP):$(PORT)
-	@echo ---------------------------------------------
+docker_pulldata:
+	docker-compose run web python manage.py loaddata initial_data.json

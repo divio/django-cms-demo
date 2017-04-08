@@ -6,9 +6,14 @@ django CMS demo
 
 |Browser Matrix|
 
-The aim of this project is to run django CMS with standard configurations
-including recommended addons and best practices. You can use this repository for
-tutorial, debugging, development and research purposes.
+The aim of this project is to test new addons or features using the latest
+django CMS development version. Several addons used here are pulling directly
+from GitHub in their master or development states. This means that the project
+setup can be unsable from time to time. Please only use if you know what
+you are doing.
+
+Please only use this repository for debugging, development and research
+purposes. This codebas is not meant to be used in production.
 
 The setup process will automatically pull the `Explorer Theme
 <https://github.com/divio/django-cms-explorer>`_ files into the project to
@@ -27,7 +32,6 @@ There are also additional **recommended addons** available:
 - `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
 - `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_
 - `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
-- `Aldryn Locations <https://github.com/aldryn/aldryn-locations>`_
 
 
 ************
