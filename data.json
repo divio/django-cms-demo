@@ -11,8 +11,8 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$30000$AB7La6YftzLN$E5ipBQWRVpZSBNm1mmo8x1AojGHBnFQguFYT9ovA/pI=",
-        "last_login": "2017-04-08T20:32:18.229Z",
+        "password": "pbkdf2_sha256$30000$OXRzyHjG874a$pRKI7Vd+yBstxZBeRl9UdciL9M/sBe315EqyzJ5ozzE=",
+        "last_login": null,
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -20,18 +20,9 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2017-04-08T20:26:20.065Z",
+        "date_joined": "2017-04-09T15:10:47.955Z",
         "groups": [],
         "user_permissions": []
-    }
-},
-{
-    "model": "cms.usersettings",
-    "pk": 1,
-    "fields": {
-        "user": 1,
-        "language": "en",
-        "clipboard": 1
     }
 }
 ]

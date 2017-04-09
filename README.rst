@@ -47,6 +47,24 @@ You can login to the cms by appending ``/?edit`` to the url. The credentials are
 - Username: **admin**
 - Password: **admin**
 
+Themes
+------
+
+This project does not ship with any HTML or static files. You can choose
+from several Boilerplates to get started:
+
+* `HTML 5 <https://github.com/divio/djangocms-boilerplate-html5>`_
+* `Bootstrap 3 <https://github.com/divio/djangocms-boilerplate-bootstrap3>`_
+* `Webpack <https://github.com/divio/djangocms-boilerplate-webpack>`_
+* `Explorer Theme <https://github.com/divio/django-cms-explorer>`_
+
+Here is an example on how to get started using the **Explorer Theme**:
+
+* run ``curl -LOk https://github.com/divio/django-cms-explorer/archive/master.tar.gz``
+* run ``tar -xzf master.tar.gz``
+* run ``mv -n django-cms-explorer-master/{*,.*} .``
+* run ``rm -rf django-cms-explorer-master/ ./master.tar.gz``
+
 
 .. |build| image:: https://travis-ci.org/divio/django-cms-demo.svg?branch=master
     :target: https://travis-ci.org/divio/django-cms-demo
