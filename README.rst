@@ -2,7 +2,7 @@
 django CMS demo
 ###############
 
-|build| |coverage|
+|build|
 
 **django CMS Demo** is no traditional "Demo" project for presentational usage.
 It is aimed for developers who want to test the latest django CMS and addon
@@ -68,5 +68,3 @@ Here is an example on how to get started using the **Explorer Theme**:
 
 .. |build| image:: https://travis-ci.org/divio/django-cms-demo.svg?branch=master
     :target: https://travis-ci.org/divio/django-cms-demo
-.. |coverage| image:: https://codecov.io/gh/divio/django-cms-demo/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/divio/django-cms-demo
