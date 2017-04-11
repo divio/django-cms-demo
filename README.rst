@@ -2,75 +2,71 @@
 django CMS demo
 ###############
 
-|Build Status| |Coverage Status| |Code Climate| |Requirements Status|
+|build| |coverage|
 
-|Browser Matrix|
-
-The aim of this project is to test new addons or features using the latest
-django CMS development version. Several addons used here are pulling directly
-from GitHub in their master or development states. This means that the project
-setup can be unsable from time to time. Please only use if you know what
-you are doing.
+**django CMS Demo** is no traditional "Demo" project for presentational usage.
+It is aimed for developers who want to test the latest django CMS and addon
+versions, living on the edge. This means, that the project setup can be unstable
+from time to time.
 
 Please only use this repository for debugging, development and research
-purposes. This codebas is not meant to be used in production.
+purposes. **This codebase is not meant to be used in production**.
 
-The setup process will automatically pull the `Explorer Theme
-<https://github.com/divio/django-cms-explorer>`_ files into the project to
-provide example templates and static files.
-
-The following **essential addons** are available through this installation:
-
-- `Aldryn Events <https://github.com/aldryn/aldryn-events>`_
-- `Aldryn FAQ <https://github.com/aldryn/aldryn-faq>`_
-- `Aldryn Jobs <https://github.com/aldryn/aldryn-jobs>`_
-- `Aldryn News & Blog <https://github.com/aldryn/aldryn-newsblog>`_
-- `Aldryn People <https://github.com/aldryn/aldryn-people>`_
-
-There are also additional **recommended addons** available:
-
-- `Aldryn Bootstrap 3 <https://github.com/aldryn/aldryn-bootstrap3>`_
-- `Aldryn Forms <https://github.com/aldryn/aldryn-forms>`_
-- `Aldryn Style <https://github.com/aldryn/aldryn-style>`_
+* **Django 1.10**
+* **django CMS develop branch**
 
 
-************
+============
 Installation
-************
+============
 
 Virtualenv
 ----------
 
-- run ``make install`` to get started
-- run ``make run`` to start the development server
-- run ``make update`` to update the project
-  (this will not load new static files from the Aldryn site)
+- run ``virtualenv env`` to create a virtual environment
+- run ``source env/bin/activate`` to start the virtual environment
+- run ``pip install -r requirements.txt`` to install all requirements
+- run ``python manage.py migrate`` to run database migrations
+- run ``python manage.py loaddata data.json`` to load the admin user,
+  you can also create your own by running ``python manage.py createsuperuser`` instead
+- run ``python manage.py runserver 0.0.0.0:8000`` to start the local development server
+- visit ``http://localhost:8000``
 
 Docker
 ------
 
-- run ``make docker`` which sets the docker image up and runs it in the background
+- run ``docker build -t divio/django-cms-demo .`` to build the image
+- run ``docker run -it -p 8000:8000 divio/django-cms-demo`` to start the container
+- visit ``http://localhost:8000`` (depending on your docker configuration)
 
-For additional information checkout the ``Makefile``.
-
-
-*****
 Login
-*****
+-----
 
 You can login to the cms by appending ``/?edit`` to the url. The credentials are:
 
 - Username: **admin**
 - Password: **admin**
 
+Themes
+------
 
-.. |Build Status| image:: https://travis-ci.org/divio/django-cms-demo.svg?branch=master
-   :target: https://travis-ci.org/divio/django-cms-demo
-.. |Coverage Status| image:: https://codeclimate.com/github/divio/django-cms-demo/badges/coverage.svg
-   :target: https://codeclimate.com/github/divio/django-cms-demo/coverage
-.. |Code Climate| image:: https://codeclimate.com/github/divio/django-cms-demo/badges/gpa.svg
-   :target: https://codeclimate.com/github/divio/django-cms-demo
-.. |Requirements Status| image:: https://requires.io/github/divio/django-cms-demo/requirements.svg?branch=master
-   :target: https://requires.io/github/divio/django-cms-demo/requirements/?branch=master
-.. |Browser Matrix| image:: https://saucelabs.com/browser-matrix/django-cms-demo.svg
-   :target: https://saucelabs.com/u/django-cms-demo
+This project does not ship with any HTML or static files. You can choose
+from several Boilerplates to get started:
+
+* `HTML 5 <https://github.com/divio/djangocms-boilerplate-html5>`_
+* `Bootstrap 3 <https://github.com/divio/djangocms-boilerplate-bootstrap3>`_
+* `Webpack <https://github.com/divio/djangocms-boilerplate-webpack>`_
+* `Explorer Theme <https://github.com/divio/django-cms-explorer>`_
+
+Here is an example on how to get started using the **Explorer Theme**:
+
+* run ``curl -LOk https://github.com/divio/django-cms-explorer/archive/master.tar.gz``
+* run ``tar -xzf master.tar.gz``
+* run ``mv -n django-cms-explorer-master/{*,.*} .``
+* run ``rm -rf django-cms-explorer-master/ ./master.tar.gz``
+
+
+.. |build| image:: https://travis-ci.org/divio/django-cms-demo.svg?branch=master
+    :target: https://travis-ci.org/divio/django-cms-demo
+.. |coverage| image:: https://codecov.io/gh/divio/django-cms-demo/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/divio/django-cms-demo

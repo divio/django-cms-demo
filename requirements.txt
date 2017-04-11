@@ -1,28 +1,19 @@
-Django>=1.8.18,<1.10
-psycopg2>=2.6.1  # required for django.db.backends.postgresql_psycopg2
-# https://github.com/divio/djangocms-text-ckeditor/pull/335
-html5lib>=0.90,!=0.9999,!=0.99999,<0.99999999
+Django>=1.8,<1.11
 
-# we can modify the django CMS installation at will to test certain features
+# install development version of django CMS for testing
 https://github.com/divio/django-cms/archive/develop.zip#egg=django-cms
 
 # always freeze versions, requires.io will show outdated dependencies
 # this file will always use the latest master (which might be unreleased)
 
-# core addons
+# core addons, installed from master
 https://github.com/divio/djangocms-admin-style/archive/master.zip#egg=djangocms-admin-style
-https://github.com/divio/django-filer/archive/develop.zip#egg=django-filer
 https://github.com/divio/djangocms-text-ckeditor/archive/master.zip#egg=djangocms-text-ckeditor
-
-# essential addons
-https://github.com/aldryn/aldryn-newsblog/archive/master.zip#egg=aldryn-newsblog
-https://github.com/aldryn/aldryn-people/archive/master.zip#egg=aldryn-people
-https://github.com/aldryn/aldryn-events/archive/master.zip#egg=aldryn-events
-https://github.com/aldryn/aldryn-faq/archive/master.zip#egg=aldryn-faq
-https://github.com/aldryn/aldryn-jobs/archive/master.zip#egg=aldryn-jobs
-https://github.com/aldryn/aldryn-categories/archive/master.zip#egg=aldryn-categories
-
-# other addons
-https://github.com/aldryn/aldryn-bootstrap3/archive/master.zip#egg=aldryn-bootstrap3
-https://github.com/aldryn/aldryn-forms/archive/master.zip#egg=aldryn-forms
-https://github.com/aldryn/aldryn-style/archive/master.zip#egg=aldryn-style
+https://github.com/divio/django-filer/archive/master.zip#egg=django-filer
+https://github.com/divio/djangocms-link/archive/master.zip#egg=djangocms-link
+https://github.com/divio/djangocms-picture/archive/master.zip#egg=djangocms-picture
+https://github.com/divio/djangocms-snippet/archive/master.zip#egg=djangocms-snippet
+https://github.com/divio/djangocms-style/archive/master.zip#egg=djangocms-style
+https://github.com/divio/djangocms-googlemap/archive/master.zip#egg=djangocms-googlemap
+https://github.com/divio/djangocms-video/archive/master.zip#egg=djangocms-video
+https://github.com/divio/djangocms-audio/archive/master.zip#egg=djangocms-audio

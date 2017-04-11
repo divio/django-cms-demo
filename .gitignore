@@ -1,23 +1,16 @@
-.idea/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
 *.pyc
-data/
-env/
-node_modules/
-tests/coverage/
+*.pyo
+db.sqlite3
 
-# ignore copied files from:
-# https://github.com/divio/django-cms-explorer
-private/
-static/
-templates/
-tests/
-tools/
-.editorconfig
-browserslist
-gulpfile.js
-package.json
-bower.json
-.bowerrc
-.csscomb.json
-.jscsrc
-.jshintrc
+# ignore themes
+/templates
+/static
+boilerplate.json

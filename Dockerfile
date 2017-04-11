@@ -1,15 +1,14 @@
-FROM python:2.7
+FROM python:3.6
 
 ENV DJANGO_SETTINGS_MODULE src.settings
 
-ADD . /project
-WORKDIR /project
+ADD . /app
+WORKDIR /app
 
 RUN pip install -r requirements.txt
-RUN curl -LOk https://github.com/divio/django-cms-explorer/archive/master.tar.gz
-RUN tar -xvzf master.tar.gz
-RUN cp -nr django-cms-explorer-master/* .
+RUN python manage.py migrate
+RUN python manage.py loaddata data.json
 
-EXPOSE 80
+EXPOSE 8000
 
-CMD python manage.py runserver 0.0.0.0:80
+CMD python manage.py runserver 0.0.0.0:8000
